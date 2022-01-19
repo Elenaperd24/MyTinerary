@@ -1,0 +1,266 @@
+.bannerPrincipal {
+  background-image: url("./image/banner/banner1.jpg");
+  background-size:cover;
+
+}
+
+.btn-cties-home{
+  background-color: #ff4b4b;
+  color: white;
+  position: relative;
+  top: 67vh;
+  right: 40vh;
+  width: 20vh;
+  border-radius: 15px 15px 15px 15px;
+}
+.carrouselHeader{
+  width: 100%;
+  height: auto;
+}
+
+.bodyOpacity{
+  position: absolute !important;
+  top:10vh;
+  right: -25vh;
+  width: 250vh;
+  height: 100vh;
+  background-color: black;
+  opacity: 80%;
+  z-index: 1;
+}
+
+
+/* **************************Navbar ***************************************************/
+.navbar1{
+  height: 6vh;  
+}
+.navbar-nav{  
+  background-color: #fff5ee;
+}
+.sticky-top{
+  height: 0;
+}
+.link-vav {
+  position: absolute;
+  right: 30vh;
+  top: 0.2vh;
+  background-color: blue;
+}
+.navbar-button{  
+  position: absolute;
+  right: 25vh;
+  top: 0.4vh;
+  height: 2vh;
+  
+}
+.btn-nav {
+  font-family: 'Acme', sans-serif;
+  font-size: 3vh;
+  background-color:transparent;
+}
+
+.nav-link :hover {
+  background-color:#ff4b4a;
+  color: white;
+  }
+  .login{       
+    height: 6.5vh;
+    padding: 0;    
+  }
+  .icon-login{
+    position: relative;
+    background-color: transparent !important;
+    height: 10vh;
+    top: 0.5vh;
+    padding: 1vh;
+  }
+
+  .social-media{
+    position: absolute;  
+    top: 0.5vh;
+    width: 25vh;
+    right:3vh;
+    max-height: 5vh;
+  }
+  .logo{    
+    height: 8vh;
+  }
+  .colorChange{
+    background-color:#fff5ee;
+    margin-top: -1vh;
+    height: 11vh;
+    padding: 0;
+    
+  }
+  /* **************************Sign IN / UP ***************************************************/
+  
+  .menu{
+    position:absolute;
+    top: 15vh;
+    right: 0vh;
+    height: 107vh;
+    width: 35%;
+    background-color: white;
+    border-top-left-radius: 15px;
+    opacity: 90%;
+    border: black;
+
+  }
+  .formSign{
+    position: relative;
+    top: 5vh;
+    left: 15vh;
+    width: 50vh;
+  }
+  .helpForm{
+    position: relative;
+    top: 4vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2vh;
+    align-items: center;
+    background-color: #9cd5e4;
+       
+  }
+  .btn-signin{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    top: 10vh;
+    background-color: #ff4b4b;
+    color: white;
+    width: 50vh;
+  }
+  /*************************************signup*****************************/
+  .menu-signUP{
+    position:absolute;
+    top: 15vh;
+    right: 5vh;
+    width: 50%;
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    opacity: 90%;
+    border: black;    
+
+  }
+ 
+  .btn-signUp{
+    position: relative;
+    align-items: center;    
+    justify-content: center;
+    left: 20%;
+    background-color: #ff4b4b;
+    color: white;
+    width: 50vh;
+    margin: 8vh;
+  }
+  .continer-signUp{
+    display: flex;
+    background-color:#9cd5e4;
+    width: 100vh;
+  }
+  
+/* **************************card more likes ***************************************************/
+.cards-like h1{
+  position:absolute;
+  color: #fff5ee;
+  text-align: center;
+  width: 20vh;
+  right: 1vh;
+  
+  }
+  .cards-like .card-title{
+    color: #ff4b4a;
+  }
+.cards-like .card {
+  left: 3vw;
+  top: 2vw;
+  padding: 8px;
+  margin: 5px;
+}
+.cards-like {
+  width: 90%;
+  align-items: center;
+  margin-top: 4vh;
+  background-color: #9cd5e4;
+  padding-left: 5vh;
+  margin-left: 5vh;
+  margin-bottom: 10vh;
+
+}
+
+.cards-like .item-card {
+  border-radius: 15px 15px 15px 15px;
+  margin: 2vh;
+}
+/* **************************card Cities ***************************************************/
+
+.find-Continent{
+  display: flex;
+  width: 50%;
+  margin-top: 5vh;
+  align-items: center;
+}
+.find-Continent .btn{
+  margin-right: 2vh;
+}
+.containerCities{
+  margin-left: 8vh;
+  margin-top: 10vh;
+  border-radius: 25px;
+  padding: 0;
+  border-radius: 25px;
+}
+
+.image-card :hover{  
+  transform: translate3d(15px, 15px, 15px);
+  }
+  .image-card :hover{
+    background-color: rosybrown;
+    }
+
+
+
+.card{
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  border-radius: 25px;
+  margin-right: 0;
+  color: #ff4b4a;
+  
+}
+
+.card .card-body{
+  border-radius: 25px
+}
+.card-img-top{
+  
+  border-radius: 25px;
+  
+  border-bottom: 0;
+}
+/************************Carousel City city***********************************/
+.carousel-city{
+  position: relative;
+}
+
+/* **************************Carousel Cities home ***************************************************/
+.carouseL-city-home{
+  
+  height: 50vh;  
+  width: 100%;
+}
+
+  
+
+/* **************************card cities ***************************************************/
+.footer{
+  
+  background-color:#fff5ee;
+  margin-top: 5vh;
+  color: #ff4b4a;
+}
+.footer a{
+  color: black;
+}
