@@ -6,7 +6,6 @@ import Home from "./components/Home"
 import Footer from "./components/Footer"
 import Cities from './components/Cities'
 import City from './components/City';
-import NavbarPrueba from './components/NavbarPrueba';
 import SignUp from './components/SingUp';
 import Signin from './components/Signin';
 
@@ -14,7 +13,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavbarPrueba/>
+      <Navbar/>
       <Routes>
        <Route path="/"element={<Home />} />
        <Route path="/cities"element={<Cities />} />

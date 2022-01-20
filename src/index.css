@@ -35,8 +35,8 @@
   height: 6vh;  
 }
 
-.sticky-top{
-  height: 0;
+.navbar-nav{
+  margin-right: 2vh;
 }
 .link-vav {
   position: absolute;
@@ -63,7 +63,9 @@
   }
   .login{       
     height: 6.5vh;
-    padding: 0;    
+    padding: 0 !important;
+    margin: 0 !important;
+        
   }
   .icon-login{
     position: relative;
@@ -101,7 +103,7 @@
     top: 15vh;
     right: 0vh;
     height: 107vh;
-    width: 35%;
+    width: 70vh;
     background-color: white;
     border-top-left-radius: 15px;
     opacity: 90%;
@@ -109,10 +111,10 @@
 
   }
   .formSign{
-    position: relative;
+    position: absolute;
     top: 5vh;
-    left: 15vh;
-    width: 50vh;
+    right: 5vh;
+    max-width: 50vh;
   }
   .helpForm{
     position: relative;
@@ -273,8 +275,11 @@
     background-color: #fff5ee;    
   }
 .menu{
-  position: absolute;
-  justify-content: center;
+  right: 7vh;
+  border-radius: 15px;
+}
+.formSign{
+  right: 8vh;
 }
 
 }
