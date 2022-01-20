@@ -2,7 +2,7 @@
   "name": "mytinerary",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://elenaperd24.github.io/MyTinerary/",
+  "homepage": "https://elenaperd24.github.io/MyTinerary",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
