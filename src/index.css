@@ -283,3 +283,9 @@
 }
 
 }
+@media screen and(max-whidth:412px) {
+  .menu{
+    width: 2vh;
+  }
+  
+}

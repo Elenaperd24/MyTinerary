@@ -35,7 +35,9 @@ function Navbar() {
             <nav className={colorChange ? "colorChange navbar shadow navbar-expand-md navbar-light  fixed-top " :
                 "navbar navbar-expand-md shadow navbar-light fixed-top prueba"}>
                 <div className="container-fluid p-0">
+                    <LinkRouter to= "/">
                     <img src={colorLogo ? logo : logoNegro} className="navbar-brand logo img-fluid" alt="brand" />
+                    </LinkRouter>
                     <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
