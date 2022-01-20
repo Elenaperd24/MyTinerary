@@ -34,9 +34,7 @@
 .navbar1{
   height: 6vh;  
 }
-.navbar-nav{  
-  background-color: #fff5ee;
-}
+
 .sticky-top{
   height: 0;
 }
@@ -87,11 +85,15 @@
   }
   .colorChange{
     background-color:#fff5ee;
-    margin-top: -1vh;
-    height: 11vh;
+    height: 10vh;
     padding: 0;
     
   }
+  .prueba{
+    background-color:transparent;
+    width: 100%;
+  }
+   
   /* **************************Sign IN / UP ***************************************************/
   
   .menu{
@@ -263,4 +265,16 @@
 }
 .footer a{
   color: black;
+}
+/**media screen****/
+@media screen and (max-width: 720px) {
+    
+  .prueba{
+    background-color: #fff5ee;    
+  }
+.menu{
+  position: absolute;
+  justify-content: center;
+}
+
 }
