@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.726c2440.css",
+    "main.js": "/static/js/main.e129c649.js",
+    "static/js/787.a34fb91a.chunk.js": "/static/js/787.a34fb91a.chunk.js",
+    "static/media/bannerCity.jpg": "/static/media/bannerCity.5ef07c2e96b8b73287d3.jpg",
+    "static/media/banner1.jpg": "/static/media/banner1.f6363b2c48ea780c1f62.jpg",
+    "static/media/cardcities.jpg": "/static/media/cardcities.33ca2e0f316d4ce225e6.jpg",
+    "static/media/bannerSignin.jpg": "/static/media/bannerSignin.b67c512a9f390d2d5d28.jpg",
+    "static/media/banner3.jpg": "/static/media/banner3.4cca90238987cbfade3d.jpg",
+    "static/media/banner2.jpg": "/static/media/banner2.55c5e455885dd8956193.jpg",
+    "static/media/Vancouver (2).jpg": "/static/media/Vancouver (2).ee11114e0fa87bdbd1c1.jpg",
+    "static/media/login.png": "/static/media/login.332835ca465cd345d3cd.png",
+    "static/media/bannerSignUP.jpg": "/static/media/bannerSignUP.35c140f3f963cb391192.jpg",
+    "static/media/Vancouver (1).jpg": "/static/media/Vancouver (1).3d46cdaabe843d4d3a86.jpg",
+    "static/media/sydney  (3).jpg": "/static/media/sydney  (3).6381e38e64683a303710.jpg",
+    "static/media/Dublin (2).jpg": "/static/media/Dublin (2).68a5014543dd18bb79c9.jpg",
+    "static/media/socialmedia.png": "/static/media/socialmedia.dcf9a6cbddeacbf997ea.png",
+    "static/media/Dublin (3).jpg": "/static/media/Dublin (3).3eb0f6ce87526ccc72dc.jpg",
+    "static/media/Dublin (1).jpg": "/static/media/Dublin (1).dacacc20893a1473095b.jpg",
+    "static/media/Vancouver (3).jpg": "/static/media/Vancouver (3).8ca5245b8bdc851eb9b2.jpg",
+    "static/media/sydney  (2).jpg": "/static/media/sydney  (2).aad419cca30807deda1d.jpg",
+    "static/media/sydney  (1).jpg": "/static/media/sydney  (1).d1278fb99e49ab8fa877.jpg",
+    "static/media/logoNegro.png": "/static/media/logoNegro.b08a3ededaafeb134040.png",
+    "static/media/logoMyTinerary.png": "/static/media/logoMyTinerary.7a56525f00cdfe07eb70.png",
+    "index.html": "/index.html",
+    "main.726c2440.css.map": "/static/css/main.726c2440.css.map",
+    "main.e129c649.js.map": "/static/js/main.e129c649.js.map",
+    "787.a34fb91a.chunk.js.map": "/static/js/787.a34fb91a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.726c2440.css",
+    "static/js/main.e129c649.js"
+  ]
+}
