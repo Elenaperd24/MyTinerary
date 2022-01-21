@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MyTinerary/static/css/main.4949d9b8.css",
-    "main.js": "/MyTinerary/static/js/main.bd7485be.js",
+    "main.css": "/MyTinerary/static/css/main.472bfac4.css",
+    "main.js": "/MyTinerary/static/js/main.13f3c6f8.js",
     "static/js/787.a34fb91a.chunk.js": "/MyTinerary/static/js/787.a34fb91a.chunk.js",
     "static/media/bannerCity.jpg": "/MyTinerary/static/media/bannerCity.5ef07c2e96b8b73287d3.jpg",
     "static/media/banner1.jpg": "/MyTinerary/static/media/banner1.f6363b2c48ea780c1f62.jpg",
@@ -21,15 +21,16 @@
     "static/media/Vancouver (3).jpg": "/MyTinerary/static/media/Vancouver (3).8ca5245b8bdc851eb9b2.jpg",
     "static/media/sydney  (2).jpg": "/MyTinerary/static/media/sydney  (2).aad419cca30807deda1d.jpg",
     "static/media/sydney  (1).jpg": "/MyTinerary/static/media/sydney  (1).d1278fb99e49ab8fa877.jpg",
+    "static/media/usuario.jpg": "/MyTinerary/static/media/usuario.15ddeb3caa0ce44c8d92.jpg",
     "static/media/logoNegro.png": "/MyTinerary/static/media/logoNegro.b08a3ededaafeb134040.png",
     "static/media/logoMyTinerary.png": "/MyTinerary/static/media/logoMyTinerary.7a56525f00cdfe07eb70.png",
     "index.html": "/MyTinerary/index.html",
-    "main.4949d9b8.css.map": "/MyTinerary/static/css/main.4949d9b8.css.map",
-    "main.bd7485be.js.map": "/MyTinerary/static/js/main.bd7485be.js.map",
+    "main.472bfac4.css.map": "/MyTinerary/static/css/main.472bfac4.css.map",
+    "main.13f3c6f8.js.map": "/MyTinerary/static/js/main.13f3c6f8.js.map",
     "787.a34fb91a.chunk.js.map": "/MyTinerary/static/js/787.a34fb91a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4949d9b8.css",
-    "static/js/main.bd7485be.js"
+    "static/css/main.472bfac4.css",
+    "static/js/main.13f3c6f8.js"
   ]
 }
