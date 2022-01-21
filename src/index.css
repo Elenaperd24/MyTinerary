@@ -198,23 +198,21 @@
   margin: 2vh;
 }
 /* **************************card Cities ***************************************************/
+.allCities{
+ justify-content: center;
+ margin-top: 20vh;
+  
+}
+.nameCiudad{
+  justify-content: center;
+  font-family:lobster;
+  background-color: hsl(188, 52%, 82%);
+  margin-bottom: 0;
+}
+.allCities .card {
+  border: none;
+}
 
-.find-Continent{
-  display: flex;
-  width: 50%;
-  margin-top: 5vh;
-  align-items: center;
-}
-.find-Continent .btn{
-  margin-right: 2vh;
-}
-.containerCities{
-  margin-left: 8vh;
-  margin-top: 10vh;
-  border-radius: 25px;
-  padding: 0;
-  border-radius: 25px;
-}
 
 .image-card :hover{  
   transform: translate3d(15px, 15px, 15px);
@@ -234,20 +232,20 @@
   color: #ff4b4a;
   
 }
+.card-city :hover{
+  background-color: #fff4ee ;
+  transform: translate3d(5px , 5px, 15px);
+}
 
 .card .card-body{
   border-radius: 25px
 }
-.card-img-top{
-  
+.imagen-card{  
   border-radius: 25px;
-  
-  border-bottom: 0;
-}
-/************************Carousel City city***********************************/
-.carousel-city{
-  position: relative;
-}
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  ;}
+
 
 /* **************************Carousel Cities home ***************************************************/
 .carouseL-city-home{
@@ -255,10 +253,37 @@
   height: 50vh;  
   width: 100%;
 }
+/********************* City **********************************/
+.contenedorReview{
+  justify-content: center;
+  margin-top: 5vh;
+  
+  
+}
+.review{
+ margin: 5vh;
+}
+.foto-usuario {
+  border-radius: 100%;
+  height: auto;
+}
+.moreReview{
+  padding: 0.5vh !important;
+  margin-top: 2vh !important;
+
+}
+.enlaceItinerary{
+  margin-top: 1vh;
+  align-items: center;
+  justify-content: center;
+}
+.enlaceItinerary a {
+  color: #ff4a48;
+}
 
   
 
-/* **************************card cities ***************************************************/
+/* **************************FOOTER ***************************************************/
 .footer{
   
   background-color:#fff5ee;
@@ -268,7 +293,7 @@
 .footer a{
   color: black;
 }
-/**media screen****/
+/***************************************media query****/
 @media screen and (max-width: 720px) {
     
   .prueba{

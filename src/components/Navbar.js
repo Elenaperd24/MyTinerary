@@ -22,13 +22,8 @@ function Navbar() {
             setColorLogo(true);
         }      
        
-    };  
-    
-
-
-
-    window.addEventListener('scroll', changeNavbarColor);
-    
+    };    
+    window.addEventListener('scroll', changeNavbarColor);  
 
     return (
         <>
