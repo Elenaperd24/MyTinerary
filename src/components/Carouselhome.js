@@ -1,17 +1,11 @@
 import React from "react";
-import Sydney1 from "../image/cities/sydney/sydney  (1).jpg"
-import Sydney2 from "../image/cities/sydney/sydney  (2).jpg"
-import Sydney3 from "../image/cities/sydney/sydney  (3).jpg"
-import Dublin1 from "../image/cities/Dublin/Dublin (1).jpg"
-import Dublin2 from "../image/cities/Dublin/Dublin (2).jpg"
-import Dublin3 from "../image/cities/Dublin/Dublin (3).jpg"
-import Vancouver1 from "../image/cities/Vancouver/Vancouver (1).jpg"
-import Vancouver2 from "../image/cities/Vancouver/Vancouver (2).jpg"
-import Vancouver3 from "../image/cities/Vancouver/Vancouver (3).jpg"
-
+import Vancouver from "../image/cities/Vancouver/Vancouver (4).jpg"
+import Sydney from "../image/cities/sydney/sydney  (4).jpg"
+import Dublin from "../image/cities/Dublin/Dublin (4).jpg"
 function Carouselhome() {
     return (
-        <div id="carouselExampleCaptions carouseL-city-home" className="carousel slide" data-bs-ride="carousel">
+
+        <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -19,25 +13,25 @@ function Carouselhome() {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={Dublin1} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
+                    <img src={Vancouver}className="d-block w-100" alt="..."/>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={Dublin1} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
+                    <img src={Sydney} className="d-block w-100" alt="..."/>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={Dublin1} className="d-block w-100" alt="..." />
-                    <div className="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
+                    <img src={Dublin} className="d-block w-100" alt="..."/>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -49,6 +43,7 @@ function Carouselhome() {
                 <span className="visually-hidden">Next</span>
             </button>
         </div>
+
     )
 
 }
