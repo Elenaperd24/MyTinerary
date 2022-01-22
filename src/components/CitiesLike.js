@@ -6,7 +6,7 @@ function CitiesLike() {
 
     return (
         <>  <div className="cards-like">
-            <div className="container">
+            <div className="container">                
                 <div className="row">
                     <div className=" col-12 col-md-6 col-lg-4 col-xl-4">
                         <div className="card item-card">

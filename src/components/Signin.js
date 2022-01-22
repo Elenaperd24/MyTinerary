@@ -4,6 +4,7 @@ import login from "../image/logos/login.png";
 import bannerSignin from "../image/banner/bannerSignin.jpg";
 import SignUp from "./SingUp";
 import MaterialIcon, { colorPalette } from 'material-icons-react';
+
 //<MaterialIcon className="icon-login" icon="account_circle" size='large' color="black" />//
 
 //<img src={login} className="login" alt="login" />//

@@ -165,6 +165,16 @@
   }
   
 /* **************************card more likes ***************************************************/
+.iconos{
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.txt-more-like{
+  justify-content: center;
+  color: #ff4a48;
+  font-family:lobster;
+  margin-top: 2vh;
+}
 .cards-like h1{
   position:absolute;
   color: #fff5ee;
@@ -185,7 +195,7 @@
 .cards-like {
   width: 90%;
   align-items: center;
-  margin-top: 4vh;
+  margin-top: 2vh;
   background-color: #9cd5e4;
   padding-left: 5vh;
   margin-left: 5vh;
@@ -294,7 +304,7 @@
   color: black;
 }
 /***************************************media query****/
-@media screen and (max-width: 720px) {
+@media (min-width: 413px) and (max-width:720px){
     
   .prueba{
     background-color: #fff5ee;    
@@ -308,9 +318,19 @@
 }
 
 }
-@media screen and(max-whidth:412px) {
+@media (max-width: 412px) {
   .menu{
-    width: 2vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .formSign{
+    width: 95%;
+    margin: 0 !important;
+    right: 10px;
+    
   }
   
 }

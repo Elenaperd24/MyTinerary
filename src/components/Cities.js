@@ -2,7 +2,7 @@ import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import cardcities from "../image/cities/cardcities.jpg";
 import CarouselHeader from "./CarouselHeader";
-
+import MaterialIcon, { colorPalette } from 'material-icons-react';
 function Cities() {
     return (
         <>
@@ -16,13 +16,17 @@ function Cities() {
                         <div className="col-md-4">
                             <img src={cardcities} className="card-img-top imagen-card" alt="..." />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-8 d-flex">
                             <div className="card-body">
                                 <div className="tituloCard">
                                     <h5 className="card-title">Card title</h5>
-                                </div>
+                                </div>                               
                                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
+                                <div className="iconos d-flex">
+                                <MaterialIcon icon="favorite" size={50}/>
+                                <MaterialIcon icon="flight" size={50} />
+                                <MaterialIcon icon="mode_comment" size={50} />
+                                </div>
                             </div>
                         </div>
                     </div>

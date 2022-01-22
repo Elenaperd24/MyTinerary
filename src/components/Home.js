@@ -4,6 +4,7 @@ import CitiesLike from "./CitiesLike"
 import Carouselhome from './Carouselhome';
 import { Link as LinkRouter } from "react-router-dom";
 
+
 function Home() {
 
     return (
@@ -12,7 +13,9 @@ function Home() {
             {/**<LinkRouter to="/cities">
                 <button className="btn btn-cties-home">Cities</button>
             </LinkRouter>**/}
+            <h1 className="d-flex txt-more-like">Cities more Like</h1>
             <CitiesLike />
+            <h1 className="d-flex txt-more-like">Let's Travel The World</h1>
             <Carouselhome />
 
         </div>
