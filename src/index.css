@@ -114,8 +114,9 @@
     opacity: 90%;
   }
   .formSign{
+    position: relative;
     height: 90vh;
-    width: 80vh;    
+    width: 80%;    
   }
   .helpForm{
     display: flex;
@@ -130,36 +131,42 @@
     justify-content: center;
     background-color: #ff4b4b;
     color: white;
-    width: 35vw;
+    width: 100%;
     margin-top: 8vh;
   }
   /*************************************signup*****************************/
   .menu-signUP{
     position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     top: 15vh;
-    right: 5vh;
-    width: 50%;
-    background-color: white;
+    right: 0vh;
+    height: 100vh;
+    width: 60vw;
     border-radius: 15px 15px 15px 15px;
-    opacity: 90%;
     border: black;    
 
   }
+  .form-SignUP{
+    margin-top: 0;
+    height: 80vh;
+  }
  
   .btn-signUp{
-    position: relative;
-    align-items: center;    
+      position: relative;
+    align-items: center;
     justify-content: center;
-    left: 20%;
     background-color: #ff4b4b;
     color: white;
-    width: 50vh;
-    margin: 8vh;
+    width: 100%;
+    margin-top: 6vh;
   }
   .continer-signUp{
     display: flex;
     background-color:#9cd5e4;
-    width: 100vh;
+    width: 100%;
   }
   
 /* **************************card more likes ***************************************************/
@@ -302,7 +309,7 @@
   color: black;
 }
 /***************************************media query****/
-@media (min-width: 413px) and (max-width:1280){
+@media (min-width: 413px) and (max-width:720px){
     
   .prueba{
     background-color: #fff5ee;    
@@ -318,32 +325,58 @@
 .btn-signin{
   width: 60vw;
 }
-
+.menu-signUP{
+  width: 80vw;
+  background-color: white;
+  opacity: 90%;
+}
+/**** *************************************small ***/
 }
 @media (max-width: 412px) {
   .prueba{
     background-color: #fff5ee;    
   }
   .menu{
-    position: relative;
     display: flex;
-    top: 2vh;
+    justify-content: center;
     align-items: center;
-    justify-content: ;
+    top: 8vh;
     border-radius: 15px;
-    width: 80vw;
+    width: 90vw;
     height: 50vh;
   }
   .formSign{
     width: 70vw;
-    height: 70vh;
+    height: 80vh;
     margin-top: 2vh;
-    margin-bottom: 2vh;
   }
   .btn-signin{
     width: 60vw;
     margin-top: 2vh;
   }
+  .menu-signUP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8vh;
+    border-radius: 15px;
+    width: 90vw;
+    height: 60vh;
+    background-color: white;
+    opacity: 95%;
+  }
+  .form-SignUP{
+    position: relative;
+    top: 2vh;
+    margin-right: 8vw;
+    width: 80vw;
+    height: 80vh;
+  }
+  .btn-signUp{
+    margin-top: 0;
+    width: 80vw;
+  }
   
-}
+  }
+
 

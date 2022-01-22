@@ -19,7 +19,7 @@ function SignUp() {
         <>  <div>
             <img src={bannerSignUP} className="banner-image w-100 d-flex justify-content-center aling-item-center" />
             <div className="menu-signUP shadow container-md">
-                <form className="container-md">
+                <form className="container-md form-SignUP">
                     <div className="d-flex">
                         <div className="mb-3 container-md">
                             <label for="exampleInputEmail1" className="form-label">Name</label>
@@ -37,7 +37,7 @@ function SignUp() {
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         <div id="emailHelp" className="form-text">Please enter a username.</div>
                     </div>
-                    <div className="d-flex">
+                    <div className="d-flex passwordSignUp">
                         <div className="mb-3 container-md" >
                             <label for="exampleInputPassword1" className="form-label">Password</label>
                             <input type="password" className="form-control" id="exampleInputPassword1" />
@@ -53,9 +53,9 @@ function SignUp() {
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" for="exampleCheck1">Remember me</label>
                     </div>
-                    <div className="continer-signUp">
+                    <div>
                         <input type="submit" className="btn d-flex btn-signUp" value="Sign Up" onclick="" />
-                    </div>
+                        </div>
                 </form>
             </div>
         </div>
