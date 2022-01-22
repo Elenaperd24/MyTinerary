@@ -319,6 +319,9 @@
 
 }
 @media (max-width: 412px) {
+  .prueba{
+    background-color: #fff5ee;    
+  }
   .menu{
     width: 80vw;
     display: flex;
