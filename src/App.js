@@ -8,6 +8,7 @@ import Cities from './components/Cities'
 import City from './components/City';
 import SignUp from './components/SingUp';
 import Signin from './components/Signin';
+import NavbarOriginal from './components/NavbarOriginal';
 
 function App() {
 
