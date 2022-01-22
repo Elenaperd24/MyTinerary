@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MyTinerary/static/css/main.472bfac4.css",
-    "main.js": "/MyTinerary/static/js/main.13f3c6f8.js",
+    "main.css": "/MyTinerary/static/css/main.455bbbad.css",
+    "main.js": "/MyTinerary/static/js/main.7dd6f145.js",
     "static/js/787.a34fb91a.chunk.js": "/MyTinerary/static/js/787.a34fb91a.chunk.js",
     "static/media/bannerCity.jpg": "/MyTinerary/static/media/bannerCity.5ef07c2e96b8b73287d3.jpg",
     "static/media/banner1.jpg": "/MyTinerary/static/media/banner1.f6363b2c48ea780c1f62.jpg",
@@ -9,28 +9,25 @@
     "static/media/bannerSignin.jpg": "/MyTinerary/static/media/bannerSignin.b67c512a9f390d2d5d28.jpg",
     "static/media/banner3.jpg": "/MyTinerary/static/media/banner3.4cca90238987cbfade3d.jpg",
     "static/media/banner2.jpg": "/MyTinerary/static/media/banner2.55c5e455885dd8956193.jpg",
-    "static/media/Vancouver (2).jpg": "/MyTinerary/static/media/Vancouver (2).ee11114e0fa87bdbd1c1.jpg",
     "static/media/login.png": "/MyTinerary/static/media/login.332835ca465cd345d3cd.png",
     "static/media/bannerSignUP.jpg": "/MyTinerary/static/media/bannerSignUP.35c140f3f963cb391192.jpg",
-    "static/media/Vancouver (1).jpg": "/MyTinerary/static/media/Vancouver (1).3d46cdaabe843d4d3a86.jpg",
-    "static/media/sydney  (3).jpg": "/MyTinerary/static/media/sydney  (3).6381e38e64683a303710.jpg",
-    "static/media/Dublin (2).jpg": "/MyTinerary/static/media/Dublin (2).68a5014543dd18bb79c9.jpg",
+    "static/media/Vancouver (4).jpg": "/MyTinerary/static/media/Vancouver (4).8fadeb403de142e2fae6.jpg",
+    "static/media/Dublin (4).jpg": "/MyTinerary/static/media/Dublin (4).f3a7049f46bdf7ab2ff5.jpg",
+    "static/media/sydney  (4).jpg": "/MyTinerary/static/media/sydney  (4).33ce0b0ead619d3c6d57.jpg",
     "static/media/socialmedia.png": "/MyTinerary/static/media/socialmedia.dcf9a6cbddeacbf997ea.png",
-    "static/media/Dublin (3).jpg": "/MyTinerary/static/media/Dublin (3).3eb0f6ce87526ccc72dc.jpg",
-    "static/media/Dublin (1).jpg": "/MyTinerary/static/media/Dublin (1).dacacc20893a1473095b.jpg",
-    "static/media/Vancouver (3).jpg": "/MyTinerary/static/media/Vancouver (3).8ca5245b8bdc851eb9b2.jpg",
-    "static/media/sydney  (2).jpg": "/MyTinerary/static/media/sydney  (2).aad419cca30807deda1d.jpg",
-    "static/media/sydney  (1).jpg": "/MyTinerary/static/media/sydney  (1).d1278fb99e49ab8fa877.jpg",
     "static/media/usuario.jpg": "/MyTinerary/static/media/usuario.15ddeb3caa0ce44c8d92.jpg",
     "static/media/logoNegro.png": "/MyTinerary/static/media/logoNegro.b08a3ededaafeb134040.png",
     "static/media/logoMyTinerary.png": "/MyTinerary/static/media/logoMyTinerary.7a56525f00cdfe07eb70.png",
+    "static/media/revicons.eot": "/MyTinerary/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/MyTinerary/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/MyTinerary/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/MyTinerary/index.html",
-    "main.472bfac4.css.map": "/MyTinerary/static/css/main.472bfac4.css.map",
-    "main.13f3c6f8.js.map": "/MyTinerary/static/js/main.13f3c6f8.js.map",
+    "main.455bbbad.css.map": "/MyTinerary/static/css/main.455bbbad.css.map",
+    "main.7dd6f145.js.map": "/MyTinerary/static/js/main.7dd6f145.js.map",
     "787.a34fb91a.chunk.js.map": "/MyTinerary/static/js/787.a34fb91a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.472bfac4.css",
-    "static/js/main.13f3c6f8.js"
+    "static/css/main.455bbbad.css",
+    "static/js/main.7dd6f145.js"
   ]
 }
