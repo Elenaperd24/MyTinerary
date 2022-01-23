@@ -2,72 +2,56 @@ import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import cardcities from "../image/cities/cardcities.jpg";
 import CarouselHeader from "./CarouselHeader";
-import MaterialIcon, { colorPalette } from 'material-icons-react';
 import FloatingActionButtons from "./FloatingActionButtons";
+import ColorTextFields from "./ColorTextFields";
+import Vancouver from "../image/cities/Vancouver/Vancouver (4).jpg"
+import Sydney from "../image/cities/sydney/sydney  (4).jpg"
+import Dublin from "../image/cities/Dublin/Dublin (4).jpg"
+
 function Cities() {
     return (
         <>
             <CarouselHeader />
+            <ColorTextFields />
             <div className="allCities d-flex row">
-                <div className="card mb-3 card-city">
-                    <LinkRouter to="/city" className="nameCiudad">
-                    <h1 className="d-flex nameCiudad" >Dublin</h1>
+                <div className="card text-center">
+                    <LinkRouter to="/city" style={{textDecoration: "none", color:"#ff4b4a"}} >
+                    <div className="card-header">
+                    <h5 className="card-title">Vancouver</h5>
+                    </div>
                     </LinkRouter>
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src={cardcities} className="card-img-top imagen-card" alt="..." />
-                        </div>
-                        <div className="col-md-8 d-flex">
-                            <div className="card-body">
-                                <div className="tituloCard">
-                                    <h5 className="card-title">Card title</h5>
-                                </div>                               
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div className="iconos d-flex">
-                                    <FloatingActionButtons/>                               
-                                </div>
-                            </div>
-                        </div>
+
+                    <div className="card-body">
+                        <img src={Vancouver}className="d-block w-100" alt="..."/>
+                        <FloatingActionButtons/>
+                    </div>
+                    <div className="card-footer text-muted">
+                        
                     </div>
                 </div>
-                <div className="card mb-3 card-city">
-                    <h1 className="d-flex nameCiudad" >Dublin</h1>
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src={cardcities} className="card-img-top imagen-card" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-                            </div>
-                        </div>
+                <div className="card text-center">
+                    <div className="card-header">
+                    <h5 className="card-title">Sydney</h5>
+                    </div>
+                    <div className="card-body">
+                        <img src={Sydney}className="d-block w-100" alt="..."/>
+                        <FloatingActionButtons/>
+                    </div>
+                    <div className="card-footer text-muted">
                     </div>
                 </div>
-                <div className="card mb-3 card-city">
-                    <h1 className="d-flex nameCiudad" >Dublin</h1>
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src={cardcities} className="card-img-top imagen-card" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-
-                            </div>
-                        </div>
+                <div className="card text-center">
+                    <div className="card-header">
+                    <h5 className="card-title">Dublin</h5>
+                    </div>
+                    <div className="card-body">
+                        <img src={Dublin}className="d-block w-100" alt="..."/>
+                        <FloatingActionButtons/>
+                    </div>
+                    <div className="card-footer text-muted">
                     </div>
                 </div>
-            </div>
-
-
-
-
-
-
-
+            </div >
         </>
     )
 }

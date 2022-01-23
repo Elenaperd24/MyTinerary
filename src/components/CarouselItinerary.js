@@ -1,6 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import BannerCity from "../image/banner/bannerCity.jpg"
+import SwipeableTextMobileStepper from "./SwipeableTextMobileStepper";
 function CarouselItinerary() {
 
   const responsive = {
@@ -24,46 +25,19 @@ function CarouselItinerary() {
   };
   return (
     <Carousel responsive={responsive}>
-      <div><div className="">
-                        <div className="card item-card">
-                            <img src={BannerCity} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
+      <div className="d-flex itinerariosCity">
+              <div><div className="">
+                        <SwipeableTextMobileStepper/>
                     </div></div>
       <div><div className="">
-                        <div className="card item-card">
-                            <img src={BannerCity} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
+                        <SwipeableTextMobileStepper/>
                     </div></div>
       <div><div className="">
-                        <div className="card item-card">
-                            <img src={BannerCity} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
+                      <SwipeableTextMobileStepper/>
                     </div></div>
-      <div><div className="">
-                        <div className="card item-card">
-                            <img src={BannerCity} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div></div>
+      
+                    </div>
+
     </Carousel>
 
   )

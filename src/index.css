@@ -88,13 +88,12 @@
   }
   .colorChange{
     background-color:#fff5ee;
-    height: 10vh;
+    height: 12vh;
     padding: 0;
     
   }
   .prueba{
     background-color:transparent;
-    width: 100%;
   }
    
   /* **************************Sign IN / UP ***************************************************/
@@ -215,8 +214,13 @@
 /* **************************card Cities ***************************************************/
 .allCities{
  justify-content: center;
- margin-top: 20vh;
+ margin-top: 10vh;
   
+}
+.busquedaCity{
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
 }
 .nameCiudad{
   justify-content: center;
@@ -249,7 +253,6 @@
 }
 .card-city :hover{
   background-color: #fff4ee ;
-  transform: translate3d(5px , 5px, 15px);
 }
 
 .card .card-body{
@@ -269,11 +272,12 @@
   width: 100%;
 }
 /********************* City **********************************/
+.itinerariosCity{
+  flex-direction: column;
+}
 .contenedorReview{
   justify-content: center;
   margin-top: 5vh;
-  
-  
 }
 .review{
  margin: 5vh;
@@ -315,6 +319,9 @@
     background-color: #fff5ee;    
          
   }
+  .logo{
+    width:30vw;    
+  }
 .menu{
   border-radius: 15px;
   width: 80vw;
@@ -335,6 +342,9 @@
 @media (max-width: 412px) {
   .prueba{
     background-color: #fff5ee;    
+  }
+  .logo{
+    width:30vw;    
   }
   .menu{
     display: flex;

@@ -7,10 +7,8 @@ import CarouselItinerary from "../components/CarouselItinerary"
 function City() {   
 
     return (
-        <>
-            
+        <>            
             <img src={BannerCity} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" />
-            <CarouselItinerary/>
             <div className="d-flex contenedorReview container">
                 <div className="row">
                     <div class="card review col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "18rem" }}>
