@@ -6,9 +6,14 @@ import { Link as LinkRouter } from "react-router-dom";
 
 
 function Home() {
-
+    const useEffect = () => {
+        window.scrollTo(0, 0);
+        }
     return (
+        <>     
+          {useEffect()}
         <div className="home">
+            
             <img src={banner} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" />
             {/**<LinkRouter to="/cities">
                 <button className="btn btn-cties-home">Cities</button>
@@ -19,6 +24,7 @@ function Home() {
             <Carouselhome />
 
         </div>
+        </>
     )
 
 }
