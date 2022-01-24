@@ -61,7 +61,7 @@ function Footer() {
                                 <ul className="list-unstyled">
                                     <li className="mb-2"><a className="text-decoration-none" href="https://www.instagram.com/?hl=es-la">
                                         @myTinerary</a>
-                                        </li>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
