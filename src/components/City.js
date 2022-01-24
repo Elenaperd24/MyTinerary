@@ -9,8 +9,13 @@ import BanderaChile from '../image/cities/Chile/BANDERA CHILE.png'
 import CarouselItinerario from "./CarouselItinerario";
 
 function City() {
+    const useEffect = () => {
+        window.scrollTo(0, 0);
+        }
+    
     return (
         <>
+        {useEffect()}
             <img src={BannerChile} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" />
             <div className="d-flex informacionPrincipal">
                 <div className="nameCountry ">
