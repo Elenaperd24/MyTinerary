@@ -10,8 +10,12 @@ import Dublin from "../image/cities/Dublin/Dublin (4).jpg"
 import SantiagoDeChile from '../image/cities/Chile/Chile(4).jpg'
 
 function Cities() {
+    const useEffect = () => {
+        window.scrollTo(0, 0);
+        }
     return (
         <>
+        {useEffect()}
             <CarouselHeader />
             <ColorTextFields />
             <div className="allCities d-flex row">
