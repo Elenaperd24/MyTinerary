@@ -439,10 +439,28 @@ padding: 0;
 .menu-signUP{
   width: 80vw;
   background-color: white;
-  opacity: 90%;
+  opacity: 90%;}
+
+.informacionPrincipal{
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 0;
+  margin-left: 4vw;
+  margin-top: 4vh;
+}
+.descripcionCity {
+
+  width: 90vw;
+  margin-bottom: 5vh;
+}
+.nameCountry {
+  display: flex;
+  justify-content: center;
+}
 }
 /**** *************************************small ***/
-}
+
 @media (max-width: 412px) {
   .prueba{
     background-color: #fff5ee;    
@@ -490,7 +508,22 @@ padding: 0;
     margin-top: 0;
     width: 80vw;
   }
-  
+  .informacionPrincipal{
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 0;
+    margin-left: 4vw;
+    margin-top: 2vh;
+  }
+  .descripcionCity {   
+      width: 90vw;
+    margin-bottom: 5vh;
+  }
+  .nameCountry {
+    display: flex;
+    justify-content: center;
+  }
   }
 
 
