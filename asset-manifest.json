@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MyTinerary/static/css/main.d7401f95.css",
+    "main.css": "/MyTinerary/static/css/main.516756d8.css",
     "main.js": "/MyTinerary/static/js/main.b9c4fe41.js",
     "static/js/787.a34fb91a.chunk.js": "/MyTinerary/static/js/787.a34fb91a.chunk.js",
     "static/media/bannerCity.jpg": "/MyTinerary/static/media/bannerCity.5ef07c2e96b8b73287d3.jpg",
@@ -35,12 +35,12 @@
     "static/media/revicons.ttf": "/MyTinerary/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/MyTinerary/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/MyTinerary/index.html",
-    "main.d7401f95.css.map": "/MyTinerary/static/css/main.d7401f95.css.map",
+    "main.516756d8.css.map": "/MyTinerary/static/css/main.516756d8.css.map",
     "main.b9c4fe41.js.map": "/MyTinerary/static/js/main.b9c4fe41.js.map",
     "787.a34fb91a.chunk.js.map": "/MyTinerary/static/js/787.a34fb91a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7401f95.css",
+    "static/css/main.516756d8.css",
     "static/js/main.b9c4fe41.js"
   ]
 }
