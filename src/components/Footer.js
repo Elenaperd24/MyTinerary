@@ -19,12 +19,12 @@ function Footer() {
                         </div>
                         <div className="col-6 col-lg-2 offset-lg-1 mb-3">
                             <h5>Links</h5>
-                            <ul className="list-unstyled">
-                                <li className="mb-2"><a href="#">Home</a></li>
-                                <li className="mb-2"><a href="#">Cities</a></li>
-                                <li className="mb-2"><a href="#">Sign In</a></li>
-                                <li className="mb-2"><a href="#">Sign Up</a></li>
-                                <li className="mb-2"><a href="#">Reviews</a></li>
+                            <ul className="list-unstyled ">
+                                <li className="mb-2"><a className="text-decoration-none" href="#">Home</a></li>
+                                <li className="mb-2"><a className="text-decoration-none" href="#">Cities</a></li>
+                                <li className="mb-2"><a className="text-decoration-none" href="#">Sign In</a></li>
+                                <li className="mb-2"><a className="text-decoration-none"href="#">Sign Up</a></li>
+                                <li className="mb-2"><a className="text-decoration-none"href="#">Reviews</a></li>
                             </ul>
                         </div>
                         <div className="col-6 col-lg-2 mb-3">
@@ -33,13 +33,7 @@ function Footer() {
                                 <li className="mb-2"><a href="#">Review</a></li>                                
                             </ul>
                         </div>
-                        <div className="col-6 col-lg-2 mb-3">
-                            <h5>Projects</h5>
-                            <ul className="list-unstyled">
-                                <li className="mb-2"><a href="">Contact Us</a></li>
-                                
-                            </ul>
-                        </div>
+                        
                         <div className="col-6 col-lg-2 mb-3">
                             <h5>Places</h5>
                             <ul className="list-unstyled">
