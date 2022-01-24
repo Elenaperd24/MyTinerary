@@ -90,6 +90,9 @@
     background-color:#fff5ee;
     height: 12vh;
     padding: 0;
+    border: none;
+    border-bottom: solid;
+    border-bottom-color: #ff4b4b;
     
   }
   .prueba{
@@ -231,17 +234,6 @@
 .allCities .card {
   border: none;
 }
-
-
-.image-card :hover{  
-  transform: translate3d(15px, 15px, 15px);
-  }
-  .image-card :hover{
-    background-color: rosybrown;
-    }
-
-
-
 .card{
   width: 90%;
   padding: 0;
@@ -251,10 +243,6 @@
   color: #ff4b4a;
   
 }
-.card-city :hover{
-  background-color: #fff4ee ;
-}
-
 .card .card-body{
   border-radius: 25px
 }
@@ -264,17 +252,76 @@
   border-bottom-left-radius: 0;
   ;}
 
+/****************************City***********************************************************/
+.contenido{
+  margin-top: 5vh;
+}
+.informacionPrincipal{
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center !important;
+}
+.nameCountry{
+ margin-right: 10vw;
+ display: flex;
+ align-items: center;
+ color: #ff4b4a;
+ position: relative;
+ left: 2vw;
+ 
+}
+.descripcionCity h5{
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 2vw;
+}
+.descripcionCity{
+  width: 40vw;
+  border-radius: 15px;
+  font-family: Dancing;
+}
+.whyCity{
+  position: relative;
+  left: 2vw;
+  border-left-style: solid;
+  padding: 2vh;
+  width: 90%;
+ 
+  color: #7dd6e5;
+}
+.whyCity h1{
+  color: #ff4a48;
+}
+.listaDeImagenesCity{
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  border-radius: 25px;
+}
+.importantInformation{
+  position: relative;
+  left: 2vw;
+  width: 90%;
+  border-left-style: solid;
+  padding-left: 2vw;
+  padding-right: 0;
+  margin: 0;
+  color: #7dd6e5;
+  background-color: #fff4ee;
+}
+.importantInformation h1{
+  color: #ff4a48;
+}
 
-/* **************************Carousel Cities home ***************************************************/
+
+  /* **************************Carousel Cities home ***************************************************/
 .carouseL-city-home{
   
   height: 50vh;  
   width: 100%;
 }
 /********************* City **********************************/
-.itinerariosCity{
-  flex-direction: column;
-}
+
 .contenedorReview{
   justify-content: center;
   margin-top: 5vh;
@@ -299,8 +346,65 @@
 .enlaceItinerary a {
   color: #ff4a48;
 }
-
+.contInfoImportant{
+  justify-content: center;
+  margin-top: 5vh;
+  width: 90vw;
   
+}
+.contInfoImportant .card-body{
+  position: relative;
+  width: 95%;  
+  background-color: #fff4ee;
+}
+.contInfoImportant .card-title{
+  background-color: #7dd6e5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 1vh;
+}
+/***info importnte***/
+.contInfoImportant .info{
+  margin: 5vh;
+  text-align: justify;
+  text-justify: inter-word;
+  border-style:hidden;
+}
+.contInfoImportant .card-img-top{
+  width: 10vw;
+  background-color: #7dd6e5;
+}
+/********Carousel****/
+.react-multi-carousel-track li{
+  padding: 2vw;
+  margin-left: 1vw;
+ 
+}
+.itemItinerario {
+display: flex;
+flex-direction: column;
+margin: 0;
+padding: 0;
+}
+.itemItinerario li{
+  position: relative;
+  left: 0;
+  width: 60%;
+  padding: 0;
+  margin: 0;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 0.5vw;
+  background-color: #ff4a48;
+  color: white;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
 
 /* **************************FOOTER ***************************************************/
 .footer{

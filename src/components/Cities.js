@@ -7,6 +7,7 @@ import ColorTextFields from "./ColorTextFields";
 import Vancouver from "../image/cities/Vancouver/Vancouver (4).jpg"
 import Sydney from "../image/cities/sydney/sydney  (4).jpg"
 import Dublin from "../image/cities/Dublin/Dublin (4).jpg"
+import SantiagoDeChile from '../image/cities/Chile/Chile(4).jpg'
 
 function Cities() {
     return (
@@ -17,12 +18,12 @@ function Cities() {
                 <div className="card text-center">
                     <LinkRouter to="/city" style={{textDecoration: "none", color:"#ff4b4a"}} >
                     <div className="card-header">
-                    <h5 className="card-title">Vancouver</h5>
+                    <h5 className="card-title">Santiago De Chile</h5>
                     </div>
                     </LinkRouter>
 
                     <div className="card-body">
-                        <img src={Vancouver}className="d-block w-100" alt="..."/>
+                        <img src={SantiagoDeChile}className="d-block w-100" alt="..."/>
                         <FloatingActionButtons/>
                     </div>
                     <div className="card-footer text-muted">
