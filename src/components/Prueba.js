@@ -1,6 +1,6 @@
 import React from "react";
 
-function Marianela() {
+function Prueba() {
 
     const datos = [
         {
@@ -52,4 +52,4 @@ function Marianela() {
 
     )
 }
-export default Marianela;
+export default Prueba;

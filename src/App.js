@@ -10,7 +10,7 @@ import City from './components/City';
 import SignUp from './components/SingUp';
 import Signin from './components/Signin';
 import axios from 'axios'
-import Marianela from './components/Marianela';
+import Prueba from './components/Prueba';
 
 function App() {
 
@@ -39,7 +39,7 @@ function App() {
         <Route path="/city" element={<City data={data} dataItinerary={dataItinerary}/>} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/singup" element={<SignUp data={data} />} />
-        <Route path="/marianela" element={<Marianela/>}/>
+        <Route path="/prueba" element={<Prueba/>}/>
       </Routes> 
       <Footer />
     </BrowserRouter>
