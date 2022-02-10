@@ -4,102 +4,54 @@ import cardcities from "../image/cities/cardcities.jpg";
 import CarouselHeader from "./CarouselHeader";
 import FloatingActionButtons from "./FloatingActionButtons";
 import ColorTextFields from "./ColorTextFields";
-import Vancouver from "../image/cities/Vancouver/Vancouver (4).jpg"
-import Sydney from "../image/cities/sydney/sydney  (4).jpg"
-import Dublin from "../image/cities/Dublin/Dublin (4).jpg"
-import SantiagoDeChile from '../image/cities/Chile/Chile(4).jpg'
+import Banner2Sydeney from '../image/cities/Sydney/Banner2.jpg'
+import Banner2BuenosAires from '../image/cities/Buenos Aires/Banner2.jpg'
+import Banner2Ushuaia from '../image/cities/Ushuaia/Banner2.jpg'
 
-function Cities() {
+const Cities = (data) => {
+    const cities = data.data
+    cities.sort()
+    console.log(cities);
+
     const useEffect = () => {
         window.scrollTo(0, 0);
-        }
+    }
+
     return (
         <>
-        {useEffect()}
+
+            {useEffect()}
             <CarouselHeader />
             <ColorTextFields />
             <div className="allCities d-flex row">
-                <div className="card text-center">
-                    <LinkRouter to="/city" style={{ textDecoration: "none", color: "#ff4b4a" }} >
-                        <div className="card-header">
-                            <h5 className="card-title">Santiago De Chile</h5>
+                {cities.map((city) => { 
+                    return(
+                    <div className="card text-center">
+                        <LinkRouter to="/city" style={{ textDecoration: "none", color: "white" , background: "#ff4b4a"}} >
+                            <div className="card-header">
+                                <h5 className="card-title">{city.name}</h5>
+                            </div>
+                        </LinkRouter>
+                        <div className="card-body">
+                            <div className="contenerdorInfoCity">
+                                <figure>
+                                    <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} className="imagen-card-cities d-block w-100"/>
+                                    <div className="capa">
+                                        <LinkRouter to="/city" style={{ textDecoration: "none", color: "white" }}>
+                                            <h3>See More About This City</h3>
+                                        </LinkRouter>
+                                    </div>
+                                </figure>
+                            </div>
+                            <p>{city.descripcion.main}
+                            </p>
+                            <FloatingActionButtons />
                         </div>
-                    </LinkRouter>
-                    <div className="card-body">
-                        <div className="contenerdorInfoCity">
-                            <figure>
-                                <img src={SantiagoDeChile} className="d-block w-100" alt="..." />
-                                <div className="capa">
-                                    <LinkRouter to="/city" style={{textDecoration: "none", color: "white"}}>
-                                        <h3>See More About This City</h3>
-                                    </LinkRouter>
-
-
-                                </div>
-                            </figure>
+                        <div className="card-footer text-muted">
                         </div>
-                        <p>Santiago (official name), also known as Santiago de Chile, is the capital and main city
-                            of Chile and of the Metropolitan Region of Santiago, of which it is also the geographical
-                            center and whose population is concentrated mostly in the city.
-                        </p>
-                        <FloatingActionButtons />
-                    </div>
-                    <div className="card-footer text-muted">
+                    </div>)
+                })}
 
-                    </div>
-                </div>
-                <div className="card text-center">
-                    <div className="card-header">
-                        <h5 className="card-title">Sydney</h5>
-                    </div>
-                    <div className="card-body">
-                        <div className="contenerdorInfoCity">
-                            <figure>
-                                <img src={SantiagoDeChile} className="d-block w-100" alt="..." />
-                                <div className="capa">
-                                    <LinkRouter to="/city" style={{textDecoration: "none", color: "white"}}>
-                                        <h3>See More About This City</h3>
-                                    </LinkRouter>
-
-
-                                </div>
-                            </figure>
-                        </div>
-                        <p>Santiago (official name), also known as Santiago de Chile, is the capital and main city
-                            of Chile and of the Metropolitan Region of Santiago, of which it is also the geographical
-                            center and whose population is concentrated mostly in the city.
-                        </p>
-                        <FloatingActionButtons />
-                    </div>
-                    <div className="card-footer text-muted">
-                    </div>
-                </div>
-                <div className="card text-center">
-                    <div className="card-header">
-                        <h5 className="card-title">Dublin</h5>
-                    </div>
-                    <div className="card-body">
-                        <div className="contenerdorInfoCity">
-                            <figure>
-                                <img src={SantiagoDeChile} className="d-block w-100" alt="..." />
-                                <div className="capa">
-                                    <LinkRouter to="/city" style={{textDecoration: "none", color: "white"}}>
-                                        <h3>See More About This City</h3>
-                                    </LinkRouter>
-
-
-                                </div>
-                            </figure>
-                        </div>
-                        <p>Santiago (official name), also known as Santiago de Chile, is the capital and main city
-                            of Chile and of the Metropolitan Region of Santiago, of which it is also the geographical
-                            center and whose population is concentrated mostly in the city.
-                        </p>
-                        <FloatingActionButtons />
-                    </div>
-                    <div className="card-footer text-muted">
-                    </div>
-                </div>
             </div >
         </>
     )

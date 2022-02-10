@@ -5,10 +5,13 @@ import Carouselhome from './Carouselhome';
 import { Link as LinkRouter } from "react-router-dom";
 
 
-function Home() {
+function Home(data) {
+    const cities = data.data
+    console.log(cities);
     const useEffect = () => {
         window.scrollTo(0, 0);
         }
+    
     return (
         <>     
           {useEffect()}
@@ -19,9 +22,9 @@ function Home() {
                 <button className="btn btn-cties-home">Cities</button>
             </LinkRouter>**/}
             <h1 className="d-flex txt-more-like">Cities more Like</h1>
-            <CitiesLike />
+            <CitiesLike data = {data.data}/>
             <h1 className="d-flex txt-more-like">Let's Travel The World</h1>
-            <Carouselhome />
+            <Carouselhome data ={data.data}/>
 
         </div>
         </>

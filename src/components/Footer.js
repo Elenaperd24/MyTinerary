@@ -12,7 +12,7 @@ function Footer() {
                     <div className="row">
                         <div className="col-lg-3 mb-3">
                             <a className="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
-                                <img src={logoNegro} width="180" height="auto" className="d-block me-2" viewBox="0 0 118 94" role="img" />
+                                <img src={logoNegro} width="180" height="auto" className="d-block me-2" viewBox="0 0 118 94" role="img"/>
                             </a>
                             <ul className="list-unstyled small text-muted">
                                 <li className="mb-2">Designed and built with all the love in the world by the <a href="/docs/5.1/about/team/"> Team MyTinerary</a> </li>
@@ -24,13 +24,13 @@ function Footer() {
                             <h5>Links</h5>
                             <ul className="list-unstyled ">
                                 <LinkRouter to="/">
-                                    <li className="mb-2"><a className="text-decoration-none" href="#">Home</a></li>
+                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Home{/*</a>*/}</li>
                                 </LinkRouter>
                                 <LinkRouter to="/cities">
-                                    <li className="mb-2"><a className="text-decoration-none" href="#">Cities</a></li>
+                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Cities{/*</a>*/}</li>
                                 </LinkRouter>
                                 <LinkRouter to="/signin">
-                                    <li className="mb-2"><a className="text-decoration-none" href="#">Sign In</a></li>
+                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Sign In{/*</a>*/}</li>
                                 </LinkRouter>
                             </ul>
                         </div>
@@ -38,13 +38,13 @@ function Footer() {
                             <h5>Places</h5>
                             <ul className="list-unstyled">
                                 <LinkRouter to="/city">
-                                    <li className="mb-2"><a className="text-decoration-none" href="#">Santiago de Chile</a></li>
+                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Santiago de Chile{/*</a>*/}</li>
                                 </LinkRouter>
                                 <LinkRouter to="/city">
-                                    <li className="mb-2"><a className="text-decoration-none" href="#">Sydney</a></li>
+                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Sydney{/*</a>*/}</li>
                                 </LinkRouter>
                                 <LinkRouter to="/city">
-                                    <li className="mb-2"><a className="text-decoration-none" href="#">Dublin</a></li>
+                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Dublin{/*</a>*/}</li>
                                 </LinkRouter>
                             </ul>
                         </div>

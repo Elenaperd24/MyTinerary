@@ -4,12 +4,12 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Chile1 from '../image/cities/Chile/Chile(1).jpg'
-import Chile2 from '../image/cities/Chile/Chile(2).jpg'
-import GatronomiaChile from '../image/cities/Chile/Chile Gastronomia.jpg'
-import ChileCultura from '../image/cities/Chile/Chile Cultura.jpg'
-import SeguridadChile from '../image/cities/Chile/ChileSeguridad.jpg'
-import PanoramicaChile from '../image/cities/Chile/PanoramicaChile.jpg'
+import Chile1 from '../image/cities/Buenos Aires/Banner2.jpg';
+import Chile2 from '../image/cities/Buenos Aires/Cultura.jpg';
+import GatronomiaChile from '../image/cities/Buenos Aires/Gastronomia.jpg';
+import ChileCultura from '../image/cities/Buenos Aires/Infraestructura.jpg';
+import SeguridadChile from '../image/cities/Buenos Aires/Seguridad.jpg';
+import PanoramicaChile from '../image/cities/Buenos Aires/Panoramica.jpg';
 
 function srcset(image, width, height, rows = 1, cols = 1) {
   return {
@@ -20,7 +20,49 @@ function srcset(image, width, height, rows = 1, cols = 1) {
   };
 }
 
-export default function ListaImagenesCity() {
+export default function ListaImagenesCity(data) {
+  console.log(data);
+  const city = data.city
+
+  const itemData = [
+    {
+      img: process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner2}`,
+      title: 'Modern Infrastructure',
+      author: '@myTinerary',
+      featured: true,
+    },
+    {
+      img: process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.infrastructure}`,
+      title: 'Amazing landscapes',
+      author: '@myTinerary',
+    },
+    {
+      img: process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.gastronomy}`,
+      title: 'Unique Gastronomy',
+      author: '@myTinerary',
+    },
+    {
+      img: process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.culture}`,
+      title: 'Culture and heritage',
+      author: '@myTinerary',
+    },
+    {
+      img: process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.security}`,
+      title: 'Safety and Quality of Life',
+      author: '@myTinerary',
+    },
+    {
+      img: process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.panorama}`,
+      title: `Beautiful ${" "+ city[0].name}`,
+      author: '@myTinerary',
+      featured: true,
+    },
+    
+  ];
+  
+
+
+  
   return (
       <div className='listaDeImagenesCity'>
     <ImageList
@@ -70,38 +112,3 @@ export default function ListaImagenesCity() {
   );
 }
 
-const itemData = [
-  {
-    img: Chile1,
-    title: 'Modern Infrastructure',
-    author: '@myTinerary',
-    featured: true,
-  },
-  {
-    img: Chile2,
-    title: 'Amazing landscapes',
-    author: '@myTinerary',
-  },
-  {
-    img: GatronomiaChile,
-    title: 'Unique Gastronomy',
-    author: '@myTinerary',
-  },
-  {
-    img: ChileCultura,
-    title: 'Culture and heritage',
-    author: '@myTinerary',
-  },
-  {
-    img: SeguridadChile,
-    title: 'Safety and Quality of Life',
-    author: '@myTinerary',
-  },
-  {
-    img: PanoramicaChile,
-    title: 'Beautiful Santiago de Chile',
-    author: '@myTinerary',
-    featured: true,
-  },
-  
-];

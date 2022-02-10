@@ -1,38 +1,47 @@
 import React from "react";
-import Vancouver from "../image/cities/Vancouver/Vancouver (4).jpg"
-import Sydney from "../image/cities/sydney/sydney  (4).jpg"
-import Dublin from "../image/cities/Dublin/Dublin (4).jpg"
-function Carouselhome() {
+import Banner2Missions from '../image/cities/Missions Argentina/Banner2.jpg'
+import Banner2BuenosAires from '../image/cities/Buenos Aires/Banner2.jpg'
+import Banner2Ushuaia from '../image/cities/Ushuaia/Banner2.jpg'
+
+function Carouselhome(data) {
+    const cities = data.data
+    
+    console.log(cities);
+
+
+    let cont = 0;
     return (
 
         <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                {cities.map((city) => {
+                    cont = cont + 1
+                    return (
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to={cont} aria-label={"Slide " + (cont + 1)}></button>
+                    )
+                })}
             </div>
             <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <img src={Vancouver}className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
+                <div className="carousel-item active">                   
+                    <img src={process.env.PUBLIC_URL + `/image/cities/${cities[0].name}/${cities[0].images.banner2}`} alt={cities[0].name} className="d-block w-100"/>
+                    <div className="carousel-caption d-none d-md-block infoCityCorusel">
+                        <h5>{cities[0].name}</h5>
+                        <p>{cities[0].descripcion.main}</p>
+                    </div>
                 </div>
-                <div className="carousel-item">
-                    <img src={Sydney} className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                </div>
-                <div className="carousel-item">
-                    <img src={Dublin} className="d-block w-100" alt="..."/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
-                </div>
+                
+                {cities.map((city) => {
+                    return (
+                        <div className="carousel-item">
+                             <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} className="d-block w-100"/>
+                            <div className="carousel-caption d-none d-md-block infoCityCorusel">
+                                <h5>{city.name}</h5>
+                                <p>{city.descripcion.main}</p>
+                            </div>
+                        </div>)
+                })}
+
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>

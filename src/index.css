@@ -1,9 +1,10 @@
+/***********************************ana********************************/
 .bannerPrincipal {
   background-image: url("./image/banner/banner1.jpg");
   background-size:cover;
+  
 
 }
-
 .btn-cties-home{
   background-color: #ff4b4b;
   color: white;
@@ -274,12 +275,15 @@ cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 25px;
 }
 .contenerdorInfoCity figure:hover > .capa{
   opacity: 1;
   visibility: visible;
 }
-
+.imagen-card-cities {
+  border-radius: 25px;
+}
 
 
 /****************************City***********************************************************/
@@ -349,6 +353,10 @@ cursor: pointer;
   
   height: 50vh;  
   width: 100%;
+}
+.infoCityCorusel{
+  background-color:  rgb(128, 128, 128,55%);
+  border-radius: 20px;
 }
 /********************* City **********************************/
 
@@ -448,7 +456,7 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 413px) and (max-width:720px){
+@media (min-width: 413px) and (max-width:767px){
     
   .prueba{
     background-color: #fff5ee;    

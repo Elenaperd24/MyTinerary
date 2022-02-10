@@ -7,7 +7,9 @@ import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 //<img src={login} className="login" alt="login" />//
 
-function SignUp() {
+function SignUp(data) {
+    const cities = data.data
+    console.log(cities);
     const [showMenu, setShowMenu] = React.useState(false)
 
     function mostrarMenu() {

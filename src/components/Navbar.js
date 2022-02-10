@@ -28,7 +28,7 @@ function Navbar() {
     return (
         <>
             <nav className={colorChange ? "colorChange navbar shadow navbar-expand-md navbar-light  fixed-top " :
-                "navbar navbar-expand-md shadow navbar-light fixed-top"}>
+                "navbar navbar-expand-md shadow navbar-light fixed-top "}>
                 <div className="container-fluid p-0">
                     <LinkRouter to="/">
                         <img src={colorLogo ? logo : logoNegro} className="navbar-brand logo img-fluid" alt="brand" />

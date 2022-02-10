@@ -10,20 +10,20 @@ import MaterialIcon, { colorPalette } from 'material-icons-react';
 //<img src={login} className="login" alt="login" />//
 
 function Signin() {
-    const [showMenu, setShowMenu] = React.useState(false)
+    //const [showMenu, setShowMenu] = React.useState(false)
 
-    function mostrarMenu() {
-        showMenu ? setShowMenu(false) : setShowMenu(true)
+   // function mostrarMenu() {
+    //    showMenu ? setShowMenu(false) : setShowMenu(true)
 
-    }
+   // }
 
-    function abrirSingUp() {
-        <SignUp />
-    }
+   // function abrirSingUp() {
+    //    <SignUp />
+    //} //
 
     return (
         <>
-            <img src={bannerSignin} className="banner-image w-100 d-flex justify-content-center aling-item-center" />
+            <img src={bannerSignin} alt="bannerSignin" className="banner-image w-100 d-flex justify-content-center aling-item-center"/>
             <div className="menu shadow container-md">
                 <form className="formSign row">
                     <div className="mb-3 col-12">
@@ -45,7 +45,7 @@ function Signin() {
                         <div className="d-flex">
                             <p>Don't have an account?</p>
                             <LinkRouter to="/singup">
-                                <a className="" href="#">Sign Up</a>
+                                {/*<a className="" href="#">*/}Sign Up{/*</a>*/}
                             </LinkRouter>
                         </div>
                     </div>
