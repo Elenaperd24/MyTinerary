@@ -1,31 +1,43 @@
-import React from "react";
-import Banner1 from "../image/banner/banner1.jpg"
-import Banner2 from "../image/banner/banner2.jpg"
-import Banner3 from "../image/banner/banner3.jpg"
-import logoNegro from "../image/logos/logoNegro.png"
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
 
-function CarouselHeader() {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
+import "./styleCarouselHeader.css";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
+export default function App() {
     return (
         <>
-        
-
-        <div id="carouselExampleSlidesOnly " className="carousel slide carrouselHeader" data-bs-ride="carousel">
-            <div className="carousel-inner"> 
-                <div className="carousel-item active">
-                <img src={Banner2} className="d-block w-100" alt="Banner1" />
-                </div>
-                <div className="carousel-item">
-                <img src={Banner1} className="d-block w-100" alt="Banner2" />
-                </div>
-                <div className="carousel-item">
-                <img src={Banner3} className="d-block w-100" alt="Banner3" />
-                </div>
-            </div>
-        </div>
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <img src={process.env.PUBLIC_URL + `/image/banner/pruebabanner2.jpg`} alt=".." />
+                </SwiperSlide>
+                <SwiperSlide>
+                <img src={process.env.PUBLIC_URL + `/image/banner/pruebabanner3.jpg`} alt=".." />
+                </SwiperSlide>
+                
+            </Swiper>
         </>
-    )
-
+    );
 }
-export default CarouselHeader;

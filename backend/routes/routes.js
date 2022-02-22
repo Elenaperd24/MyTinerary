@@ -1,12 +1,12 @@
 const Router = require ('express').Router()
-const citiesController = require('../controller/datosControlles')
-const {obtenerDatos , obtenerItineraries} = citiesController //desestructuracion
+const datosController = require('../controller/datosControlles')
+const {obtenerDatos , obtenerItineraries} = datosController //desestructuracion
 
 
 Router.route('/datos')
 .get(obtenerDatos)
 
-Router.route('/infoitinerary')
+Router.route('/infoitinerary/:city')
 .get(obtenerItineraries)
 
 module.exports = Router

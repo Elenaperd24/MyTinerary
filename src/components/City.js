@@ -1,34 +1,36 @@
-import React from "react";
+import React, { useEffect , useState} from "react";
+import { useStateValue } from "../StateProvide";
 import BannerChile from "../image/banner/bannerSantiagoDeChile.jpg"
 import Banner1 from "../image/cities/Sydney/Banner1.jpg"
 import usuario from "../image/logos/usuario.jpg"
+import axios from 'axios'
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import ListaImagenesCity from "./ListaImagenesCity"
-
 import CarouselItinerario from "./CarouselItinerario";
 import Cities from "./Cities";
 import { Filter } from "@mui/icons-material";
+import { useParams } from "react-router-dom";
 
-function City(data) {
-    console.log(data);
-    const cities = data.data
-    const itineraries = data.dataItinerary
-    console.log(itineraries[0]);
-    let city = cities.filter(item => item.name === "Sydney")
-    let itinerary = itineraries.filter(element => element.city === city[0].name)
-        console.log(itinerary);
-    console.log(city[0]);
-    
-    const useEffect = () => {
-        window.scrollTo(0, 0); 
-        }
-    
+function City() {
+    const [itineraries, setItineraries] = useState([])
+    const { id } = useParams()
+    const [{ cities}, dispatch] = useStateValue()   
+    let city = cities.filter(item => item._id === id)
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        city.map(city =>
+        axios.get(`http://localhost:4000/api/infoitinerary/${city.name}`)
+        .then(response => setItineraries(response.data.response.itinerary)
+         
+          )
+          
+    ) }, [])
+console.log(itineraries);
     return (
         <>
-        {useEffect()}
-        <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="..."/>
+            <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="..." />
             {/* <img src={Banner1} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" /> */}
             <div className="d-flex informacionPrincipal">
                 <div className="nameCountry ">
@@ -39,6 +41,11 @@ function City(data) {
                     </h5>
                 </div>
             </div>
+            <div className="importantInformation">
+                <h1>Look at the itineraries</h1>
+                <h1>that you are going to love</h1>
+            </div>
+            <CarouselItinerario itineraries={itineraries} />
             <div className="whyCity container">
                 <h3>Why choose </h3>
                 <h1>{city[0].name + " "} as a destination?</h1>
@@ -63,7 +70,7 @@ function City(data) {
                     <div className="card info shadow col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "19rem" }}>
                         <div className="card-body">
                             <h5 className="card-title">Population and territory</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">+{city[0].population +" "} M</h6>
+                            <h6 className="card-subtitle mb-2 text-muted">+{city[0].population + " "} M</h6>
                             <div className="foto-usuario d-flex">
                                 <img src={city[0].flag} className="card-img-top foto-usuario" alt="..." />
                             </div>
@@ -82,11 +89,7 @@ function City(data) {
                     </div>
                 </div>
             </div>
-            <div className="importantInformation">
-                <h1>Look at the itineraries</h1>
-                <h1>that you are going to love</h1>
-            </div>
-            <CarouselItinerario itinerary={itinerary}/>
+
             <div className="importantInformation">
                 <h1>Know experiences</h1>
                 <h1>and itineraries of our users</h1>
@@ -114,7 +117,7 @@ function City(data) {
                                     </div>
                                 </div>
                                 <div className="enlaceItinerary d-flex">
-                                   {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
+                                    {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
                                 </div>
                             </div>
                         </div>
@@ -140,8 +143,8 @@ function City(data) {
                                     </div>
                                 </div>
                                 <div className="enlaceItinerary d-flex">
-                            {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
-                             </div>
+                                    {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
+                                </div>
 
                             </div>
                         </div>
@@ -165,8 +168,8 @@ function City(data) {
                                     </div>
                                 </div>
                                 <div className="enlaceItinerary d-flex">
-                                   {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
-                                   </div>
+                                    {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,7 @@ function srcset(image, width, height, rows = 1, cols = 1) {
 }
 
 export default function ListaImagenesCity(data) {
-  console.log(data);
+
   const city = data.city
 
   const itemData = [

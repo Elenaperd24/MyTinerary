@@ -9,7 +9,8 @@ import MaterialIcon, { colorPalette } from 'material-icons-react';
 
 //<img src={login} className="login" alt="login" />//
 
-function Signin() {
+function Signin(data) {
+    console.log(data);
     //const [showMenu, setShowMenu] = React.useState(false)
 
    // function mostrarMenu() {
@@ -23,6 +24,7 @@ function Signin() {
 
     return (
         <>
+        <div className="gabi">
             <img src={bannerSignin} alt="bannerSignin" className="banner-image w-100 d-flex justify-content-center aling-item-center"/>
             <div className="menu shadow container-md">
                 <form className="formSign row">
@@ -53,6 +55,7 @@ function Signin() {
                     <input type="submit" className="btn d-flex btn-signin" value="Sign In" onclick="" />
                     </div>
                 </form>
+            </div>
             </div>
 
 
