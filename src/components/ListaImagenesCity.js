@@ -4,12 +4,6 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import Chile1 from '../image/cities/Buenos Aires/Banner2.jpg';
-import Chile2 from '../image/cities/Buenos Aires/Cultura.jpg';
-import GatronomiaChile from '../image/cities/Buenos Aires/Gastronomia.jpg';
-import ChileCultura from '../image/cities/Buenos Aires/Infraestructura.jpg';
-import SeguridadChile from '../image/cities/Buenos Aires/Seguridad.jpg';
-import PanoramicaChile from '../image/cities/Buenos Aires/Panoramica.jpg';
 
 function srcset(image, width, height, rows = 1, cols = 1) {
   return {

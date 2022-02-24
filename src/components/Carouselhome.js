@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { useStateValue } from "../StateProvide";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,10 +13,7 @@ import "./styles.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 
-export default function App() {
-    const [{cities},dispatch] = useStateValue()
-
-   let preview = (cities.length )/2
+export default function App(props) {  
  
     return (
         <>
@@ -39,7 +35,7 @@ export default function App() {
                 modules={[EffectCoverflow, Pagination]}
                 className="mySwiper"
             >
-                {cities.map((city) => {
+                {props.cities.map((city) => {
                     return (
                         <>
                             <SwiperSlide key={city._id}>

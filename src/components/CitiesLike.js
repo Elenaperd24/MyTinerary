@@ -1,17 +1,13 @@
 import React from "react";
-import { useStateValue } from "../StateProvide";
 
-
-function CitiesLike() {
-    const [{cities},dispatch] = useStateValue()
+function CitiesLike(props) {
+    const cities = props.cities
+    
     let morePopulation = cities.filter (city => city.population <= 45)
-      return (
-          
+      return (          
         <div className="cards-like">
             <div className="container">
-
                 <div className="row"> 
-
                     {morePopulation.map((city) => {
                         return (
                             <div key={city._id} className=" col-12 col-md-6 col-lg-4 col-xl-4" >
@@ -29,9 +25,7 @@ function CitiesLike() {
                     })}
                 </div>
             </div>
-        </div>
-        
+        </div>        
     )
-
 }
 export default CitiesLike;

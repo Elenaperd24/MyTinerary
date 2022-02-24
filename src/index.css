@@ -1,10 +1,10 @@
-/***********************************ana********************************/
+
 .bannerPrincipal {
   background-image: url("./image/banner/banner1.jpg");
-  background-size:cover;
-  
+  background-size:cover; 
 
 }
+
 .btn-cties-home{
   background-color: #ff4b4b;
   color: white;
@@ -29,14 +29,7 @@
   opacity: 80%;
   z-index: 1;
 }
-
-
 /* **************************Navbar ***************************************************/
-.navbar1{
-  height: 6vh;  
-}
-
-
 .navbar-nav{
   margin-right: 2vh;
 }
@@ -50,15 +43,13 @@
   position: absolute;
   right: 25vh;
   top: 0.4vh;
-  height: 2vh;
-  
+  height: 2vh;  
 }
 .btn-nav {
   font-family: 'Acme', sans-serif;
   font-size: 3vh;
   background-color:transparent;
 }
-
 .nav-link :hover {
   background-color:#ff4b4a;
   color: white;
@@ -75,14 +66,6 @@
     height: 10vh;
     top: 0.5vh;
     padding: 1vh;
-  }
-
-  .social-media{
-    position: absolute;  
-    top: 0.5vh;
-    width: 25vh;
-    right:3vh;
-    max-height: 5vh;
   }
   .logo{
     width:20vw;    
@@ -182,7 +165,7 @@
 .txt-more-like{
   justify-content: center;
   color: #ff4a48;
-  font-family:lobster;
+  font-family: Permanent Marker;
   margin-top: 2vh;
 }
 .cards-like h1{
@@ -268,8 +251,7 @@ cursor: pointer;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(40, 40, 40, 0.7);
-  color: white;
+  background-color: rgba(125, 214, 229, 0.7);  
   transition: all 500ms ease-out;
   opacity: 0;
   visibility: hidden;
@@ -278,13 +260,27 @@ cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: 25px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 .contenerdorInfoCity figure:hover > .capa{
   opacity: 1;
   visibility: visible;
+
 }
 .imagen-card-cities {
   border-radius: 25px;
+}
+.cardsCities{
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.cityNoFind{
+  margin-top: 2vw;
 }
 
 
@@ -292,6 +288,16 @@ cursor: pointer;
 .iconoBusqueda{
   position: absolute;
   top: 20px;
+}
+
+.NameCity{
+  position: absolute;
+  top: 30vh;
+  right: 10vw;
+  max-width: 40vw;
+  font-size: 70px;
+  margin-top: 2vh;
+
 }
 
 .contenido{
@@ -506,6 +512,17 @@ padding: 0;
   display: flex;
   justify-content: center;
 }
+
+.NameCity{
+  position: absolute;
+  top: 30vh;
+  right: 10vw;
+  max-width: 40vw;
+  font-size: 70px;
+  margin-top: 2vh;
+
+}
+
 }
 /**** *************************************small ***/
 
@@ -572,6 +589,15 @@ padding: 0;
   .nameCountry {
     display: flex;
     justify-content: center;
+  }
+  .NameCity{
+    position: absolute;
+    top: 30vh;
+    right: 10vw;
+    max-width: 40vw;
+    font-size: 70px;
+    margin-top: 2vh;
+  
   }
   }
 

@@ -1,37 +1,34 @@
-import React, { useEffect , useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useStateValue } from "../StateProvide";
-import BannerChile from "../image/banner/bannerSantiagoDeChile.jpg"
-import Banner1 from "../image/cities/Sydney/Banner1.jpg"
 import usuario from "../image/logos/usuario.jpg"
+import usuario2 from "../image/logos/usuario2.jpg"
+import usuario3 from "../image/logos/usuario3.jpg"
 import axios from 'axios'
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import ListaImagenesCity from "./ListaImagenesCity"
 import CarouselItinerario from "./CarouselItinerario";
-import Cities from "./Cities";
-import { Filter } from "@mui/icons-material";
+import Prueba from "../image/prueba.jpg"
+
 import { useParams } from "react-router-dom";
 
 function City() {
     const [itineraries, setItineraries] = useState([])
     const { id } = useParams()
-    const [{ cities}, dispatch] = useStateValue()   
+    const [{ cities }, dispatch] = useStateValue()
     let city = cities.filter(item => item._id === id)
+
     useEffect(() => {
         window.scrollTo(0, 0);
         city.map(city =>
-        axios.get(`http://localhost:4000/api/infoitinerary/${city.name}`)
-        .then(response => setItineraries(response.data.response.itinerary)
-         
-          )
-          
-    ) }, [])
-console.log(itineraries);
+            axios.get(`http://localhost:4000/api/infoitinerary/${city.name}`)
+                .then(response => setItineraries(response.data.response.itinerary))
+        )
+    }, [])
+
     return (
         <>
-            <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="..." />
-            {/* <img src={Banner1} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" /> */}
+            <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100 bannerCity d-flex justify-content-center aling-item-center" alt="..." />
+           {/*  <img src={Prueba} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" /> */}
+            <div className="NameCity" style={{ fontFamily: "Permanent Marker" }} >{city[0].name}</div>
             <div className="d-flex informacionPrincipal">
                 <div className="nameCountry ">
                     <h1>{city[0].name}</h1>
@@ -89,13 +86,10 @@ console.log(itineraries);
                     </div>
                 </div>
             </div>
-
             <div className="importantInformation">
                 <h1>Know experiences</h1>
                 <h1>and itineraries of our users</h1>
             </div>
-
-
             <div className="d-flex contenedorReview container">
                 <div className="row">
                     <div className="card review col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "18rem" }}>
@@ -103,7 +97,7 @@ console.log(itineraries);
                             <h5 className="card-title">User Name</h5>
                             <h6 className="card-subtitle mb-2 text-muted">Review</h6>
                             <div className="foto-usuario d-flex">
-                                <img src={usuario} className="card-img-top foto-usuario" alt="..." />
+                                <img src={usuario3} className="card-img-top foto-usuario" alt="..." />
                             </div>
                             <div className="accordion accordion-flush" id="accordionFlushExample">
                                 <div className="accordion-item">
@@ -127,7 +121,7 @@ console.log(itineraries);
                             <h5 className="card-title">User Name</h5>
                             <h6 className="card-subtitle mb-2 text-muted">Review</h6>
                             <div className="foto-usuario d-flex">
-                                <img src={usuario} className="card-img-top foto-usuario" alt="..." />
+                                <img src={usuario2} className="card-img-top foto-usuario" alt="..." />
                             </div>
                             <div className="accordion accordion-flush" id="accordionFlushExample">
                                 <div className="accordion-item">
@@ -175,9 +169,6 @@ console.log(itineraries);
                     </div>
                 </div>
             </div>
-
-
-
 
         </>
     )

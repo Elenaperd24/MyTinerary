@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import fotolugar from '../image/cities/Buenos Aires/Banner2.jpg'
 
 function CarouselItinerario(info) {
   const itinerary = info.itineraries
@@ -35,7 +34,7 @@ function CarouselItinerario(info) {
       {itinerary.map((item) => {
         cont = cont + 1
         return (
-          <div key={item._id}><Card key={item._id} sx={{ maxWidth: 345, background: "#fff4ee" }}>
+          <div key={item._id}><Card key={item._id} sx={{ maxWidth: "25vw", background: "#fff4ee" }}>
             <CardMedia key={item._id}
               component="img"
               alt="green iguana"
@@ -61,114 +60,9 @@ function CarouselItinerario(info) {
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card></div>)
-      })}
-      {/* <div><Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="140"
-          image={fotolugar}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            San Pedro de Atacama
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Romance, adventure and rest in the middle of the desert
-            <div><h3>5 days - 259km</h3></div>
-            <ul className="itemItinerario">
-              <li className="nav-link" >ASTROTOURISM</li>
-              <li className="nav-link" >ADVENTURE AND SPORTS</li>
-              <li className="nav-link" >HOT SPRINGS</li>
-            </ul>
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card></div>
-      <div><Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="140"
-          image={fotolugar}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            San Pedro de Atacama
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Romance, adventure and rest in the middle of the desert
-            <div><h3>5 days - 259km</h3></div>
-            <ul className="itemItinerario">
-              <li className="nav-link" >ASTROTOURISM</li>
-              <li className="nav-link" >ADVENTURE AND SPORTS</li>
-              <li className="nav-link" >HOT SPRINGS</li>
-            </ul>
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card></div>
-      <div><Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="140"
-          image={fotolugar}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            San Pedro de Atacama
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Romance, adventure and rest in the middle of the desert
-            <div><h3>5 days - 259km</h3></div>
-            <ul className="itemItinerario">
-              <li className="nav-link" >ASTROTOURISM</li>
-              <li className="nav-link" >ADVENTURE AND SPORTS</li>
-              <li className="nav-link" >HOT SPRINGS</li>
-            </ul>
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card></div>
-      <div><Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="140"
-          image={fotolugar}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            San Pedro de Atacama
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Romance, adventure and rest in the middle of the desert
-            <div><h3>5 days - 259km</h3></div>
-            <ul className="itemItinerario">
-              <li className="nav-link" >ASTROTOURISM</li>
-              <li className="nav-link" >ADVENTURE AND SPORTS</li>
-              <li className="nav-link" >HOT SPRINGS</li>
-            </ul>
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card></div> */}
+      })}     
     </Carousel>;
     </>
-
   )
 }
 export default CarouselItinerario;

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
-import Signin from "./Signin";
 import logo from "../image/logos/logoMyTinerary.png"
-import socialmedia from "../image/logos/socialmedia.png"
 import logoNegro from "../image/logos/logoNegro.png"
 import login from "../image/logos/login.png";
-import { screen } from "@testing-library/react";
 
 function Navbar() {
     const [colorChange, setColorchange] = useState(false);
@@ -21,7 +18,6 @@ function Navbar() {
             setColorchange(false);
             setColorLogo(true);
         }
-
     };
     window.addEventListener('scroll', changeNavbarColor);
 
@@ -58,11 +54,7 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-
-
         </>
-
-
     )
 
 }
