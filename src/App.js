@@ -25,28 +25,27 @@ function App() {
           cities: response.data.response.cities
         })
       })
-    
+
   }, [])
 
-/*      const dataItinerary = []                modo de consumir la data por axios no por dispatch
-      axios.get("http://localhost:4000/api/infoitinerary")
-        .then(response => dataItinerary.push(...response.data.response.itinerary))
-        console.log(dataItinerary); */
+  /*      const dataItinerary = []                modo de consumir la data por axios no por dispatch
+        axios.get("http://localhost:4000/api/infoitinerary")
+          .then(response => dataItinerary.push(...response.data.response.itinerary))
+          console.log(dataItinerary); */
 
-     return (
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/home" element={<Home />} />
-            <Route path="/cities" element={<Cities/>} />
-            <Route path="/city/:id" element={<City />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/singup" element={<SignUp />} />
-         
-            <Route path="*" element={<Home />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      )
-    }
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/cities" element={<Cities />} />
+        <Route path="/city/:id" element={<City />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/singup" element={<SignUp />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  )
+}
 export default App;

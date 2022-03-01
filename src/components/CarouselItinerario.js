@@ -34,7 +34,7 @@ function CarouselItinerario(info) {
       {itinerary.map((item) => {
         cont = cont + 1
         return (
-          <div key={item._id}><Card key={item._id} sx={{ maxWidth: "25vw", background: "#fff4ee" }}>
+          <div key={item._id}><Card key={item._id} sx={{ maxWidth: 345, background: "#fff4ee" }}>
             <CardMedia key={item._id}
               component="img"
               alt="green iguana"

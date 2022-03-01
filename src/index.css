@@ -295,7 +295,7 @@ cursor: pointer;
   top: 30vh;
   right: 10vw;
   max-width: 40vw;
-  font-size: 70px;
+  font-size: 80px;
   margin-top: 2vh;
 
 }
@@ -513,16 +513,6 @@ padding: 0;
   justify-content: center;
 }
 
-.NameCity{
-  position: absolute;
-  top: 30vh;
-  right: 10vw;
-  max-width: 40vw;
-  font-size: 70px;
-  margin-top: 2vh;
-
-}
-
 }
 /**** *************************************small ***/
 
@@ -589,15 +579,6 @@ padding: 0;
   .nameCountry {
     display: flex;
     justify-content: center;
-  }
-  .NameCity{
-    position: absolute;
-    top: 30vh;
-    right: 10vw;
-    max-width: 40vw;
-    font-size: 70px;
-    margin-top: 2vh;
-  
   }
   }
 

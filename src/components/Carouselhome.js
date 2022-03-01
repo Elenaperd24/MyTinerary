@@ -13,8 +13,8 @@ import "./styles.css";
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 
-export default function App(props) {  
- 
+export default function App(props) {
+
     return (
         <>
             <Swiper
@@ -22,15 +22,15 @@ export default function App(props) {
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={"auto"}
-                loop={true}
-/*                 loopFillGroupWithBlank={true}
- */                coverflowEffct={{
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                }}
+                /*   loop={true} */
+                /*loopFillGroupWithBlank={true} */
+                /*    coverflowEffct={{
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true,
+                    }} */
                 pagination={true}
                 modules={[EffectCoverflow, Pagination]}
                 className="mySwiper"
@@ -38,10 +38,9 @@ export default function App(props) {
                 {props.cities.map((city) => {
                     return (
                         <>
-                            <SwiperSlide key={city._id}>
+                            <SwiperSlide key={`${city._id}+a`}>
                                 <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} />
                             </SwiperSlide>
-
                         </>
                     )
                 })}

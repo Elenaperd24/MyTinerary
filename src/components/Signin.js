@@ -1,28 +1,10 @@
 import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
-import login from "../image/logos/login.png";
 import bannerSignin from "../image/banner/bannerSignin.jpg";
-import SignUp from "./SingUp";
-import MaterialIcon, { colorPalette } from 'material-icons-react';
 
-//<MaterialIcon className="icon-login" icon="account_circle" size='large' color="black" />//
-
-//<img src={login} className="login" alt="login" />//
-
-function Signin(data) {
-    console.log(data);
-    //const [showMenu, setShowMenu] = React.useState(false)
-
-   // function mostrarMenu() {
-    //    showMenu ? setShowMenu(false) : setShowMenu(true)
-
-   // }
-
-   // function abrirSingUp() {
-    //    <SignUp />
-    //} //
-
-    return (
+function Signin() {
+    
+       return (
         <>
         <div className="gabi">
             <img src={bannerSignin} alt="bannerSignin" className="banner-image w-100 d-flex justify-content-center aling-item-center"/>
@@ -57,9 +39,6 @@ function Signin(data) {
                 </form>
             </div>
             </div>
-
-
-
         </>
     )
 }

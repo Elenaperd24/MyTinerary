@@ -26,9 +26,12 @@ function City() {
 
     return (
         <>
-            <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100 bannerCity d-flex justify-content-center aling-item-center" alt="..." />
-           {/*  <img src={Prueba} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" /> */}
-            <div className="NameCity" style={{ fontFamily: "Permanent Marker" }} >{city[0].name}</div>
+            <div style={{posicion:"absolute" }}>
+                <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100 bannerCity d-flex justify-content-center aling-item-center" alt="..." />
+                {/*  <img src={Prueba} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" /> */}
+                <div className="NameCity" style={{ fontFamily: "Permanent Marker" }} >{city[0].name}</div>
+            </div>
+
             <div className="d-flex informacionPrincipal">
                 <div className="nameCountry ">
                     <h1>{city[0].name}</h1>

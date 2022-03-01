@@ -1,8 +1,6 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,8 +10,9 @@ import "./styleCarouselHeader.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import Cities from "./Cities";
 
-export default function App() {
+export default function App(props) {
     return (
         <>
             <Swiper
@@ -23,20 +22,26 @@ export default function App() {
                     delay: 2500,
                     disableOnInteraction: false,
                 }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+              /*   pagination={{
+                    clickable: false,
+                }} */
+                navigation={false}
+                modules={[Autoplay, /* Pagination, */ Navigation]}
                 className="mySwiper"
             >
                 <SwiperSlide>
                     <img src={process.env.PUBLIC_URL + `/image/banner/pruebabanner2.jpg`} alt=".." />
                 </SwiperSlide>
                 <SwiperSlide>
-                <img src={process.env.PUBLIC_URL + `/image/banner/pruebabanner3.jpg`} alt=".." />
+                    <img src={process.env.PUBLIC_URL + `/image/banner/pruebabanner3.jpg`} alt=".." />
                 </SwiperSlide>
-                
+                {props.cities.map((city) => {
+                    return (
+                        <SwiperSlide>
+                            <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner1}`} alt=".." />
+                        </SwiperSlide>
+                    )
+                })}
             </Swiper>
         </>
     );
