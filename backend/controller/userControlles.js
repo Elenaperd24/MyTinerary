@@ -54,23 +54,23 @@ const userControllers = {
         console.log(req.body)
         try {
             const usuarioExiste = await User.findOne({ email })
-            if (usuarioExiste) {          
-                      
-                if(google){
-                     const passwordHash = bcryptjs.hashSync(password, 10)
-                     usuarioExiste.password=passwordHash;
-                     usuarioExiste.emailVerified = true
-                     usuarioExiste.google = true
-                     usuarioExiste.connected = false 
+            if (usuarioExiste) {
 
-                     usuarioExiste.save()
-                     res.json({success: true, from:"google", response:"actualizamos tu signin para que lo realices con google"})
+                if (google) {
+                    const passwordHash = bcryptjs.hashSync(password, 10)
+                    usuarioExiste.password = passwordHash;
+                    usuarioExiste.emailVerified = true
+                    usuarioExiste.google = true
+                    usuarioExiste.connected = false
+
+                    usuarioExiste.save()
+                    res.json({ success: true, from: "google", response: "actualizamos tu signin para que lo realices con google" })
                 }
-                else{
-                  res.json({success:false, from:"SignUp", response:"este email ya esta en uso, realiza SignIn"})  
+                else {
+                    res.json({ success: false, from: "SignUp", response: "este email ya esta en uso, realiza SignIn" })
                 }
-                }                
-                else{ 
+            }
+            else {
                 const emailVerified = false
                 const uniqueString = crypto.randomBytes(15).toString("hex")
                 const passwordHash = bcryptjs.hashSync(password, 10)
@@ -85,26 +85,26 @@ const userControllers = {
                     google
                 })
 
-                if(google){
-                    newUser.emailVerified = true,
-                    newUser.google =true,
-                    newUser.connected =false,
-                    await newUser.save()
-                    res.json({success:true, from:"google", response:"felicitaciones hemos creado tu usario con google", data:{newUser}})
+                if (google) {
+                    newUser.emailVerified = true
+                        newUser.google = true
+                        newUser.connected = false
+                        await newUser.save()
+                    res.json({ success: true, from: "google", response: "felicitaciones hemos creado tu usario con google", data: { newUser } })
                 }
 
-                else  {
+                else {
                     newUser.emailVerified = false
-                    newUser.google=false
-                    newUser.connected = false 
+                    newUser.google = false
+                    newUser.connected = false
                     await newUser.save()
                     await sendEmail(email, uniqueString)
-                    res.json({ success: "true", from:"SignUp",  response: "We have sent you your email" , data: {newUser}})
+                    res.json({ success: "true", from: "SignUp", response: "We have sent you your email", data: { newUser } })
                 }
-            }       
-        
-    }
-    catch (error) { res.json({ success: "false", from:"SignUp" , response: null, error: error }) }
+            }
+
+        }
+        catch (error) { res.json({ success: "false", from: "SignUp", response: null, error: error }) }
     },
 
     accesUser: async (req, res) => {
@@ -149,12 +149,12 @@ const userControllers = {
             console.log(error); res.json({ success: false, response: null, error: error })
         }
     },
-    cerrarSesion: async (req,res) => {
+    cerrarSesion: async (req, res) => {
         const email = req.body.email
-        const user = await User.findOne({email})
+        const user = await User.findOne({ email })
         user.connected = false
         await user.save()
-        res.json({success:true, response:"Log Out"})
+        res.json({ success: true, response: "Log Out" })
     }
 }
 

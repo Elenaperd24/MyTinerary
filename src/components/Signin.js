@@ -13,9 +13,9 @@ function Signin() {
     const [{ user }, dispatch] = useStateValue()
 
     const responseGoogle = (response) => {
-  console.log(response);
+        console.log(response);
 
-  
+
     }
 
     async function signinUser(event) {
@@ -48,8 +48,8 @@ function Signin() {
                 dispatch({
                     type: accionType.USERDB,
                     user: response.data.response
-                })              
-            
+                })
+
 
             })
     }
@@ -84,23 +84,16 @@ function Signin() {
                         </div>
                         <div>
                             <input type="submit" className="btn d-flex btn-signin" value="Sign In" />
-                            
+
                         </div>
-
-                                        <GoogleLogin
-    clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
-    buttonText="SignIn with Google Account"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'}
-  />
-
-                        
+                        <GoogleLogin
+                            clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
+                            buttonText="SignIn with Google Account"
+                            onSuccess={responseGoogle}
+                            onFailure={responseGoogle}
+                            cookiePolicy={'single_host_origin'}
+                        />
                     </form>
-     
-
-
-
                 </div>
             </div>
         </>
