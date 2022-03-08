@@ -27,7 +27,7 @@ async function sendEmail(email, uniqueString) {
             console.log(error)
         }
         else {
-            console.log("mensaje enviado");
+            console.log("Message sent");
         }
     })
 
@@ -64,10 +64,10 @@ const userControllers = {
                     usuarioExiste.connected = false
 
                     usuarioExiste.save()
-                    res.json({ success: true, from: "google", response: "actualizamos tu signin para que lo realices con google" })
+                    res.json({ success: true, from: "google", response: "We update your signin so you can do it with google" })
                 }
                 else {
-                    res.json({ success: false, from: "SignUp", response: "este email ya esta en uso, realiza SignIn" })
+                    res.json({ success: false, from: "SignUp", response: "This email is already in use, perform SignIn" })
                 }
             }
             else {
@@ -90,7 +90,7 @@ const userControllers = {
                         newUser.google = true
                         newUser.connected = false
                         await newUser.save()
-                    res.json({ success: true, from: "google", response: "felicitaciones hemos creado tu usario con google", data: { newUser } })
+                    res.json({ success: true, from: "google", response: "Congratulations we have created your user with google", data: { newUser } })
                 }
 
                 else {
@@ -99,7 +99,7 @@ const userControllers = {
                     newUser.connected = false
                     await newUser.save()
                     await sendEmail(email, uniqueString)
-                    res.json({ success: "true", from: "SignUp", response: "We have sent you your email", data: { newUser } })
+                    res.json({ success: "true", from: "SignUp", response: "We have sent an email to your email", data: { newUser } })
                 }
             }
 
@@ -139,7 +139,7 @@ const userControllers = {
 
                 }
                 else {
-                    res.json({ success: false, from: "controller", error: "verifica tu email o password" })
+                    res.json({ success: false, from: "controller", error: "verify your email or password" })
 
                 }
             }
