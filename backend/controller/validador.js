@@ -15,12 +15,13 @@ const validator = (req, res, next) => {
         email: joi.string().email({minDomainSegments:2}).required().messages({
             "string.email": "The format mail is not correct"          
         }),
-        password: joi.string().max(20).min(6).trim().pattern(new RegExp("[a-zA-Z-09]")).required().messages({ //trim espacios post o ant
+        password: joi.string().max(30).min(6).trim().pattern(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])/).required().messages({ //trim espacios post o ant
             "string.min": "The password must minimally have 3 characters",
-            "string.pattern": "The password must have number and leters"
+            "string.pattern.base": "The password must have number and leters"
         }),
+        google: joi.boolean()
     })
-    const validation = Schema.validate(req.body.NuevoUsuario, {abortEarly:false })
+    const validation = Schema.validate(req.body.NuevoUsuario, {abortEarly:true })
 
     if(validation.error){
         return res.json({success:"falseVAL", response:validation})

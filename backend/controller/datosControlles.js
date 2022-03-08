@@ -1,5 +1,6 @@
 const Cities = require('../models/cities')
 const Itinerary = require('../models/itinerary')
+const User = require("../models/user")
 
 const datosController = {
     obtenerDatos:async (req,resp) => { 
@@ -35,8 +36,9 @@ const datosController = {
             success:error?false:true,
             error:error
         }) 
-    } 
+    } ,
 
+   
    /*  obtenerItineraries:async (req,resp) => {
         
         

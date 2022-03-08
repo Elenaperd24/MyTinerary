@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
+import GoogleLogin from 'react-google-login';
 import swal from 'sweetalert'
 import bannerSignUP from "../image/banner/bannerSignUP.jpg";
 import MaterialIcon, { colorPalette } from 'material-icons-react';
@@ -14,38 +15,89 @@ import { Icon } from "@mui/material";
 //<img src={login} className="login" alt="login" />//
 
 function SignUp() {
-     async function newUser(event) {
-    
+
+     const responseGoogle = async (response) => {
+  console.log(response);
+
+  const NuevoUsuario = {
+      name: response.profileObj.givenName,
+      lastName: response.profileObj.familyName,
+      email:response.profileObj.email,
+      password:response.googleId+"Ep",
+      google:true
+  }
+ await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
+            .then(response => {
+                if (response.data.success === "falseVAL") {
+                    let detailsError = response.data.response.error.details
+                    console.log(detailsError)
+                        detailsError.map(error => 
+                        swal({
+                        title:" error",
+                        icon: "error",
+                        text:error.message,
+                        buttons:"ok"
+                        }))
+                }
+                else if(response.data.success==="trueUE"){
+                    console.log(response.data);
+                }
+                else{
+                    swal({
+                        title:"Check your Email",
+                        icon: "success",
+                        text:response.data.response,
+                        buttons:"ok"
+                        })
+                  
+
+                }
+            })
+    }
+    async function newUser(event) {
         event.preventDefault()
         const NuevoUsuario = {
             name: event.target[0].value,
             lastName: event.target[1].value,
             email: event.target[2].value,
-            password: event.target[3].value
+            password: event.target[3].value,
+            google:false
         }
-
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
             .then(response => {
                 if (response.data.success === "falseVAL") {
                     let detailsError = response.data.response.error.details
                     console.log(detailsError)
-                  detailsError.map(error => { alert(error.message)   
-                  /*    swal({
-                        title: "ERROR",
-                        text: error.message,
+                        detailsError.map(error => 
+                        swal({
+                        title:" error",
                         icon: "error",
-                        buttons: "ok"
-                    }) */
-                    })
+                        text:error.message,
+                        buttons:"ok"
+                        }))
+                }
+                else if(response.data.success==="trueUE"){
+                    console.log(response.data);
+                }
+                else{
+                    swal({
+                        title:"Check your Email",
+                        icon: "success",
+                        text:response.data.response,
+                        buttons:"ok"
+                        })
+                  
+
                 }
             })
-            
     }
- 
+
+
+
     return (
         <>  <div>
             <img src={bannerSignUP} className="banner-image w-100 d-flex justify-content-center aling-item-center" />
-            <div className="menu-signUP shadow container-md">           
+            <div className="menu-signUP shadow container-md">
                 <form onSubmit={newUser} className="container-md form-SignUP">
                     <div className="d-flex">
                         <div className="mb-3 container-md">
@@ -83,8 +135,15 @@ function SignUp() {
                     <div>
                         <input type="submit" className="btn d-flex btn-signUp" />
                     </div>
+                    <GoogleLogin
+                    clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
+                    buttonText="SignUp with Google Account"
+                     onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                    cookiePolicy={'single_host_origin'}
+                        /> 
                 </form>
-            </div>
+                   </div>
         </div>
 
 
