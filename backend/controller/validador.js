@@ -4,11 +4,11 @@ const { nuevoUsuario } = require("./userControlles")
 const validator = (req, res, next) => {
     console.log(req.body.NuevoUsuario)
     const Schema = joi.object({
-        name: joi.string().max(10).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({ //trim espacios post o ant
+        name: joi.string().max(40).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({ //trim espacios post o ant
             "string.min": "The name must minimally have 3 characters",
             "string.empty": "El field name can not be empty"
         }),
-        lastName: joi.string().max(20).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({ //trim espacios post o ant
+        lastName: joi.string().max(20).min(3).trim().pattern(new RegExp("[a-zA-Z]")).messages({ //trim espacios post o ant
             "string.min": "The Last name must minimally have 20 characters",
             "string.empty": "El field Last Name can not be empty"
         }),
@@ -19,7 +19,7 @@ const validator = (req, res, next) => {
             "string.min": "The password must minimally have 3 characters",
             "string.pattern.base": "The password must have number and leters"
         }),
-        google: joi.boolean()
+        from: joi.string()
     })
     const validation = Schema.validate(req.body.NuevoUsuario, {abortEarly:true })
 

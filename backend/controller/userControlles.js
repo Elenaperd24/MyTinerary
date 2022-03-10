@@ -47,24 +47,21 @@ const userControllers = {
             res.json({ success: false, response: "your email couldn't be verified" })
         }
     },
-
     nuevoUsuario: async (req, res) => {
-
-        const { name, lastName, email, password, google } = req.body.NuevoUsuario // destructurar agarramos un objeto y sus variables las podemos trabajar por separado
+        const { name, lastName, email, password, from } = req.body.NuevoUsuario // destructurar agarramos un objeto y sus variables las podemos trabajar por separado
         console.log(req.body)
         try {
             const usuarioExiste = await User.findOne({ email })
-            if (usuarioExiste) {
-
-                if (google) {
+            if (usuarioExiste) {                
+                if (from!=="signup" ) {
                     const passwordHash = bcryptjs.hashSync(password, 10)
                     usuarioExiste.password = passwordHash;
                     usuarioExiste.emailVerified = true
-                    usuarioExiste.google = true
+                    usuarioExiste.from = from
                     usuarioExiste.connected = false
 
                     usuarioExiste.save()
-                    res.json({ success: true, from: "google", response: "We update your signin so you can do it with google" })
+                    res.json({ success: true, from: from, response: "We update your signin so you can do it with  " + from })
                 }
                 else {
                     res.json({ success: false, from: "SignUp", response: "This email is already in use, perform SignIn" })
@@ -82,15 +79,15 @@ const userControllers = {
                     uniqueString,
                     emailVerified,
                     connected: false,
-                    google
+                    from
                 })
 
-                if (google) {
+                if (from!=="signup") {
                     newUser.emailVerified = true
                         newUser.google = true
                         newUser.connected = false
                         await newUser.save()
-                    res.json({ success: true, from: "google", response: "Congratulations we have created your user with google", data: { newUser } })
+                    res.json({ success: true, from: from, response: "Congratulations we have created your user with  " + from, data: { newUser } })
                 }
 
                 else {
@@ -99,12 +96,11 @@ const userControllers = {
                     newUser.connected = false
                     await newUser.save()
                     await sendEmail(email, uniqueString)
-                    res.json({ success: "true", from: "SignUp", response: "We have sent an email to your email", data: { newUser } })
+                    res.json({ success: true, from: "SignUp", response: "We have sent an email to your email", data: { newUser } })
                 }
             }
-
         }
-        catch (error) { res.json({ success: "false", from: "SignUp", response: null, error: error }) }
+        catch (error) { res.json({ success: false, from: "SignUp", response: null, error: error }) }
     },
 
     accesUser: async (req, res) => {
@@ -136,16 +132,13 @@ const userControllers = {
                     else {
                         res.json({ success: false, from: "controller", error: "user or password are incorret" })
                     }
-
                 }
                 else {
                     res.json({ success: false, from: "controller", error: "verify your email or password" })
-
                 }
             }
-
         }
-        catch (error) {
+        catch (error) { 
             console.log(error); res.json({ success: false, response: null, error: error })
         }
     },

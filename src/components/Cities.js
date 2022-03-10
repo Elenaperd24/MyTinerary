@@ -12,6 +12,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
+import { accionType } from '../reducer'
+
 
 function Cities() {
     useEffect(() => {
@@ -19,38 +21,49 @@ function Cities() {
     }, [])
 
     //MIS DATOS DB   
-    const [{ cities }, dispatch] = useStateValue() 
-    
-    const [citiesNew, setCitiesNew]= useState(cities)
+    const [{ cities, citiesNew }, dispatch] = useStateValue()
+
     console.log(citiesNew);
+    console.log(cities)
 
     const [noFind, setNoFind] = useState(false)
+
     let countries = []
-    cities.map((city) => {
+    citiesNew.map((city) => {
         if (!countries.includes(city.country)) {
             return (
                 countries.push(city.country)
             )
         }
     })
-    function filterCities ()  {
-     
+    function filterCities(event) {
+        console.log("llame a la funcion");
+        console.log(event.target.value);
+
         let textCity = document.getElementById("City").value.toLowerCase()
+        console.log(textCity);
         let textCountry = document.getElementById("Country").value.toLowerCase()
         if (textCity !== "" || textCountry !== "") {
             let resultFilter = []
             resultFilter = cities.filter(city => city.name.toLowerCase().includes(textCity) && city.country.toLowerCase().includes(textCountry))
-            setCitiesNew(resultFilter)
-            setNoFind(false)
+            // setCitiesNew(resultFilter)
+            console.log(resultFilter);
+            dispatch({
+                type: accionType.FILTER,
+                citiesNew: resultFilter
+            })
         }
         else {
-            setCitiesNew(cities)
+            dispatch({
+                type: accionType.FILTER,
+                citiesNew: cities
+            })
         }
-    };
-   
+    }
+
     return (
         <>
-            <CarouselHeader cities = {cities}/>
+            <CarouselHeader cities={cities} />
             <div className='busquedaCity'>
                 <Stack spacing={2} sx={{ width: 300 }}>
                     <Autocomplete
@@ -58,17 +71,19 @@ function Cities() {
                         freeSolo
                         options={countries.map((option) => option)}
                         onKeyPress={filterCities}
+                        onChange={filterCities}
                         renderInput={(params) => <TextField {...params} label="Country" color="success" focused onChange={filterCities} />}
                     />
                     <Autocomplete
                         freeSolo
                         id="City"
                         disableClearable
-                        options={cities.map((option) => option.name)}
+                        options={citiesNew.map((option) => option.name)}
                         onKeyPress={filterCities}
                         renderInput={(params) => (
                             <TextField {...params} label="Search City" placeholder="Name City" color="secondary" InputProps={{ ...params.InputProps, type: 'search', }}
                                 onChange={filterCities}
+                                onKeyPress={filterCities}
                                 variant="standard"
                                 focused
                             />
@@ -81,7 +96,7 @@ function Cities() {
                 {/* Aqui comienzan mis cards Cities */}
 
                 <div className="row cardsCities">
-                 
+
                     {citiesNew.map((city) => {
                         return (
                             <Card sx={{ maxWidth: 375, margin: "2vw", background: "#fff4ee", borderRadius: "15px" }} key={city._id}>
@@ -109,7 +124,7 @@ function Cities() {
                                             alt="Paella dish"
                                         />
                                         <div className="capa">
-                                            <LinkRouter key={city._id} to={`/city/${city._id}`} style={{ textDecoration: "none", color: "#ff4b4a" ,fontFamily: "Permanent Marker"}}>
+                                            <LinkRouter key={city._id} to={`/city/${city._id}`} style={{ textDecoration: "none", color: "#ff4b4a", fontFamily: "Permanent Marker" }}>
                                                 <h3>See More About This City</h3>
                                             </LinkRouter>
                                         </div>

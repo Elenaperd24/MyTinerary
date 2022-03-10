@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 import swal from 'sweetalert'
 import bannerSignUP from "../image/banner/bannerSignUP.jpg";
-import MaterialIcon, { colorPalette } from 'material-icons-react';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
 import axios from "axios";
-import { InfoOutlined } from "@mui/icons-material";
-import { Icon } from "@mui/material";
 
 //<MaterialIcon className="icon-login" icon="account_circle" size='large' color="black" />//
 
@@ -16,43 +12,26 @@ import { Icon } from "@mui/material";
 
 function SignUp() {
 
-     const responseGoogle = async (response) => {
-  console.log(response);
+    const responseGoogle = async (response) => {
+        const NuevoUsuario = {
+            name: response.profileObj.givenName,
+            lastName: response.profileObj.familyName,
+            email: response.profileObj.email,
+            password: response.googleId + "Ep",
+            from: "Google"
+        }
+        detectFrom(NuevoUsuario)
+    }
 
-  const NuevoUsuario = {
-      name: response.profileObj.givenName,
-      lastName: response.profileObj.familyName,
-      email:response.profileObj.email,
-      password:response.googleId+"Ep",
-      google:true
-  }
- await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
-            .then(response => {
-                if (response.data.success === "falseVAL") {
-                    let detailsError = response.data.response.error.details
-                    console.log(detailsError)
-                        detailsError.map(error => 
-                        swal({
-                        title:" error",
-                        icon: "error",
-                        text:error.message,
-                        buttons:"ok"
-                        }))
-                }
-                else if(response.data.success==="trueUE"){
-                    console.log(response.data);
-                }
-                else{
-                    swal({
-                        title:"Check your Email",
-                        icon: "success",
-                        text:response.data.response,
-                        buttons:"ok"
-                        })
-                  
-
-                }
-            })
+    const responseFacebook = async (response) => {
+        const NuevoUsuario = {
+            name: response.name,
+            lastName: response.lastName,
+            email: response.email,
+            password: response.id + "Ep",
+            from: "Facebook"
+        }
+        detectFrom(NuevoUsuario)
     }
     async function newUser(event) {
         event.preventDefault()
@@ -61,39 +40,43 @@ function SignUp() {
             lastName: event.target[1].value,
             email: event.target[2].value,
             password: event.target[3].value,
-            google:false
+            from: "signup"
         }
+        detectFrom(NuevoUsuario)
+    }
+    async function detectFrom(NuevoUsuario) {
         await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
             .then(response => {
                 if (response.data.success === "falseVAL") {
                     let detailsError = response.data.response.error.details
                     console.log(detailsError)
-                        detailsError.map(error => 
+                    detailsError.map(error =>
                         swal({
-                        title:" error",
-                        icon: "error",
-                        text:error.message,
-                        buttons:"ok"
+                            title: " error",
+                            icon: "error",
+                            text: error.message,
+                            buttons: "ok"
                         }))
                 }
-                else if(response.data.success==="trueUE"){
+                else if (response.data.success === true) {
                     console.log(response.data);
-                }
-                else{
                     swal({
-                        title:"Check your Email",
+                        title: " Login...",
                         icon: "success",
-                        text:response.data.response,
-                        buttons:"ok"
-                        })
-                  
-
+                        text: response.data.response,
+                        buttons: "ok"
+                    })
+                }
+                else {
+                    console.log(response.data)
+                    swal({
+                        title: response.data.response,
+                        icon: "warning",
+                        buttons: "ok"
+                    })
                 }
             })
     }
-
-
-
     return (
         <>  <div>
             <img src={bannerSignUP} className="banner-image w-100 d-flex justify-content-center aling-item-center" />
@@ -136,18 +119,20 @@ function SignUp() {
                         <input type="submit" className="btn d-flex btn-signUp" />
                     </div>
                     <GoogleLogin
-                    clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
-                    buttonText="SignUp with Google Account"
-                     onSuccess={responseGoogle}
-                    onFailure={responseGoogle}
-                    cookiePolicy={'single_host_origin'}
-                        /> 
+                        clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
+                        buttonText="SignUp with Google Account"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />
+                    <FacebookLogin
+                        appId="644823753295174"
+                        autoLoad={false}
+                        fields="name,email,picture"
+                        callback={responseFacebook} />
                 </form>
-                   </div>
+            </div>
         </div>
-
-
-
         </>
     )
 }

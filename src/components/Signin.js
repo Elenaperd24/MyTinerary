@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link as LinkRouter } from "react-router-dom";
 import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 import bannerSignin from "../image/banner/bannerSignin.jpg";
 import axios from "axios"
 import swal from 'sweetalert'
@@ -14,8 +15,20 @@ function Signin() {
 
     const responseGoogle = (response) => {
         console.log(response);
+        const UserData = {
+           email: response.profileObj.email,
+            password: response.googleId + "Ep",
+        }      
+        detectFrom(UserData)
 
 
+    }
+    const responseFacebook = async (response) => {
+        const UserData = {
+            email: response.email,
+            password: response.id + "Ep",
+        }
+        detectFrom(UserData)
     }
 
     async function signinUser(event) {
@@ -23,36 +36,39 @@ function Signin() {
         const UserData = {
             email: event.target[0].value,
             password: event.target[1].value,
-        }
-        await axios.post("http://localhost:4000/api/signin", { UserData })
-            .then(response => {
-                if (response.data.success === false) {
-                    swal({
-                        title: "error",
-                        icon: "error",
-                        text: response.data.error,
-                        buttons: "ok"
-                    })
-                }
-                else if (response.data.success === true) {
-                    console.log("estas logueado");
-
-                    swal({
-                        title: "Login....",
-                        icon: "success",
-                        text: "You have started sesion",
-                        buttons: "ok"
-                    })
-
-                }
-                dispatch({
-                    type: accionType.USERDB,
-                    user: response.data.response
-                })
-
-
-            })
+        } 
+        detectFrom(UserData)    
     }
+
+    async function detectFrom(UserData) {
+        await axios.post("http://localhost:4000/api/signin", { UserData })
+        .then(response => {
+            if (response.data.success === false) {
+                swal({
+                    title: "error",
+                    icon: "error",
+                    text: response.data.error,
+                    buttons: "ok"
+                })
+            }
+            else if (response.data.success === true) {
+                console.log("estas logueado");
+                swal({
+                    title: "Login....",
+                    icon: "success",
+                    text: "You have started sesion",
+                    buttons: "ok"
+                })
+            }
+            dispatch({
+                type: accionType.USERDB,
+                user: response.data.response
+            })
+        })         
+    }
+
+
+
     return (
         <>
             <div className="gabi">
@@ -84,7 +100,6 @@ function Signin() {
                         </div>
                         <div>
                             <input type="submit" className="btn d-flex btn-signin" value="Sign In" />
-
                         </div>
                         <GoogleLogin
                             clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
@@ -93,6 +108,11 @@ function Signin() {
                             onFailure={responseGoogle}
                             cookiePolicy={'single_host_origin'}
                         />
+                         <FacebookLogin
+                        appId="644823753295174"
+                        autoLoad={false}
+                        fields="name,email,picture"
+                        callback={responseFacebook} />
                     </form>
                 </div>
             </div>
