@@ -81,6 +81,9 @@ const userControllers = {
                     connected: false,
                     from
                 })
+                console.log("user condicional no existe usuario")
+
+                console.log(newUser);
 
                 if (from!=="signup") {
                     newUser.emailVerified = true
