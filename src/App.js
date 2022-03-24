@@ -30,20 +30,22 @@ function App() {
 
   if(localStorage.getItem("token")!==null){
     const token = localStorage.getItem("token")
-    const user = axios.post("http://localhost:4000/api/signinToken", {
+    axios.get("http://localhost:4000/api/signinToken", {
       headers:{
-        "Autorization":"Bearer"+token
+        'Authorization':'Bearer '+token
       }
     })
-    if(user.data.success){
+    .then(user=>
+   { if(user.data.success){
       dispatch({
         type:accionType.USERDB,
-        user: user.data.response
+        user: user.data
       })
     }
     else{
       localStorage.removeItem("token")
-    }
+    }}
+    )
   }
 
 

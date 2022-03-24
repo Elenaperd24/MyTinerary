@@ -21,7 +21,9 @@ function Navbar() {
         const email = user.datosUser.email
         await axios.post("http://localhost:4000/api/signout", { email })
             .then(response =>{
-                localStorage.removeItem("token")
+                if(response.data.success){
+                    localStorage.removeItem("token")
+                }
                 dispatch({
                     type: accionType.USERDB,
                     user: null

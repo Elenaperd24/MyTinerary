@@ -151,6 +151,21 @@ const userControllers = {
         user.connected = false
         await user.save()
         res.json({ success: true, response: "Log Out" })
+    },
+    verifyToken: async(req,res) =>{
+        if(!req.error){
+            res.json({success:true, 
+                datosUser:
+                {name:req.user.name, 
+                lastName: req.user.lastName,
+                email: req.user.email, 
+                connected:req.user.connected , 
+                id:req.user.id},
+                response:"Welcome Back Again "+req.user.name})
+        }
+        else{
+            res.json({success:false, response:"Sesion vencia, inicia sesion de nuevo"})
+        }
     }
 }
 
