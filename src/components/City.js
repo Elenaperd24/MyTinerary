@@ -6,7 +6,6 @@ import usuario3 from "../image/logos/usuario3.jpg"
 import axios from 'axios'
 import ListaImagenesCity from "./ListaImagenesCity"
 import CarouselItinerario from "./CarouselItinerario";
-import Prueba from "../image/prueba.jpg"
 
 import { useParams } from "react-router-dom";
 
@@ -46,7 +45,7 @@ function City() {
                 <h1>that you are going to love</h1>
             </div>
             <CarouselItinerario itineraries={itineraries} />
-            <div className="whyCity container">
+               <div className="whyCity container">
                 <h3>Why choose </h3>
                 <h1>{city[0].name + " "} as a destination?</h1>
             </div>
@@ -85,89 +84,6 @@ function City() {
                                 <img src={city[0].flag} className="card-img-top foto-usuario" alt="..." />
                             </div>
                             <p className="card-text info ">{city[0].descripcion.weather}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="importantInformation">
-                <h1>Know experiences</h1>
-                <h1>and itineraries of our users</h1>
-            </div>
-            <div className="d-flex contenedorReview container">
-                <div className="row">
-                    <div className="card review col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "18rem" }}>
-                        <div className="card-body">
-                            <h5 className="card-title">User Name</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Review</h6>
-                            <div className="foto-usuario d-flex">
-                                <img src={usuario3} className="card-img-top foto-usuario" alt="..." />
-                            </div>
-                            <div className="accordion accordion-flush" id="accordionFlushExample">
-                                <div className="accordion-item">
-                                    <h2 className="accordion-header" id="flush-headingOne">
-                                        <button className="  card-text accordion-button collapsed moreReview" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                            See itinerary details
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div className="accordion-body">the capital city of the Republic of Ireland, situated in the northeast of the country, on the coast: ... He owns a house and 250 acres of land in the most expensive area of north Dublin. The last time I was in Dublin, the traffic was all snarled up</div>
-                                    </div>
-                                </div>
-                                <div className="enlaceItinerary d-flex">
-                                    {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card review col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "18rem" }}>
-                        <div className="card-body">
-                            <h5 className="card-title">User Name</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Review</h6>
-                            <div className="foto-usuario d-flex">
-                                <img src={usuario2} className="card-img-top foto-usuario" alt="..." />
-                            </div>
-                            <div className="accordion accordion-flush" id="accordionFlushExample">
-                                <div className="accordion-item">
-                                    <h2 className="accordion-header" id="flush-headingOne">
-                                        <button className="  card-text accordion-button collapsed moreReview" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                            See itinerary details
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div className="accordion-body">the capital city of the Republic of Ireland, situated in the northeast of the country, on the coast: ... He owns a
-                                            house and 250 acres of land in the most expensive area of north Dublin. The last time I was in
-                                            Dublin, the traffic was all snarled up</div>
-                                    </div>
-                                </div>
-                                <div className="enlaceItinerary d-flex">
-                                    {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card review col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "18rem" }}>
-                        <div className="card-body">
-                            <h5 className="card-title">User Name</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Review</h6>
-                            <div className="foto-usuario d-flex">
-                                <img src={usuario} className="card-img-top foto-usuario" alt="..." />
-                            </div>
-                            <div className="accordion accordion-flush" id="accordionFlushExample">
-                                <div className="accordion-item">
-                                    <h2 className="accordion-header" id="flush-headingOne">
-                                        <button className="  card-text accordion-button collapsed moreReview" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                            See itinerary details
-                                        </button>
-                                    </h2>
-                                    <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div className="accordion-body">the capital city of the Republic of Ireland, situated in the northeast of the country, on the coast: ... He owns a house and 250 acres of land in the most expensive area of north Dublin. The last time I was in Dublin, the traffic was all snarled up</div>
-                                    </div>
-                                </div>
-                                <div className="enlaceItinerary d-flex">
-                                    {/*<a href="#" className="card-link">*/}Itinerary   User{/*</a>*/}
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

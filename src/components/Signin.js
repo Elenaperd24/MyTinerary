@@ -14,14 +14,11 @@ function Signin() {
     const [{ user }, dispatch] = useStateValue()
 
     const responseGoogle = (response) => {
-        console.log(response);
         const UserData = {
            email: response.profileObj.email,
             password: response.googleId + "Ep",
         }      
         detectFrom(UserData)
-
-
     }
     const responseFacebook = async (response) => {
         const UserData = {
@@ -52,7 +49,7 @@ function Signin() {
                 })
             }
             else if (response.data.success === true) {
-                console.log("estas logueado");
+                localStorage.setItem("token",response.data.response.token)
                 swal({
                     title: "Login....",
                     icon: "success",

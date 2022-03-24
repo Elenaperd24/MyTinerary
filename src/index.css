@@ -456,7 +456,27 @@ padding: 0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
+/**************************comments**************************************/
+.comments {
+  background-color: white;
+  border-style: none;
+  padding: 8px;
+  overflow-y: auto;
+  height: 300px;
+}
+.comments::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
 
+.comments::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.comments::-webkit-scrollbar-thumb {
+  background-color: #7dd6e5;
+  border-radius: 20px;
+  border-right: 2px solid rgba(250, 230, 223, 0.9);
+}
 
 /* **************************FOOTER ***************************************************/
 .footer{

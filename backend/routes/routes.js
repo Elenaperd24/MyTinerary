@@ -1,11 +1,13 @@
 const Router = require ('express').Router()
 const datosController = require('../controller/datosControlles')
+const commentsControllers = require('../controller/commentsControlles')
+const passport = require('../config/passport')
 
 const {obtenerDatos , obtenerItineraries, obtenerUser} = datosController //desestructuracion
 const userController = require("../controller/userControlles.js")
 const validator = require("../controller/validador")
-const {nuevoUsuario, verifyEmail , accesUser, cerrarSesion} = userController
-
+const {nuevoUsuario, verifyEmail , accesUser, cerrarSesion, verifyToken} = userController
+const {cargarComments, obtenerComments, deleteComments, editComments} = commentsControllers
 Router.route('/datos')
 .get(obtenerDatos)
 
@@ -24,5 +26,15 @@ Router.route("/signin")
 Router.route("/signout")
 .post(cerrarSesion)
 
+Router.route("/comments")
+.post(cargarComments)
+
+Router.route("/comments/:id")
+.get(obtenerComments)
+.delete(deleteComments)
+.put(editComments)
+
+Router.route("/signinToken")
+.get(passport.authenticate("jwt",{session:false}),verifyToken)
 
 module.exports = Router

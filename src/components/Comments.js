@@ -1,0 +1,199 @@
+import "react-multi-carousel/lib/styles.css";
+import { useEffect } from 'react';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import React, { useState } from "react";
+import { styled } from '@mui/material/styles';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CommentIcon from '@mui/icons-material/Comment';
+import SendIcon from '@mui/icons-material/Send';
+import swal from 'sweetalert'
+import { useStateValue } from '../StateProvide';
+import axios from "axios";
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import Avatar from '@mui/material/Avatar';
+import { red } from '@mui/material/colors';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { type } from "@testing-library/user-event/dist/type";
+
+const ExpandMore = styled((props) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+    }),
+}));
+
+function Comments(props) {
+    const [{ user }, dispatch] = useStateValue()
+    const [expanded, setExpanded] = React.useState(false);
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+    const [comment, setComment] = useState()
+    const [reload, setReload] = useState(false)
+    const [edit, setEdit] = useState(true)
+    const [changeComment, setChangeComment] =useState()
+    const actions = [
+        { icon: <ModeEditIcon />, name: 'Edit' },
+        { icon: <DeleteForeverIcon />, name: 'Delete' }
+    ];
+
+
+    const submitComent = async (event) => {
+        event.preventDefault()
+        swal({
+            title: "comment sent",
+            icon: "success",
+            buttons: "ok"
+        })
+        const dataComments = {
+            intinerary: props.itinerary,
+            user: user.datosUser.id,
+            message: event.target[0].value
+        }
+        await axios.post("http://localhost:4000/api/comments", { dataComments })
+            .then(response => setComment(response.data.response.comment))
+        setReload(!reload)
+    }
+    useEffect(() => {
+        let id = props.itinerary
+        axios.get(`http://localhost:4000/api/comments/${id}`)
+            .then(response => setComment(response.data.response.comment))
+
+    }, [reload])
+
+    const deleteEdit = async (id, name) => {
+        if (name === "Delete") {
+            axios.delete(`http://localhost:4000/api/comments/${id}`)
+            setReload(!reload)
+        }
+        else if (name === "Edit") {
+            setEdit(false)
+        }
+    }
+    const inputText = (event) =>{
+        setChangeComment(event.target.value)
+    }
+    const editComments = async (id) => {
+        let data = changeComment
+        axios.put(`http://localhost:4000/api/comments/${id}`,{data})
+        setEdit(true)
+        setReload(!reload)
+    }
+
+    return (
+        <>
+            <CardActions>
+                <Box sx={{ '& > :not(style)': { m: 1.7 } }}>
+                    <Fab aria-label="like">
+                        <FavoriteIcon />
+                    </Fab>
+                </Box>
+                <ExpandMore
+                    // expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                >
+                    <Fab color="secondary" aria-label="CommentIcon">
+                        <CommentIcon />
+                    </Fab>
+                </ExpandMore>
+
+            </CardActions>
+            <h3 style={{ textDecoration: "none", color: "#7dd6e5", fontFamily: "Permanent Marker", textAlign: "center" }}>
+                know opinions of our users
+            </h3>
+            <div className="comments shadow">
+
+                {comment?.map((item) => {
+                    return (
+                        <Card sx={{ maxWidth: 390, margin: "6px" }}>
+                            <CardHeader
+                                avatar={
+                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                        R
+                                    </Avatar>
+                                }
+                                title={item.user.name}
+                                subheader="September 14, 2016"
+                            />
+                            <CardContent>
+                                {edit ? <Typography variant="body2" color="text.secondary">
+                                    {item.comments}
+                                </Typography> :
+                                    <input variant="body2" color="text.secondary" defaultValue={item.comments} onChange={inputText} style={{ width: "100%" , height:70 }} >
+                                    </input>}
+                            </CardContent>
+                            {edit ?
+                                <Box sx={{ height: 40, transform: 'translateZ(0px)', flexGrow: 1 }}>
+                                    <SpeedDial
+                                        ariaLabel="SpeedDial"
+                                        sx={{ position: 'absolute', bottom: 10, right: 5 }}
+                                        icon={<MoreVertIcon />}
+                                        //hidden="Left"
+                                        direction="left"
+                                    >
+                                        {actions.map((action) => (
+                                            <SpeedDialAction sx={{ backgroundColor: "#ff4a48", color: "white" }}
+                                                key={action.name}
+                                                icon={action.icon}
+                                                tooltipTitle={action.name}
+                                                onClick={() => deleteEdit(item._id, action.name)}
+                                            />
+                                        ))}
+                                    </SpeedDial>
+                                </Box> :
+                                <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} onClick={()=>editComments(item._id)}>
+                                    <SendIcon />
+                                </Fab>
+                            }
+                        </Card>
+                    )
+
+                })}
+            </div>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <form onSubmit={submitComent}>
+                        <div className="mb-3">
+                            <label for="exampleFormControlTextarea1" className="form-label"></label>
+                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{ borderStyle: "solid", borderColor: "#ff4a48" }}></textarea>
+                        </div>
+                        <div>
+                            <div>
+                                <ExpandMore
+                                    // expand={expanded}
+                                    onClick={handleExpandClick}
+                                    aria-expanded={expanded}
+                                    aria-label="show more"
+                                >
+                                    <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} type="submit">
+                                        <SendIcon />
+                                    </Fab>
+                                </ExpandMore>
+                            </div>
+                        </div>
+                    </form>
+                </CardContent>
+            </Collapse>
+
+
+        </>
+    )
+}
+export default Comments;

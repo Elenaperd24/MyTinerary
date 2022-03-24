@@ -16,19 +16,16 @@ function Navbar() {
     const [colorLogo, setColorLogo] = useState(true);
     const [color, setColor] = useState("prueba");
     const [{ user }, dispatch] = useStateValue()
+
     async function cerrarSesion() {
         const email = user.datosUser.email
-        console.log(email)
         await axios.post("http://localhost:4000/api/signout", { email })
             .then(response =>{
-                console.log(response)
-                console.log(user);
+                localStorage.removeItem("token")
                 dispatch({
                     type: accionType.USERDB,
                     user: null
-                })
-            }
-            )
+                })})
     }
     const changeNavbarColor = () => {
         if (window.scrollY > 100) {

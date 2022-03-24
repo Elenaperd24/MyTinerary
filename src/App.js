@@ -28,6 +28,25 @@ function App() {
 
   }, [])
 
+  if(localStorage.getItem("token")!==null){
+    const token = localStorage.getItem("token")
+    const user = axios.post("http://localhost:4000/api/signinToken", {
+      headers:{
+        "Autorization":"Bearer"+token
+      }
+    })
+    if(user.data.success){
+      dispatch({
+        type:accionType.USERDB,
+        user: user.data.response
+      })
+    }
+    else{
+      localStorage.removeItem("token")
+    }
+  }
+
+
   /*      const dataItinerary = []                modo de consumir la data por axios no por dispatch
         axios.get("http://localhost:4000/api/infoitinerary")
           .then(response => dataItinerary.push(...response.data.response.itinerary))

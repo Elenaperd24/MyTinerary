@@ -120,16 +120,16 @@ const userControllers = {
                     let passwordCoincide = bcryptjs.compareSync(password, user.password)
 
                     if (passwordCoincide) {
-                        const token = jwt.sign({ ...user }, process.env.SECRETKEY)
                         const datosUser = {
                             name: user.name,
                             lastName: user.lastName,
                             email: user.email,
-                            connected: user.connected
-
+                            connected: user.connected,
+                            id: user._id
                         }
                         user.connected = true
                         await user.save()
+                        const token = jwt.sign({ ...datosUser }, process.env.SECRETKEY,{expiresIn:60*60*24})
                         res.json({ success: true, from: "controller", response: { token, datosUser } })
                     }
                     else {
