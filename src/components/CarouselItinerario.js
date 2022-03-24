@@ -9,6 +9,7 @@ import Comments from "./Comments";
 
 function CarouselItinerario(info) {
   const itinerary = info.itineraries
+  console.log(itinerary);
   let cont = 0
   const responsive = {
     superLargeDesktop: {
@@ -55,7 +56,7 @@ function CarouselItinerario(info) {
                     <li className="nav-link" >{item.actividades.activity3.name}</li>
                   </ul>
                 </Typography>
-                <Comments itinerary={item._id} />
+                <Comments itinerary={item._id}  likes={item.likes} />
               </CardContent>
             </Card></div>)
       })}

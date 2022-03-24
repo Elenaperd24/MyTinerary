@@ -1,3 +1,4 @@
+const { array } = require('joi');
 const mongoose = require('mongoose') //va a almacenar los datos
 
 const itinerarySchema = new mongoose.Schema ({   
@@ -8,6 +9,7 @@ const itinerarySchema = new mongoose.Schema ({
       costo: {type:String,require:true},
       descripcion: {type:String,require:true},
       actividades: {type:Object,require:true},
+      likes:{type:Array,require:true}
         
     })
 const Itinerary = mongoose.model("itinerary", itinerarySchema)

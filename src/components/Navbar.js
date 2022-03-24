@@ -22,12 +22,14 @@ function Navbar() {
         await axios.post("http://localhost:4000/api/signout", { email })
             .then(response =>{
                 if(response.data.success){
+                    console.log(user)
                     localStorage.removeItem("token")
+                    dispatch({
+                        type: accionType.USERDB,
+                        user: null
+                    })
                 }
-                dispatch({
-                    type: accionType.USERDB,
-                    user: null
-                })})
+            })
     }
     const changeNavbarColor = () => {
         if (window.scrollY > 100) {

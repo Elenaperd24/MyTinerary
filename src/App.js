@@ -26,27 +26,29 @@ function App() {
         })
       })
 
+      if(localStorage.getItem("token")!==null){
+        const token = localStorage.getItem("token")
+        axios.get("http://localhost:4000/api/signinToken", {
+          headers:{
+            'Authorization':'Bearer '+token
+          }
+        })
+        .then(user=>
+       { if(user.data.success){
+          dispatch({
+            type:accionType.USERDB,
+            user: user.data
+          })
+        }
+        else{
+          localStorage.removeItem("token")
+        }}
+        )
+      }
+
   }, [])
 
-  if(localStorage.getItem("token")!==null){
-    const token = localStorage.getItem("token")
-    axios.get("http://localhost:4000/api/signinToken", {
-      headers:{
-        'Authorization':'Bearer '+token
-      }
-    })
-    .then(user=>
-   { if(user.data.success){
-      dispatch({
-        type:accionType.USERDB,
-        user: user.data
-      })
-    }
-    else{
-      localStorage.removeItem("token")
-    }}
-    )
-  }
+ 
 
 
   /*      const dataItinerary = []                modo de consumir la data por axios no por dispatch

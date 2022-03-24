@@ -38,7 +38,10 @@ const ExpandMore = styled((props) => {
 }));
 
 function Comments(props) {
+    console.log(props);
+
     const [{ user }, dispatch] = useStateValue()
+    console.log(user);
     const [expanded, setExpanded] = React.useState(false);
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -46,7 +49,19 @@ function Comments(props) {
     const [comment, setComment] = useState()
     const [reload, setReload] = useState(false)
     const [edit, setEdit] = useState(true)
-    const [changeComment, setChangeComment] =useState()
+    const [changeComment, setChangeComment] = useState()
+    let probando;
+    if (user!==null && props.likes.length>0) {
+        probando = true
+      }
+      else{
+          probando = false
+      }
+
+      const [heart, setHeart]= useState(probando)
+    //let heart = props.likes.includes(user.datosUser.id)?"primary":"gray" 
+
+    const [contador, setContador] = useState(props.likes.length)
     const actions = [
         { icon: <ModeEditIcon />, name: 'Edit' },
         { icon: <DeleteForeverIcon />, name: 'Delete' }
@@ -85,22 +100,38 @@ function Comments(props) {
             setEdit(false)
         }
     }
-    const inputText = (event) =>{
+    const inputText = (event) => {
         setChangeComment(event.target.value)
     }
     const editComments = async (id) => {
         let data = changeComment
-        axios.put(`http://localhost:4000/api/comments/${id}`,{data})
+        axios.put(`http://localhost:4000/api/comments/${id}`, { data })
         setEdit(true)
         setReload(!reload)
+    }
+
+    const Darlike = async () => {
+        console.log(user)
+        const token = localStorage.getItem("token")
+        axios.put(`http://localhost:4000/api/likeDislike/${props.itinerary}`, {},
+            { headers: { 'Authorization': 'Bearer ' + token } }
+        )
+            .then(response => {
+                console.log(response)
+                setContador(response.data.response.length)
+                //setHeart(response.data.response.includes(user.datosUser.id))      
+                setHeart(!probando)
+
+            })
+
     }
 
     return (
         <>
             <CardActions>
                 <Box sx={{ '& > :not(style)': { m: 1.7 } }}>
-                    <Fab aria-label="like">
-                        <FavoriteIcon />
+                    <Fab aria-label="like" color={heart?"primary":"gray"} onClick={Darlike}>
+                        <FavoriteIcon /> {contador}
                     </Fab>
                 </Box>
                 <ExpandMore
@@ -136,7 +167,7 @@ function Comments(props) {
                                 {edit ? <Typography variant="body2" color="text.secondary">
                                     {item.comments}
                                 </Typography> :
-                                    <input variant="body2" color="text.secondary" defaultValue={item.comments} onChange={inputText} style={{ width: "100%" , height:70 }} >
+                                    <input variant="body2" color="text.secondary" defaultValue={item.comments} onChange={inputText} style={{ width: "100%", height: 70 }} >
                                     </input>}
                             </CardContent>
                             {edit ?
@@ -158,7 +189,7 @@ function Comments(props) {
                                         ))}
                                     </SpeedDial>
                                 </Box> :
-                                <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} onClick={()=>editComments(item._id)}>
+                                <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} onClick={() => editComments(item._id)}>
                                     <SendIcon />
                                 </Fab>
                             }

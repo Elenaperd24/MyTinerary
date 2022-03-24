@@ -3,7 +3,7 @@ const datosController = require('../controller/datosControlles')
 const commentsControllers = require('../controller/commentsControlles')
 const passport = require('../config/passport')
 
-const {obtenerDatos , obtenerItineraries, obtenerUser} = datosController //desestructuracion
+const {obtenerDatos , obtenerItineraries, likeDisLike} = datosController //desestructuracion
 const userController = require("../controller/userControlles.js")
 const validator = require("../controller/validador")
 const {nuevoUsuario, verifyEmail , accesUser, cerrarSesion, verifyToken} = userController
@@ -36,5 +36,8 @@ Router.route("/comments/:id")
 
 Router.route("/signinToken")
 .get(passport.authenticate("jwt",{session:false}),verifyToken)
+
+Router.route("/likeDislike/:id")
+.put(passport.authenticate("jwt",{session:false}),likeDisLike)
 
 module.exports = Router
