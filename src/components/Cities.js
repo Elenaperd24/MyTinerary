@@ -24,6 +24,8 @@ function Cities() {
     const [{ cities, citiesNew }, dispatch] = useStateValue()
     const [noFind, setNoFind] = useState(false)
 
+    console.log(cities);
+
     let countries = []
     citiesNew.map((city) => {
         if (!countries.includes(city.country)) {

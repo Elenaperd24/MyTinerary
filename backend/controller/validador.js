@@ -4,6 +4,7 @@ const { nuevoUsuario } = require("./userControlles")
 const validator = (req, res, next) => {
     console.log(req.body.NuevoUsuario)
     const Schema = joi.object({
+        img:joi.string().required(),
         name: joi.string().max(40).min(3).trim().pattern(new RegExp("[a-zA-Z]")).required().messages({ //trim espacios post o ant
             "string.min": "The name must minimally have 3 characters",
             "string.empty": "El field name can not be empty"

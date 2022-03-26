@@ -48,13 +48,14 @@ const userControllers = {
         }
     },
     nuevoUsuario: async (req, res) => {
-        const { name, lastName, email, password, from } = req.body.NuevoUsuario // destructurar agarramos un objeto y sus variables las podemos trabajar por separado
+        const { img, name, lastName, email, password, from } = req.body.NuevoUsuario // destructurar agarramos un objeto y sus variables las podemos trabajar por separado
         console.log(req.body)
         try {
             const usuarioExiste = await User.findOne({ email })
             if (usuarioExiste) {                
-                if (from!=="signup" ) {
+                if (from!=="MyTineray" ) {
                     const passwordHash = bcryptjs.hashSync(password, 10)
+                    usuarioExiste.img= img
                     usuarioExiste.password = passwordHash;
                     usuarioExiste.emailVerified = true
                     usuarioExiste.from = from
@@ -72,6 +73,7 @@ const userControllers = {
                 const uniqueString = crypto.randomBytes(15).toString("hex")
                 const passwordHash = bcryptjs.hashSync(password, 10)
                 const newUser = new User({
+                    img,
                     name,
                     lastName,
                     email,
@@ -85,7 +87,7 @@ const userControllers = {
 
                 console.log(newUser);
 
-                if (from!=="signup") {
+                if (from!=="MyTineray") {
                     newUser.emailVerified = true
                         newUser.google = true
                         newUser.connected = false
@@ -121,11 +123,13 @@ const userControllers = {
 
                     if (passwordCoincide) {
                         const datosUser = {
+                            img:user.img,
                             name: user.name,
                             lastName: user.lastName,
                             email: user.email,
                             connected: user.connected,
-                            id: user._id
+                            id: user._id,
+                            from:user.from
                         }
                         user.connected = true
                         await user.save()
@@ -156,7 +160,8 @@ const userControllers = {
         if(!req.error){
             res.json({success:true, 
                 datosUser:
-                {name:req.user.name, 
+                {img:req.user.img,
+                name:req.user.name, 
                 lastName: req.user.lastName,
                 email: req.user.email, 
                 connected:req.user.connected , 
@@ -164,7 +169,7 @@ const userControllers = {
                 response:"Welcome Back Again "+req.user.name})
         }
         else{
-            res.json({success:false, response:"Sesion vencia, inicia sesion de nuevo"})
+            res.json({success:false, response:"Sesion vencida, inicia sesion de nuevo"})
         }
     }
 }

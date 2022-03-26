@@ -8,6 +8,7 @@ import * as React from 'react';
 import Comments from "./Comments";
 
 function CarouselItinerario(info) {
+  
   const itinerary = info.itineraries
   console.log(itinerary);
   let cont = 0
@@ -32,7 +33,7 @@ function CarouselItinerario(info) {
   };
   return (
     <><Carousel responsive={responsive}>
-      {itinerary.map((item) => {
+      {itinerary?.map((item) => {
         cont = cont + 1
         return (
           <div key={item._id} style={{maxWidth: 450, backgroundColor:"red"}}>
@@ -56,7 +57,7 @@ function CarouselItinerario(info) {
                     <li className="nav-link" >{item.actividades.activity3.name}</li>
                   </ul>
                 </Typography>
-                <Comments itinerary={item._id}  likes={item.likes} />
+                <Comments itinerary={item._id} likes={item.likes}/>
               </CardContent>
             </Card></div>)
       })}

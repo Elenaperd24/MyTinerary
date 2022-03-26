@@ -2,12 +2,13 @@ const Comments = require("../models/comments")
 
 const commentsControllers = {
     cargarComments: async (req, res) => {
-        let { intinerary, message, user } = req.body.dataComments;
+        let { intinerary, message, user, date } = req.body.dataComments;
         console.log(req.body.dataComents)
         new Comments({
             intinerary: intinerary,
             user: user,
-            comments: message
+            comments: message,
+            date:date
         }).save()
         let comment
         try {
@@ -23,10 +24,11 @@ const commentsControllers = {
         let comment
         try {
             comment = await Comments.find({ intinerary: id }).populate("user")
+            console.log(comment)
         } catch (error) {
             console.log(error)
         }
-        res.json({ success: true, response: { comment } })
+        res.json({ success: true, response: { comment  } })
     },
 
     deleteComments: async (req, res) => {
@@ -41,15 +43,18 @@ const commentsControllers = {
     },
     editComments: async (req, res) => {
         let id = req.params.id;
-        console.log(id);
         let newComment = {comments:req.body.data }
-        console.log(newComment)       
+        let newfecha = {date:req.body.newDate}
+        let date                      
         let comment
         try {
             comment = await Comments.findOneAndUpdate( {_id:id}, newComment )
+            date = await Comments.findOneAndUpdate( {_id:id}, newfecha )
+
         } catch (error) {
             console.log(error)
         }
+    
         res.json({ success: true, response: { comment } })
     }
     

@@ -8,7 +8,8 @@ const citiesSchema = new mongoose.Schema ({
         starWeek:{type:String,require:true},
         languages:{type:String,require:true},
         descripcion: {type:Object,require:true},
-        images:{type:Object,require:true}
+        images:{type:Object,require:true},
+        likeItinerary:{type:Array,require:true}
         
     })
 const City = mongoose.model("cities", citiesSchema)

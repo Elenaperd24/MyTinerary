@@ -13,7 +13,9 @@ import axios from "axios";
 function SignUp() {
 
     const responseGoogle = async (response) => {
+        console.log(response)
         const NuevoUsuario = {
+            img:response.profileObj.imageUrl,
             name: response.profileObj.givenName,
             lastName: response.profileObj.familyName,
             email: response.profileObj.email,
@@ -24,7 +26,9 @@ function SignUp() {
     }
 
     const responseFacebook = async (response) => {
+        console.log(response)
         const NuevoUsuario = {
+            img: response.picture.data.url,
             name: response.name,
             lastName: response.lastName,
             email: response.email,
@@ -35,12 +39,16 @@ function SignUp() {
     }
     async function newUser(event) {
         event.preventDefault()
+        let name= event.target[0].value
+        let lastName = event.target[1].value
+        let iniciales = name.charAt(0)+lastName.charAt(0)
         const NuevoUsuario = {
+            img: iniciales.toUpperCase(),
             name: event.target[0].value,
             lastName: event.target[1].value,
             email: event.target[2].value,
             password: event.target[3].value,
-            from: "signup"
+            from: "MyTineray"
         }
         detectFrom(NuevoUsuario)
     }
@@ -126,7 +134,7 @@ function SignUp() {
                         cookiePolicy={'single_host_origin'}
                     />
                     <FacebookLogin
-                        appId="644823753295174"
+                        appId="385035536492643"
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={responseFacebook} />

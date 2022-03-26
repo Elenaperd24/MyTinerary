@@ -38,34 +38,30 @@ const ExpandMore = styled((props) => {
 }));
 
 function Comments(props) {
-    console.log(props);
-
-    const [{ user }, dispatch] = useStateValue()
-    console.log(user);
-    const [expanded, setExpanded] = React.useState(false);
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
-    const [comment, setComment] = useState()
-    const [reload, setReload] = useState(false)
-    const [edit, setEdit] = useState(true)
-    const [changeComment, setChangeComment] = useState()
-    let probando;
-    if (user!==null && props.likes.length>0) {
-        probando = true
-      }
-      else{
-          probando = false
-      }
-
-      const [heart, setHeart]= useState(probando)
-    //let heart = props.likes.includes(user.datosUser.id)?"primary":"gray" 
-
-    const [contador, setContador] = useState(props.likes.length)
+    //console.log(props)
+    //funciones de MATERIAL UI
     const actions = [
         { icon: <ModeEditIcon />, name: 'Edit' },
         { icon: <DeleteForeverIcon />, name: 'Delete' }
     ];
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+    //FUNCIONALIDAD
+    //  console.log(props);
+    const [{ user }, dispatch] = useStateValue()
+
+    //CONSTANTES SET   
+    let date=""
+    const [comment, setComment] = useState()
+    const [reload, setReload] = useState(false)
+    const [edit, setEdit] = useState(true)
+    const [changeComment, setChangeComment] = useState()
+    const [contador, setContador] = useState(props.likes.length)
+
+    //FUNCIONES
 
 
     const submitComent = async (event) => {
@@ -75,19 +71,26 @@ function Comments(props) {
             icon: "success",
             buttons: "ok"
         })
+        fecha()
         const dataComments = {
             intinerary: props.itinerary,
             user: user.datosUser.id,
-            message: event.target[0].value
+            message: event.target[0].value,
+            date:date
         }
         await axios.post("http://localhost:4000/api/comments", { dataComments })
-            .then(response => setComment(response.data.response.comment))
+            .then(response => {
+                setComment(response.data.response.comment)
+            })
         setReload(!reload)
     }
     useEffect(() => {
         let id = props.itinerary
         axios.get(`http://localhost:4000/api/comments/${id}`)
-            .then(response => setComment(response.data.response.comment))
+            .then(response => {
+                console.log(response.data.response.comment)
+                setComment(response.data.response.comment)
+            })
 
     }, [reload])
 
@@ -104,10 +107,15 @@ function Comments(props) {
         setChangeComment(event.target.value)
     }
     const editComments = async (id) => {
+        fecha()
         let data = changeComment
-        axios.put(`http://localhost:4000/api/comments/${id}`, { data })
-        setEdit(true)
-        setReload(!reload)
+        let newDate = date
+        axios.put(`http://localhost:4000/api/comments/${id}`, { data , newDate})
+        .then(response=>{
+            setEdit(true)
+            setReload(!reload)
+        })
+       
     }
 
     const Darlike = async () => {
@@ -119,83 +127,100 @@ function Comments(props) {
             .then(response => {
                 console.log(response)
                 setContador(response.data.response.length)
-                //setHeart(response.data.response.includes(user.datosUser.id))      
-                setHeart(!probando)
 
             })
 
     }
 
+
+    function fecha() {
+        var registro = new Date()
+        var dia = registro.getDate()
+        var mes = registro.getMonth()
+        var time = registro.getHours() + ":" + registro.getMinutes()
+        var year = registro.getYear()
+       date =  dia + "/" + mes + "/" + year + " " + time
+    }
     return (
         <>
             <CardActions>
                 <Box sx={{ '& > :not(style)': { m: 1.7 } }}>
-                    <Fab aria-label="like" color={heart?"primary":"gray"} onClick={Darlike}>
+                    <Fab aria-label="like" onClick={Darlike} >
                         <FavoriteIcon /> {contador}
                     </Fab>
                 </Box>
-                <ExpandMore
-                    // expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <Fab color="secondary" aria-label="CommentIcon">
-                        <CommentIcon />
-                    </Fab>
-                </ExpandMore>
-
+                {user ?
+                    <ExpandMore
+                        // expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <Fab color="secondary" aria-label="CommentIcon">
+                            <CommentIcon />
+                        </Fab>
+                    </ExpandMore> : ""}
             </CardActions>
             <h3 style={{ textDecoration: "none", color: "#7dd6e5", fontFamily: "Permanent Marker", textAlign: "center" }}>
                 know opinions of our users
             </h3>
             <div className="comments shadow">
-
                 {comment?.map((item) => {
                     return (
                         <Card sx={{ maxWidth: 390, margin: "6px" }}>
                             <CardHeader
                                 avatar={
-                                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                        R
+                                    <Avatar sx={{ bgcolor: red[500] }} /* aria-label="recipe" */>
+                                        {item.user.from !== "MyTineray" ?
+                                            <img src={item.user.img} alt="login" />
+                                            :
+                                            item.user.img}
                                     </Avatar>
                                 }
-                                title={item.user.name}
-                                subheader="September 14, 2016"
-                            />
+                                title={item.user.name.charAt(0).toUpperCase() + item.user.name.slice(1)}
+                                subheader={ item.date +"h" + " from " + item.user.from}
+                            />                                                         
                             <CardContent>
-                                {edit ? <Typography variant="body2" color="text.secondary">
+                                {user?.datosUser.id === item.user._id ?
+                                    edit ?
+                                        <Typography variant="body2" color="text.secondary">
+                                            {item.comments}
+                                        </Typography> :
+                                        <input variant="body2" color="text.secondary"
+                                            defaultValue={item.comments}
+                                            onChange={inputText}
+                                            style={{ width: "100%", height: 70 }} >
+                                        </input>
+                                    : <Typography variant="body2" color="text.secondary">
                                     {item.comments}
-                                </Typography> :
-                                    <input variant="body2" color="text.secondary" defaultValue={item.comments} onChange={inputText} style={{ width: "100%", height: 70 }} >
-                                    </input>}
+                                </Typography>
+                                }
                             </CardContent>
-                            {edit ?
-                                <Box sx={{ height: 40, transform: 'translateZ(0px)', flexGrow: 1 }}>
-                                    <SpeedDial
-                                        ariaLabel="SpeedDial"
-                                        sx={{ position: 'absolute', bottom: 10, right: 5 }}
-                                        icon={<MoreVertIcon />}
-                                        //hidden="Left"
-                                        direction="left"
-                                    >
-                                        {actions.map((action) => (
-                                            <SpeedDialAction sx={{ backgroundColor: "#ff4a48", color: "white" }}
-                                                key={action.name}
-                                                icon={action.icon}
-                                                tooltipTitle={action.name}
-                                                onClick={() => deleteEdit(item._id, action.name)}
-                                            />
-                                        ))}
-                                    </SpeedDial>
-                                </Box> :
-                                <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} onClick={() => editComments(item._id)}>
-                                    <SendIcon />
-                                </Fab>
+                            {user?.datosUser.id === item.user._id ?
+                                edit ?
+                                    <Box sx={{ height: 40, transform: 'translateZ(0px)', flexGrow: 1 }}>
+                                        <SpeedDial
+                                            ariaLabel="SpeedDial"
+                                            sx={{ position: 'absolute', bottom: 10, right: 5 }}
+                                            icon={<MoreVertIcon />}
+                                            direction="left"
+                                        >
+                                            {actions.map((action) => (
+                                                <SpeedDialAction sx={{ backgroundColor: "#ff4a48", color: "white" }}
+                                                    key={action.name}
+                                                    icon={action.icon}
+                                                    tooltipTitle={action.name}
+                                                    onClick={() => deleteEdit(item._id, action.name)}
+                                                />
+                                            ))}
+                                        </SpeedDial>
+                                    </Box> :
+                                    <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} onClick={() => editComments(item._id)}>
+                                        <SendIcon />
+                                    </Fab>
+                                : ""
                             }
-                        </Card>
-                    )
-
+                        </Card>)
                 })}
             </div>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -222,8 +247,6 @@ function Comments(props) {
                     </form>
                 </CardContent>
             </Collapse>
-
-
         </>
     )
 }

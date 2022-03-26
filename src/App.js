@@ -12,6 +12,8 @@ import SignUp from './components/SingUp';
 import Signin from './components/Signin';
 import axios from 'axios'
 import Cities from "./components/Cities";
+import swal from 'sweetalert'
+
 
 function App() {
   const [{ cities }, dispatch] = useStateValue()
@@ -26,29 +28,35 @@ function App() {
         })
       })
 
-      if(localStorage.getItem("token")!==null){
-        const token = localStorage.getItem("token")
-        axios.get("http://localhost:4000/api/signinToken", {
-          headers:{
-            'Authorization':'Bearer '+token
-          }
-        })
-        .then(user=>
-       { if(user.data.success){
-          dispatch({
-            type:accionType.USERDB,
-            user: user.data
-          })
+    if (localStorage.getItem("token") !== null) {
+      const token = localStorage.getItem("token")
+      axios.get("http://localhost:4000/api/signinToken", {
+        headers: {
+          'Authorization': 'Bearer ' + token
         }
-        else{
-          localStorage.removeItem("token")
-        }}
+      })
+        .then(user => {
+          if (user.data.success) {
+            swal({
+              title: user.data.response,
+              icon: "success",
+              buttons: "ok"
+            })
+            dispatch({
+              type: accionType.USERDB,
+              user: user.data
+            })
+          }
+          else {            
+            localStorage.removeItem("token")
+          }
+        }
         )
-      }
+    }
 
   }, [])
 
- 
+
 
 
   /*      const dataItinerary = []                modo de consumir la data por axios no por dispatch

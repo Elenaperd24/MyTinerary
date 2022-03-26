@@ -21,6 +21,7 @@ function Signin() {
         detectFrom(UserData)
     }
     const responseFacebook = async (response) => {
+        console.log(response)
         const UserData = {
             email: response.email,
             password: response.id + "Ep",
@@ -63,9 +64,6 @@ function Signin() {
             })
         })         
     }
-
-
-
     return (
         <>
             <div className="gabi">
@@ -106,7 +104,7 @@ function Signin() {
                             cookiePolicy={'single_host_origin'}
                         />
                          <FacebookLogin
-                        appId="644823753295174"
+                        appId="385035536492643"
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={responseFacebook} />
