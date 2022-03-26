@@ -458,11 +458,12 @@ padding: 0;
 }
 /**************************comments**************************************/
 .comments {
-  background-color: white;
+  background-color: rgb(156, 213, 228,100%);
   border-style: none;
   padding: 8px;
   overflow-y: auto;
   height: 300px;
+
 }
 .comments::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -473,7 +474,7 @@ padding: 0;
 }
 
 .comments::-webkit-scrollbar-thumb {
-  background-color: #7dd6e5;
+  background-color: #ff6f6f;
   border-radius: 20px;
   border-right: 2px solid rgba(250, 230, 223, 0.9);
 }

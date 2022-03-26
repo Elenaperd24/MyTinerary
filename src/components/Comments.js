@@ -25,6 +25,9 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { type } from "@testing-library/user-event/dist/type";
+import { accionType } from '../reducer'
+
+
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -51,10 +54,10 @@ function Comments(props) {
     };
     //FUNCIONALIDAD
     //  console.log(props);
-    const [{ user }, dispatch] = useStateValue()
+    const [{ user}, dispatch] = useStateValue()
 
     //CONSTANTES SET   
-    let date=""
+    let date = ""
     const [comment, setComment] = useState()
     const [reload, setReload] = useState(false)
     const [edit, setEdit] = useState(true)
@@ -76,7 +79,7 @@ function Comments(props) {
             intinerary: props.itinerary,
             user: user.datosUser.id,
             message: event.target[0].value,
-            date:date
+            date: date
         }
         await axios.post("http://localhost:4000/api/comments", { dataComments })
             .then(response => {
@@ -110,12 +113,12 @@ function Comments(props) {
         fecha()
         let data = changeComment
         let newDate = date
-        axios.put(`http://localhost:4000/api/comments/${id}`, { data , newDate})
-        .then(response=>{
-            setEdit(true)
-            setReload(!reload)
-        })
-       
+        axios.put(`http://localhost:4000/api/comments/${id}`, { data, newDate })
+            .then(response => {
+                setEdit(true)
+                setReload(!reload)
+            })
+
     }
 
     const Darlike = async () => {
@@ -127,11 +130,10 @@ function Comments(props) {
             .then(response => {
                 console.log(response)
                 setContador(response.data.response.length)
-
+              
             })
 
     }
-
 
     function fecha() {
         var registro = new Date()
@@ -139,7 +141,7 @@ function Comments(props) {
         var mes = registro.getMonth()
         var time = registro.getHours() + ":" + registro.getMinutes()
         var year = registro.getYear()
-       date =  dia + "/" + mes + "/" + year + " " + time
+        date = dia + "/" + mes + "/" + year + " " + time
     }
     return (
         <>
@@ -161,8 +163,8 @@ function Comments(props) {
                         </Fab>
                     </ExpandMore> : ""}
             </CardActions>
-            <h3 style={{ textDecoration: "none", color: "#7dd6e5", fontFamily: "Permanent Marker", textAlign: "center" }}>
-                know opinions of our users
+            <h3 style={{ textDecoration: "none", color: "#ff6f6f", fontFamily: "Permanent Marker", textAlign: "center" }}>
+               {comment?.length>0?"know opinions of our users":"Be the first to comment"} 
             </h3>
             <div className="comments shadow">
                 {comment?.map((item) => {
@@ -178,8 +180,8 @@ function Comments(props) {
                                     </Avatar>
                                 }
                                 title={item.user.name.charAt(0).toUpperCase() + item.user.name.slice(1)}
-                                subheader={ item.date +"h" + " from " + item.user.from}
-                            />                                                         
+                                subheader={item.date + "h" + " from " + item.user.from}
+                            />
                             <CardContent>
                                 {user?.datosUser.id === item.user._id ?
                                     edit ?
@@ -192,8 +194,8 @@ function Comments(props) {
                                             style={{ width: "100%", height: 70 }} >
                                         </input>
                                     : <Typography variant="body2" color="text.secondary">
-                                    {item.comments}
-                                </Typography>
+                                        {item.comments}
+                                    </Typography>
                                 }
                             </CardContent>
                             {user?.datosUser.id === item.user._id ?
@@ -221,7 +223,7 @@ function Comments(props) {
                                 : ""
                             }
                         </Card>)
-                })}
+                })}          
             </div>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>

@@ -3,7 +3,7 @@ import React from "react";
 function CitiesLike(props) {
     const cities = props.cities
 
-    let morePopulation = cities.filter(city => city.likeItinerary.length > 0)
+    let morePopulation = cities.filter(city => city.population > 45)
     return (
         <div className="cards-like">
             <div className="container">

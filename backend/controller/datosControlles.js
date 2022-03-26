@@ -46,13 +46,13 @@ const datosController = {
             itinerary = await Itinerary.findOne({ _id: id })
             let cityItinerary = itinerary.city
             city = await Cities.find({ name: cityItinerary })
-            let idCity =  city[0]._id.toString()
+            let idCity = city[0]._id.toString()
             console.log(idCity)
 
             if (itinerary.likes.includes(user)) {
+                
+                //Cities.findByIdAndUpdate({ _id: idCity }, { $pull: { likeItinerary: user } }, { new: true })
                 Itinerary.findByIdAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
-               // Cities.findByIdAndUpdate({ _id: idCity }, { $pull: { likeItinerary: user } }, { new: true })
-
                     .then(response => {
                         resp.json({ success: true, response: response.likes })
                     })
@@ -61,9 +61,9 @@ const datosController = {
             }
             else {
 
-                    Itinerary.findByIdAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
-                  //  Cities.findByIdAndUpdate({ _id: idCity }, { $push: { likeItinerary: user } }, { new: true })
-
+                
+                //  Cities.findByIdAndUpdate({ _id: idCity }, { $push: { likeItinerary: user } }, { new: true })
+                Itinerary.findByIdAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
                     .then(response => {
                         resp.json({ success: true, response: response.likes })
                     })

@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useStateValue } from "../StateProvide";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,37 +16,40 @@ import "./styles.css";
 import { EffectCoverflow, Pagination } from "swiper";
 
 export default function App(props) {
-
+    let cities = props.cities
+    console.log(props);
     return (
         <>
-            <Swiper
-                effect={"coverflow"}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={"auto"}
-                /*   loop={true} */
-                /*loopFillGroupWithBlank={true} */
-                /*    coverflowEffct={{
-                        rotate: 50,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: true,
-                    }} */
-                pagination={true}
-                modules={[EffectCoverflow, Pagination]}
-                className="mySwiper"
-            >
-                {props.cities.map((city) => {
-                    return (
-                        <>
-                            <SwiperSlide key={`${city._id}+a`}>
-                                <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} />
-                            </SwiperSlide>
-                        </>
-                    )
-                })}
-            </Swiper>
+            {cities.length > 0 ?
+                <Swiper
+                    effect={"coverflow"}
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={"auto"}
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    /*    coverflowEffct={{
+                            rotate: 50,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 1,
+                            slideShadows: true,
+                        }} */
+                    pagination={true}
+                    modules={[EffectCoverflow, Pagination]}
+                    className="mySwiper"
+                >
+                    {cities.map((city) => {
+                        return (
+                            <>
+                                <SwiperSlide key={`${city._id}+a`}>
+                                    <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} />
+                                </SwiperSlide>
+                            </>
+                        )
+                    })}
+                </Swiper>: ""}
+
         </>
     );
 }

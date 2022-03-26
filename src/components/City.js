@@ -9,23 +9,18 @@ import CarouselItinerario from "./CarouselItinerario";
 
 import { useParams } from "react-router-dom";
 
-function City() {
+ function  City() {
     const [itineraries, setItineraries] = useState([])
     const { id } = useParams()
     const [{ cities }, dispatch] = useStateValue()
     let city = cities.filter(item => item._id === id)
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        city.map(city =>
-            axios.get(`http://localhost:4000/api/infoitinerary/${city.name}`)
-                .then(response => setItineraries(response.data.response.itinerary))
-        )
-    }, [])
-
-    return (
+    console.log(city);
+    
+   return (
         <>
-            <div style={{posicion:"absolute" }}>
+        {city.length>0?
+        <div>
+            <div style={{ posicion: "absolute" }}>
                 <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100 bannerCity d-flex justify-content-center aling-item-center" alt="..." />
                 {/*  <img src={Prueba} className="baner-image w-100  d-flex justify-content-center aling-item-center" alt="banner" /> */}
                 <div className="NameCity" style={{ fontFamily: "Permanent Marker" }} >{city[0].name}</div>
@@ -44,8 +39,8 @@ function City() {
                 <h1>Look at the itineraries</h1>
                 <h1>that you are going to love</h1>
             </div>
-            <CarouselItinerario itineraries={itineraries} />
-               <div className="whyCity container">
+            <CarouselItinerario /* itineraries={itineraries} */ city={city}/>
+            <div className="whyCity container">
                 <h3>Why choose </h3>
                 <h1>{city[0].name + " "} as a destination?</h1>
             </div>
@@ -88,7 +83,7 @@ function City() {
                     </div>
                 </div>
             </div>
-
+            </div>:""}
         </>
     )
 
