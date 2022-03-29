@@ -5,7 +5,7 @@ const Router = require('./routes/routes')
 const passport = require('passport')
 const path = require('path')
 const app = express()
-const PORT = process.env.POST || 4000
+const PORT = process.env.PORT || 4000
 const HOST = process.env.HOST || "0.0.0.0"
 
 require('./config/database')
