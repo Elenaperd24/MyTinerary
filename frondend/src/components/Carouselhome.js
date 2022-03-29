@@ -1,23 +1,16 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useStateValue } from "../StateProvide";
-
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
 import "./styles.css";
-
 // import required modules
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 
 export default function App(props) {
     let cities = props.cities
-    console.log(props);
     return (
         <>
             {cities.length > 0 ?

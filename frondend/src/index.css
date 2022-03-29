@@ -1,4 +1,3 @@
-
 .bannerPrincipal {
   background-image: url("./image/banner/banner1.jpg");
   background-size:cover; 
@@ -124,6 +123,7 @@
   }
   /*************************************signup*****************************/
   .menu-signUP{
+    background-color: white;
     position:absolute;
     display: flex;
     flex-direction: column;
@@ -131,15 +131,17 @@
     justify-content: center;
     top: 15vh;
     right: 0vh;
-    height: 100vh;
+    height: 50vh;
     width: 60vw;
     border-radius: 15px 15px 15px 15px;
     border: black;    
 
   }
   .form-SignUP{
+    background-color: #7dd6e5;
+    padding-top: 2vh;
     margin-top: 0;
-    height: 80vh;
+    height: 50vh;
   }
  
   .btn-signUp{
@@ -602,6 +604,3 @@ padding: 0;
     justify-content: center;
   }
   }
-
-
-

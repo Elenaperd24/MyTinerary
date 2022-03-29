@@ -13,7 +13,7 @@ import Signin from './components/Signin';
 import axios from 'axios'
 import Cities from "./components/Cities";
 import swal from 'sweetalert'
-
+import SigninPrueba from './components/Signinprueba';
 
 function App() {
   const [{ cities }, dispatch] = useStateValue()
@@ -74,6 +74,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/singup" element={<SignUp />} />
         <Route path="*" element={<Home />} />
+        <Route path="/prueba" element={<SigninPrueba />} />
       </Routes>
       <Footer />
     </BrowserRouter>

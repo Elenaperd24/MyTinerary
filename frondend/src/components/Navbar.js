@@ -7,13 +7,9 @@ import login from "../image/logos/login.png";
 import { accionType } from '../reducer'
 import { useStateValue } from '../StateProvide';
 import axios from 'axios'
-import MaterialIcon, { colorPalette } from 'material-icons-react';
-import usuario from "../image/logos/usuario.jpg"
 import swal from 'sweetalert'
 import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
-
-
 
 function Navbar() {
     const [colorChange, setColorchange] = useState(false);

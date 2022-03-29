@@ -138,7 +138,7 @@ function Comments(props) {
     function fecha() {
         var registro = new Date()
         var dia = registro.getDate()
-        var mes = registro.getMonth()
+        var mes = registro.getMonth() +1
         var time = registro.getHours() + ":" + registro.getMinutes()
         var year = registro.getYear()
         date = dia + "/" + mes + "/" + year + " " + time

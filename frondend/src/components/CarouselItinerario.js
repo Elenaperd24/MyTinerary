@@ -8,12 +8,30 @@ import React, { useEffect, useState } from "react";
 import Comments from "./Comments";
 import axios from 'axios'
 
-
-function CarouselItinerario(info) {
-  let city = info.city
+function CarouselItinerario(props) {
+//responsive de MATERIAL UI
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+//START COMPONENTE
+  let city = props.city
   const [itineraries, setItineraries] = useState([])
-
-  console.log(info);
   let cont = 0
 
   useEffect(() => {
@@ -24,29 +42,7 @@ function CarouselItinerario(info) {
             .then(response => setItineraries(response.data.response.itinerary))
     )
 }, [])
-
-
-
-
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
-  };
+ 
   return (
     <>
       <Carousel responsive={responsive}>

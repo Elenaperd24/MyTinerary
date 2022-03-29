@@ -1,58 +1,28 @@
 {
-  "name": "mytinerary",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://elenaperd24.github.io/MyTinerary",
-  "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "@mui/icons-material": "^5.3.0",
-    "@mui/material": "^5.3.0",
-    "@mui/styled-engine-sc": "^5.3.0",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.25.0",
-    "bootstrap": "^5.1.3",
-    "gh-pages": "^3.2.3",
-    "material-icons-react": "^1.0.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-facebook-login": "^4.1.1",
-    "react-google-login": "^5.2.2",
-    "react-multi-carousel": "^2.6.5",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "^5.0.0",
-    "react-swipeable-views": "^0.14.0",
-    "styled-components": "^5.3.3",
-    "sweetalert": "^2.1.2",
-    "swiper": "^8.0.5",
-    "web-vitals": "^2.1.2"
-  },
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "ElenaPerdomo",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^15.0.0",
+    "express": "^4.17.2",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.10",
+    "mongose": "^0.0.2-security",
+    "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "react-facebook-login": "^4.1.1"
   }
 }
