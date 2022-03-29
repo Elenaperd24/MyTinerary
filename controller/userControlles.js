@@ -20,7 +20,7 @@ async function sendEmail(email, uniqueString) {
         from: sender,
         to: email,
         subject: "User verification",
-        html: `Press <a href=http://localhost:4000/api/verify/${uniqueString}>here</a>Para validar tu email`
+        html: `Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>here</a>Para validar tu email`
     }
     await transporter.sendMail(mailOptions, function (error, response) {
         if (error) {

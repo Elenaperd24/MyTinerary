@@ -81,7 +81,7 @@ function Comments(props) {
             message: event.target[0].value,
             date: date
         }
-        await axios.post("http://localhost:4000/api/comments", { dataComments })
+        await axios.post("https://mytinerary-elena.herokuapp.com/api/comments", { dataComments })
             .then(response => {
                 setComment(response.data.response.comment)
             })
@@ -89,7 +89,7 @@ function Comments(props) {
     }
     useEffect(() => {
         let id = props.itinerary
-        axios.get(`http://localhost:4000/api/comments/${id}`)
+        axios.get(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
             .then(response => {
                 console.log(response.data.response.comment)
                 setComment(response.data.response.comment)
@@ -99,7 +99,7 @@ function Comments(props) {
 
     const deleteEdit = async (id, name) => {
         if (name === "Delete") {
-            axios.delete(`http://localhost:4000/api/comments/${id}`)
+            axios.delete(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
             setReload(!reload)
         }
         else if (name === "Edit") {
@@ -113,7 +113,7 @@ function Comments(props) {
         fecha()
         let data = changeComment
         let newDate = date
-        axios.put(`http://localhost:4000/api/comments/${id}`, { data, newDate })
+        axios.put(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`, { data, newDate })
             .then(response => {
                 setEdit(true)
                 setReload(!reload)
@@ -124,7 +124,7 @@ function Comments(props) {
     const Darlike = async () => {
         console.log(user)
         const token = localStorage.getItem("token")
-        axios.put(`http://localhost:4000/api/likeDislike/${props.itinerary}`, {},
+        axios.put(`https://mytinerary-elena.herokuapp.com/api/likeDislike/${props.itinerary}`, {},
             { headers: { 'Authorization': 'Bearer ' + token } }
         )
             .then(response => {

@@ -53,7 +53,7 @@ function SignUp() {
         detectFrom(NuevoUsuario)
     }
     async function detectFrom(NuevoUsuario) {
-        await axios.post("http://localhost:4000/api/signup", { NuevoUsuario })
+        await axios.post("https://mytinerary-elena.herokuapp.com/api/signup", { NuevoUsuario })
             .then(response => {
                 if (response.data.success === "falseVAL") {
                     let detailsError = response.data.response.error.details

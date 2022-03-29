@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
 
-    axios.get("http://localhost:4000/api/datos")
+    axios.get("https://mytinerary-elena.herokuapp.com/api/datos")
       .then(response => {
         dispatch({
           type: accionType.CITIESDB,
@@ -30,7 +30,7 @@ function App() {
 
     if (localStorage.getItem("token") !== null) {
       const token = localStorage.getItem("token")
-      axios.get("http://localhost:4000/api/signinToken", {
+      axios.get("https://mytinerary-elena.herokuapp.com/api/signinToken", {
         headers: {
           'Authorization': 'Bearer ' + token
         }
@@ -60,7 +60,7 @@ function App() {
 
 
   /*      const dataItinerary = []                modo de consumir la data por axios no por dispatch
-        axios.get("http://localhost:4000/api/infoitinerary")
+        axios.get("https://mytinerary-elena.herokuapp.com/api/infoitinerary")
           .then(response => dataItinerary.push(...response.data.response.itinerary))
           console.log(dataItinerary); */
 

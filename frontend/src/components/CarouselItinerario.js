@@ -38,7 +38,7 @@ const responsive = {
     window.scrollTo(0, 0);
     console.log("useeffect");
     city.map(city =>
-        axios.get(`http://localhost:4000/api/infoitinerary/${city.name}`)
+        axios.get(`https://mytinerary-elena.herokuapp.com/api/infoitinerary/${city.name}`)
             .then(response => setItineraries(response.data.response.itinerary))
     )
 }, [])
