@@ -496,7 +496,7 @@ padding: 0;
     width: 80%;
    }
    .FormulariosSig{
-    justify-content: center;
+    justify-content: center!important;
    }
 
 .menu-signUP{
@@ -536,7 +536,7 @@ padding: 0;
    width: 80%;
   }
   .FormulariosSig{
-    justify-content: center;
+    justify-content: center !important;
    }
   .form-SignUP{
     position: relative;
