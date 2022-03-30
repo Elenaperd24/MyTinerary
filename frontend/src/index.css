@@ -634,3 +634,11 @@ padding: 0;
     justify-content: center;
   }
   }
+  @media (min-width: 270px) and (max-width:411px){
+    .desespero{
+      width: 80%;
+     }
+     .FormulariosSig{
+       justify-content: center;
+      }
+  }
