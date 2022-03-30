@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.bf5bf5e9.css",
-    "main.js": "/static/js/main.b82573c2.js",
+    "main.css": "/static/css/main.216d87de.css",
+    "main.js": "/static/js/main.a66fc2e7.js",
     "static/js/787.a34fb91a.chunk.js": "/static/js/787.a34fb91a.chunk.js",
     "static/media/banner1.jpg": "/static/media/banner1.f6363b2c48ea780c1f62.jpg",
-    "static/media/bannerSignin.jpg": "/static/media/bannerSignin.b67c512a9f390d2d5d28.jpg",
+    "static/media/bannerSignin.jpg": "/static/media/bannerSignin.f4c557d043364e9ef7b8.jpg",
     "static/media/pruebabanner.jpg": "/static/media/pruebabanner.d0faf611f21f5c378591.jpg",
     "static/media/login.png": "/static/media/login.332835ca465cd345d3cd.png",
     "static/media/bannerSignUP.jpg": "/static/media/bannerSignUP.35c140f3f963cb391192.jpg",
@@ -18,12 +18,12 @@
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
-    "main.bf5bf5e9.css.map": "/static/css/main.bf5bf5e9.css.map",
-    "main.b82573c2.js.map": "/static/js/main.b82573c2.js.map",
+    "main.216d87de.css.map": "/static/css/main.216d87de.css.map",
+    "main.a66fc2e7.js.map": "/static/js/main.a66fc2e7.js.map",
     "787.a34fb91a.chunk.js.map": "/static/js/787.a34fb91a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf5bf5e9.css",
-    "static/js/main.b82573c2.js"
+    "static/css/main.216d87de.css",
+    "static/js/main.a66fc2e7.js"
   ]
 }

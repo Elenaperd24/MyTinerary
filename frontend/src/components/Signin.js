@@ -68,7 +68,7 @@ function Signin() {
     }
     return (
         <>
-            <div className=" FormulariosSig  d-flex shadow" style={{ backgroundImage: "url(" + bannerSignUP + ")"/* , whidth: "100%", height: "100vh", justifyContent: "right", alignItems: "center"*/ }} >
+            <div className=" FormulariosSig  d-flex shadow" style={{ backgroundImage: "url(" + bannerSignin + ")"/* , whidth: "100%", height: "100vh", justifyContent: "right", alignItems: "center"*/ }} >
                 <div className="desespero">
                     <form className="formSign row" onSubmit={signinUser}>
                         <div className="mb-3 col-12">
