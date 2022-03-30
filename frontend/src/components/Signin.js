@@ -104,7 +104,7 @@ function Signin() {
                             cookiePolicy={'single_host_origin'}
                         />
                          <FacebookLogin
-                        appId="644823753295174"
+                        appId="1157819554991138"
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={responseFacebook} />
