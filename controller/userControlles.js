@@ -41,7 +41,7 @@ const userControllers = {
         if (user) {
             user.emailVerified = true
             await user.save()
-            res.redirect("http://localhost:3000/signin")
+            res.redirect("https://mytinerary-elena.herokuapp.com/api/verify/signin")
         }
         else {
             res.json({ success: false, response: "your email couldn't be verified" })

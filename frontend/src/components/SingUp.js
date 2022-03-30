@@ -134,7 +134,7 @@ function SignUp() {
                         cookiePolicy={'single_host_origin'}
                     />
                     <FacebookLogin
-                        appId="385035536492643"
+                        appId="1157819554991138"
                         autoLoad={false}
                         fields="name,email,picture"
                         callback={responseFacebook} />
