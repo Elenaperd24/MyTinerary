@@ -68,8 +68,8 @@ function Cities() {
         if (textCity !== "" || textCountry !== "" || probando) {
             let resultFilter = []
             resultFilter = cities.filter(city =>
-               // city.continent === continente &&
-                city.continent.includes(continente)&&
+               city.continent === continente &&
+              //  city.continent.includes(continente)&&
                 city.name.toLowerCase().includes(textCity) &&
                 city.country.toLowerCase().includes(textCountry)
             )
