@@ -112,6 +112,7 @@
     border: solid #ff4b4b;
     width: 40%;
     justify-content: center;
+    align-items: center;
     border-radius: 15px;
     height: 80vh;
     margin-top: 8vh;
@@ -140,26 +141,12 @@
     margin-top: 8vh;
   }
   /*************************************signup*****************************/
-  .menu-signUP{
-    background-color: white;
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 15vh;
-    right: 0vh;
-    height: 50vh;
-    width: 60vw;
-    border-radius: 15px 15px 15px 15px;
-    border: black;    
-
-  }
+ 
   .form-SignUP{
     background-color: #7dd6e5;
-    padding-top: 2vh;
-    margin-top: 0;
-    height: 50vh;
+    width: 95%;
+    padding: 2vh;
+    position: relative;
   }
  
   .btn-signUp{
@@ -526,17 +513,7 @@ padding: 0;
    .FormulariosSig{
     justify-content: center;
    }
-/* .menu{
-  border-radius: 15px;
-  width: 80vw;
-}
-.formSign{
-  position: relative;
-  width: 70vw;
-}
-.btn-signin{
-  width: 60vw;
-} */
+
 .menu-signUP{
   width: 80vw;
   background-color: white;
@@ -585,27 +562,6 @@ padding: 0;
   .FormulariosSig{
     justify-content: center;
    }
-  /* .formSign{
-    position: relative;
-    width: 70vw;
-    height: 80vh;
-    margin-top: 2vh;
-  } */
-/*   .btn-signin{
-    width: 60vw;
-    margin-top: 2vh;
-  } */
-  .menu-signUP{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 8vh;
-    border-radius: 15px;
-    width: 90vw;
-    height: 60vh;
-    background-color: white;
-    opacity: 95%;
-  }
   .form-SignUP{
     position: relative;
     top: 2vh;
@@ -634,7 +590,9 @@ padding: 0;
     justify-content: center;
   }
   }
-  @media (min-width: 270px) and (max-width:411px){
+
+
+  /* @media (max-width: 270px){
     .desespero{
       width: 80%;
      }
@@ -642,3 +600,11 @@ padding: 0;
        justify-content: center;
       }
   }
+  .prueba{
+    background-color: #fff5ee;    
+         
+  }
+  .logo{
+    width:30vw;    
+  }
+ */

@@ -15,7 +15,7 @@ function SignUp() {
     const responseGoogle = async (response) => {
         console.log(response)
         const NuevoUsuario = {
-            img:response.profileObj.imageUrl,
+            img: response.profileObj.imageUrl,
             name: response.profileObj.givenName,
             lastName: response.profileObj.familyName,
             email: response.profileObj.email,
@@ -39,9 +39,9 @@ function SignUp() {
     }
     async function newUser(event) {
         event.preventDefault()
-        let name= event.target[0].value
+        let name = event.target[0].value
         let lastName = event.target[1].value
-        let iniciales = name.charAt(0)+lastName.charAt(0)
+        let iniciales = name.charAt(0) + lastName.charAt(0)
         const NuevoUsuario = {
             img: iniciales.toUpperCase(),
             name: event.target[0].value,
@@ -86,61 +86,67 @@ function SignUp() {
             })
     }
     return (
-        <>  <div>
-            <img src={bannerSignUP} className="banner-image w-100 d-flex justify-content-center aling-item-center" />
-            <div className="menu-signUP shadow container-md">
-                <form onSubmit={newUser} className="container-md form-SignUP">
-                    <div className="d-flex">
-                        <div className="mb-3 container-md">
-                            <label for="exampleInputName" className="form-label">Name</label>
-                            <input type="name" className="form-control" id="exampleInputName" aria-describedby="emailHelp" />
-                            <div id="exampleInputName" className="form-text">Please enter your Name.</div>
+        <>
+            <div className=" FormulariosSig  d-flex shadow" style={{ backgroundImage: "url(" + bannerSignUP + ")"/* , whidth: "100%", height: "100vh", justifyContent: "right", alignItems: "center"*/ }} >
+                <div className="desespero">
+                    <form onSubmit={newUser} className="container-md form-SignUP">
+                        <div className="d-flex">
+                            <div className="mb-3 container-md">
+                                <label for="exampleInputName" className="form-label">Name</label>
+                                <input type="name" className="form-control" id="exampleInputName" aria-describedby="emailHelp" />
+                                <div id="exampleInputName" className="form-text">Please enter your Name.</div>
+                            </div>
+                            <div className="mb-3 container-md">
+                                <label for="exampleInputName2" className="form-label">Last Name</label>
+                                <input type="name" className="form-control" id="exampleInputName2" aria-describedby="emailHelp" />
+                                <div id="exampleInputName2" className="form-text">Please enter your Last Name.</div>
+                            </div>
                         </div>
                         <div className="mb-3 container-md">
-                            <label for="exampleInputName2" className="form-label">Last Name</label>
-                            <input type="name" className="form-control" id="exampleInputName2" aria-describedby="emailHelp" />
-                            <div id="exampleInputName2" className="form-text">Please enter your Last Name.</div>
+                            <label for="exampleInputEmail1" className="form-label">Email address</label>
+                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <div id="" className="form-text">Please enter a email.</div>
                         </div>
-                    </div>
-                    <div className="mb-3 container-md">
-                        <label for="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                        <div id="" className="form-text">Please enter a email.</div>
-                    </div>
-                    <div className="d-flex passwordSignUp">
-                        <div className="mb-3 container-md" >
-                            <label for="exampleInputPassword1" className="form-label">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" />
-                            <div id="exampleInputPassword1" className="form-text">Please enter a password.</div>
+                        <div className="d-flex passwordSignUp">
+                            <div className="mb-3 container-md" >
+                                <label for="exampleInputPassword1" className="form-label">Password</label>
+                                <input type="password" className="form-control" id="exampleInputPassword1" />
+                                <div id="exampleInputPassword1" className="form-text">Please enter a password.</div>
+                            </div>
+                            <div className="mb-3 container-md" >
+                                <label for="exampleInputPassword2" className="form-label">Confirm Password</label>
+                                <input type="password" className="form-control" id="exampleInputPassword2" />
+                                <div id="exampleInputPassword2" className="form-text">Please enter again your password.</div>
+                            </div>
                         </div>
-                        <div className="mb-3 container-md" >
-                            <label for="exampleInputPassword2" className="form-label">Confirm Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword2" />
-                            <div id="exampleInputPassword2" className="form-text">Please enter again your password.</div>
+                        <div className="mb-3 form-check">
+                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                            <label className="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-                    </div>
-                    <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" for="exampleCheck1">Remember me</label>
-                    </div>
-                    <div>
-                        <input type="submit" className="btn d-flex btn-signUp" />
-                    </div>
-                    <GoogleLogin
-                        clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
-                        buttonText="SignUp with Google Account"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                        cookiePolicy={'single_host_origin'}
-                    />
-                    <FacebookLogin
-                        appId="1157819554991138"
-                        autoLoad={false}
-                        fields="name,email,picture"
-                        callback={responseFacebook} />
-                </form>
+                        <div>
+                            <input type="submit" className="btn d-flex btn-signUp" />
+                        </div>
+                        <div className="d-flex">
+                            <div>
+                                <GoogleLogin
+                                    clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
+                                    buttonText="SignIn with Google Account"
+                                    onSuccess={responseGoogle}
+                                    onFailure={responseGoogle}
+                                    cookiePolicy={'single_host_origin'}
+                                />
+                            </div>
+                            <div>
+                                <FacebookLogin
+                                    appId="1157819554991138"
+                                    autoLoad={false}
+                                    fields="name,email,picture"
+                                    callback={responseFacebook} />
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
         </>
     )
 }
