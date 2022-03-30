@@ -65,7 +65,7 @@ function Cities() {
         let textCity = document.getElementById("City").value.toLowerCase()
         let textCountry = document.getElementById("Country").value.toLowerCase()
         console.log(continente)
-        if (textCity !== "" || textCountry !== "" || probando) {
+        if (textCity !== "" || textCountry !== "" || checked) {
             let resultFilter = []
             resultFilter = cities.filter(city =>
                city.continent === continente &&
