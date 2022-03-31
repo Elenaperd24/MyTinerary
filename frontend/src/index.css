@@ -507,7 +507,7 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 413px) and (max-width:1024px){
+@media (min-width: 413px) and (max-width:1082px){
     
   .prueba{
     background-color: #fff5ee;    
