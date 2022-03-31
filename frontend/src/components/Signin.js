@@ -85,11 +85,11 @@ function Signin() {
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                             <label className="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-                        <div className="helpForm col-12">
+                        <div className="helpForm">
                             <div className="d-flex">
-                                <h3>Don't have an account?</h3>
-                                <LinkRouter to="/singup" style={{ fontSize: "30px" }}>
-                                    Sign Up
+                                <p>Don't have an account?</p>
+                                <LinkRouter to="/singup" style={{ }}>
+                                   <p> Sign Up </p>
                                 </LinkRouter>
                             </div>
                         </div>

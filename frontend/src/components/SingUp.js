@@ -115,11 +115,11 @@ function SignUp() {
                                 <input type="password" className="form-control" id="exampleInputPassword1" />
                                 <div id="exampleInputPassword1" className="form-text">Please enter a password.</div>
                             </div>
-                            <div className="mb-3 container-md" >
+                          {/*   <div className="mb-3 container-md" >
                                 <label for="exampleInputPassword2" className="form-label">Confirm Password</label>
                                 <input type="password" className="form-control" id="exampleInputPassword2" />
                                 <div id="exampleInputPassword2" className="form-text">Please enter again your password.</div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="mb-3 form-check">
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
