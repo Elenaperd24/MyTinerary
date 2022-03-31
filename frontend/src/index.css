@@ -507,8 +507,7 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 412px) and (max-width:1082px){
-    
+@media (min-width: 412.99px) and (max-width:1024px){
   .prueba{
     background-color: #fff5ee; 
     width: auto   
@@ -559,15 +558,16 @@ padding: 0;
 }
 /**** *************************************small ***/
 
-@media (min-width: 0px) and (max-width: 412px) {
+@media (min-width: 0px) and (max-width: 413px) {
   .prueba{
-    background-color: red;    
+    background-color: #fff5ee;    
   }
   .logo{
     width:30vw;    
   }
   .desespero{
    width: 90%;
+   margin-top: 10vh;
   }
   .FormulariosSig{
     justify-content: center !important;
