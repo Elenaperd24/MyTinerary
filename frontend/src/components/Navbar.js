@@ -35,7 +35,7 @@ function Navbar() {
             })
     }
     const changeNavbarColor = () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
             setColorchange(true);
             setColorLogo(false);
         }

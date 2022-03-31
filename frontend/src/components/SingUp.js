@@ -5,6 +5,8 @@ import FacebookLogin from 'react-facebook-login';
 import swal from 'sweetalert'
 import bannerSignUP from "../image/banner/bannerSignUP.jpg";
 import axios from "axios";
+import bannerSignin from "../image/banner/bannerSignin.jpg";
+
 
 //<MaterialIcon className="icon-login" icon="account_circle" size='large' color="black" />//
 
@@ -87,7 +89,7 @@ function SignUp() {
     }
     return (
         <>
-            <div className=" FormulariosSig  d-flex shadow" style={{ backgroundImage: "url(" + bannerSignUP + ")"/* , whidth: "100%", height: "100vh", justifyContent: "right", alignItems: "center"*/ }} >
+            <div className=" FormulariosSig  d-flex shadow" style={{ backgroundImage: "url(" + bannerSignin + ")"/* , whidth: "100%", height: "100vh", justifyContent: "right", alignItems: "center"*/ }} >
                 <div className="desespero">
                     <form onSubmit={newUser} className="container-md form-SignUP">
                         <div className="d-flex">
@@ -126,22 +128,25 @@ function SignUp() {
                         <div>
                             <input type="submit" className="btn d-flex btn-signUp" />
                         </div>
-                        <div className="d-flex">
-                            <div>
-                                <GoogleLogin
-                                    clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
-                                    buttonText="SignIn with Google Account"
-                                    onSuccess={responseGoogle}
-                                    onFailure={responseGoogle}
-                                    cookiePolicy={'single_host_origin'}
-                                />
-                            </div>
-                            <div>
-                                <FacebookLogin
-                                    appId="1157819554991138"
-                                    autoLoad={false}
-                                    fields="name,email,picture"
-                                    callback={responseFacebook} />
+                        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                                <div style={{ margin: "4px", backgroundColor: "white", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
+                                    <GoogleLogin
+                                        clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
+                                        buttonText="SignIn with Google Account"
+                                        onSuccess={responseGoogle}
+                                        onFailure={responseGoogle}
+                                        cookiePolicy={'single_host_origin'}
+                                    />
+                                </div>
+                                <div style={{ margin: "4px", backgroundColor: "rgb(76, 105, 186)", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
+                                    <FacebookLogin
+                                        appId="1157819554991138"
+                                        autoLoad={false}
+                                        fields="name,email,picture"
+                                        callback={responseFacebook}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </form>

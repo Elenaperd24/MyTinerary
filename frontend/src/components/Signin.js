@@ -8,7 +8,7 @@ import swal from 'sweetalert'
 import { accionType } from '../reducer'
 import { useStateValue } from '../StateProvide';
 import { useEffect } from 'react';
-import bannerSignUP from "../image/banner/bannerSignUP.jpg";
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
 
 
@@ -86,33 +86,35 @@ function Signin() {
                             <label className="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
                         <div className="helpForm col-12">
-                            <h5>Need help logging in?</h5>
                             <div className="d-flex">
-                                <p>Don't have an account?</p>
-                                <LinkRouter to="/singup">
-                                    {/*<a className="" href="#">*/}Sign Up{/*</a>*/}
+                                <h3>Don't have an account?</h3>
+                                <LinkRouter to="/singup" style={{ fontSize: "30px" }}>
+                                    Sign Up
                                 </LinkRouter>
                             </div>
                         </div>
                         <div>
                             <input type="submit" className="btn d-flex btn-signin" value="Sign In" />
                         </div>
-                        <div className="d-flex">
-                            <div>
-                                <GoogleLogin
-                                    clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
-                                    buttonText="SignIn with Google Account"
-                                    onSuccess={responseGoogle}
-                                    onFailure={responseGoogle}
-                                    cookiePolicy={'single_host_origin'}
-                                />
-                            </div>
-                            <div>
-                                <FacebookLogin
-                                    appId="1157819554991138"
-                                    autoLoad={false}
-                                    fields="name,email,picture"
-                                    callback={responseFacebook} />
+                        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                            <div style={{ display:"flex", justifyContent:"center", flexDirection:"column"}}>
+                                <div style={{ margin:"4px" , backgroundColor: "white", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
+                                    <GoogleLogin
+                                        clientId="800359852680-6rhb9r988gompretejui4b0lmr8ok60i.apps.googleusercontent.com"
+                                        buttonText="SignIn with Google Account"
+                                        onSuccess={responseGoogle}
+                                        onFailure={responseGoogle}
+                                        cookiePolicy={'single_host_origin'}
+                                    />
+                                </div>
+                                <div style={{ margin:"4px", backgroundColor: "rgb(76, 105, 186)", borderStyle: "solid", borderColor: "#ff4b4b", borderRadius: "10px", display: "flex", justifyContent: "center" }}>
+                                    <FacebookLogin
+                                        appId="1157819554991138"
+                                        autoLoad={false}
+                                        fields="name,email,picture"
+                                        callback={responseFacebook}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </form>

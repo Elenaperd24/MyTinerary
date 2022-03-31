@@ -60,8 +60,7 @@ function Cities() {
             )
         }
     })
-    function filterCities(probando) {
-       console.log(probando)       
+    function filterCities() {
         let textCity = document.getElementById("City").value.toLowerCase()
         let textCountry = document.getElementById("Country").value.toLowerCase()
         console.log(continente)
@@ -69,7 +68,6 @@ function Cities() {
             let resultFilter = []
             resultFilter = cities.filter(city =>
                city.continent === continente &&
-              //  city.continent.includes(continente)&&
                 city.name.toLowerCase().includes(textCity) &&
                 city.country.toLowerCase().includes(textCountry)
             )
@@ -88,14 +86,10 @@ function Cities() {
     }
     function handelChange(event) {
         console.log("valores de handle")
-        //console.log(event.target.name)
-        // console.log(event.target.checked)
-      //  setCheck(true)
+        
         setContinente(event.target.name)
         setChecked(!event.target.checked)
-        let probando = event.target.checked
-        console.log(probando);
-        filterCities(probando)
+        filterCities()
     }
 
     return (

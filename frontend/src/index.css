@@ -82,6 +82,7 @@
     background-color:transparent;
   }
    
+   
   /* **************************Sign IN / UP ***************************************************/
 
   .FormulariosSig{
@@ -93,7 +94,8 @@
    }
   .desespero{
     display: flex;
-    background-color: white;
+    background-color: rgb(255,255,255,70%);
+    
     border: solid #ff4b4b;
     width: 40%;
     justify-content: center;
@@ -114,7 +116,8 @@
     flex-direction: column;
     padding-top: 2vh;
     align-items: center;
-    background-color: #9cd5e4;       
+    background-color: #9cd5e4;   
+    border-radius: 15px;    
   }
   .btn-signin{
     position: relative;
@@ -123,32 +126,50 @@
     background-color: #ff4b4b;
     color: white;
     width: 100%;
-    margin-top: 8vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
   }
   /*************************************signup*****************************/
  
   .form-SignUP{
-    background-color: #7dd6e5;
+    background-color: rgb(125, 214, 229,70%);
+    border: solid;
+    border-radius: 15px;
+    border-color: rgb(125, 214, 229,70%);
     width: 95%;
     padding: 2vh;
     position: relative;
   }
  
   .btn-signUp{
-      position: relative;
+    position: relative;
     align-items: center;
     justify-content: center;
     background-color: #ff4b4b;
     color: white;
     width: 100%;
-    margin-top: 6vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
   }
   .continer-signUp{
     display: flex;
     background-color:#9cd5e4;
     width: 100%;
   }
+  .btn-face{
+    border: solid;
+    border-color: red;
+    height: 2px;
+    padding: 0;
+  }
   
+
+  
+
+
+
+
+
 /* **************************card more likes ***************************************************/
 .iconos{
   justify-content: flex-end;
@@ -185,8 +206,8 @@
   align-items: center;
   margin-top: 2vh;
   background-color: #9cd5e4;
-  padding-left: 5vh;
-  margin-left: 2vh; 
+/*   padding-left: 5vh;
+ */  /* margin-left: 2vh;  */
   margin-bottom: 10vh;
 
 }
@@ -516,19 +537,28 @@ padding: 0;
   margin-top: 4vh;
 }
 .descripcionCity {
-
   width: 90vw;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
 }
 .nameCountry {
   display: flex;
   justify-content: center;
 }
 
+.NameCity{
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  width: 30vw;
+  font-size: 25px;
+  margin-top: 2vh;
+
+}
+
 }
 /**** *************************************small ***/
 
-@media (min-width: 80px) and (max-width: 412px) {
+@media (max-width: 412px) {
   .prueba{
     background-color: #fff5ee;    
   }
@@ -558,15 +588,24 @@ padding: 0;
     flex-direction: column;
     padding-right: 0;
     margin-left: 4vw;
-    margin-top: 2vh;
+    margin-top: 1vh;
   }
   .descripcionCity {   
-      width: 90vw;
-    margin-bottom: 5vh;
+    width: 90vw;
+    margin-bottom: 2px;
   }
   .nameCountry {
     display: flex;
     justify-content: center;
+  }
+  .NameCity{
+    position: absolute;
+    top: 5vh;
+    right: 4vw;
+    width: 40vw;
+    font-size: 25px;
+    margin-top: 2vh;
+  
   }
   }
 
