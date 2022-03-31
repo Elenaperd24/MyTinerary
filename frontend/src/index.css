@@ -608,3 +608,8 @@ padding: 0;
   
   }
   }
+  
+@media (width: 2340px) {
+  .prueba{
+    background-color: #fff5ee;    
+  }}
