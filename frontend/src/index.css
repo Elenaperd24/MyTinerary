@@ -611,5 +611,9 @@ padding: 0;
   
 @media (width: 2340px) {
   .prueba{
-    background-color: #fff5ee;    
+    background-color: red  ;  
   }}
+  @media (width: 1080) {
+    .prueba{
+      background-color: red  ;  
+    }}
