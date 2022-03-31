@@ -507,7 +507,7 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 413px) and (max-width:767px){
+@media (min-width: 413px) and (max-width:1024px){
     
   .prueba{
     background-color: #fff5ee;    
@@ -608,21 +608,3 @@ padding: 0;
   
   }
   }
-
-
-  /* @media (max-width: 270px){
-    .desespero{
-      width: 80%;
-     }
-     .FormulariosSig{
-       justify-content: center;
-      }
-  }
-  .prueba{
-    background-color: #fff5ee;    
-         
-  }
-  .logo{
-    width:30vw;    
-  }
- */
