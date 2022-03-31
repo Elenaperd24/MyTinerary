@@ -172,18 +172,21 @@
     color: #ff4b4a;
   }
 .cards-like .card {
-  left: 3vw;
+/*   left: 3vw;
+ */ 
   top: 2vw;
   padding: 8px;
   margin: 5px;
 }
 .cards-like {
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  width: 80%;
   align-items: center;
   margin-top: 2vh;
   background-color: #9cd5e4;
   padding-left: 5vh;
-  margin-left: 5vh;
+  margin-left: 2vh; 
   margin-bottom: 10vh;
 
 }
@@ -525,7 +528,7 @@ padding: 0;
 }
 /**** *************************************small ***/
 
-@media (max-width: 412px) {
+@media (min-width: 80px) and (max-width: 412px) {
   .prueba{
     background-color: #fff5ee;    
   }

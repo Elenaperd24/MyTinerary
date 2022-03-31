@@ -5,6 +5,7 @@ function CitiesLike(props) {
 
     let morePopulation = cities.filter(city => city.population < 35)
     return (
+        <div style={{display:"flex", justifyContent:"center"}}>
         <div className="cards-like">
             <div className="container">
                 <div className="row">
@@ -24,6 +25,7 @@ function CitiesLike(props) {
                     })}
                 </div>
             </div>
+        </div>
         </div>
     )
 }
