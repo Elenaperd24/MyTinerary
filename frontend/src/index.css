@@ -507,10 +507,11 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 413px) and (max-width:1082px){
+@media (min-width: 412px) and (max-width:1082px){
     
   .prueba{
-    background-color: #fff5ee;    
+    background-color: #fff5ee; 
+    width: auto   
          
   }
   .logo{
@@ -560,7 +561,7 @@ padding: 0;
 
 @media (min-width: 0px) and (max-width: 412px) {
   .prueba{
-    background-color: #fff5ee;    
+    background-color: red;    
   }
   .logo{
     width:30vw;    

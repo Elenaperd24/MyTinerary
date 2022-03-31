@@ -76,7 +76,7 @@ function Navbar() {
                                         <button className="btn btn-nav p-0 m-1 " ><img src={login} className="login" style={{ backgroundColor: "transparent", border: 'none', padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" /></button>
                                     </LinkRouter>
                                 </li> :
-                                <div className="dropdown dropstart ">
+                                <div className="dropdown">
                                     <button className="btn btn-nav p-0 m-1 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         {user.datosUser.from !== "MyTineray" ?
                                             <img src={user.datosUser.img} className="login" style={{ backgroundColor: "transparent", borderRadius: '100px', borderStyle: "solid", borderColor: "#ff4b4b", padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" />
@@ -86,8 +86,8 @@ function Navbar() {
                                             </Avatar>
                                         }
                                     </button>
-                                    <ul className="dropdown-menu dropstart" aria-labelledby="dropdownMenuButton1">
-                                        <li><div className="dropdown-item dropstart" onClick={() => cerrarSesion()}>Sign Out</div></li>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><div className="dropdown-item " onClick={() => cerrarSesion()}>Sign Out</div></li>
                                     </ul>
                                 </div>}
                         </ul>
