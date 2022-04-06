@@ -41,7 +41,6 @@ const ExpandMore = styled((props) => {
 }));
 
 function Comments(props) {
-    //console.log(props)
     //funciones de MATERIAL UI
     const actions = [
         { icon: <ModeEditIcon />, name: 'Edit' },
@@ -53,7 +52,6 @@ function Comments(props) {
         setExpanded(!expanded);
     };
     //FUNCIONALIDAD
-    //  console.log(props);
     const [{ user}, dispatch] = useStateValue()
 
     //CONSTANTES SET   
@@ -63,10 +61,8 @@ function Comments(props) {
     const [edit, setEdit] = useState(true)
     const [changeComment, setChangeComment] = useState()
     const [contador, setContador] = useState(props.likes.length)
-
+    
     //FUNCIONES
-
-
     const submitComent = async (event) => {
         event.preventDefault()
         swal({
@@ -91,7 +87,6 @@ function Comments(props) {
         let id = props.itinerary
         axios.get(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
             .then(response => {
-                console.log(response.data.response.comment)
                 setComment(response.data.response.comment)
             })
 

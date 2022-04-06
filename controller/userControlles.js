@@ -3,6 +3,8 @@ const bcryptjs = require("bcryptjs")
 const nodemailer = require("nodemailer")
 const crypto = require("crypto")
 const jwt = require("jsonwebtoken")
+const style = require('./mailcss.css')
+//mport style from "./mailcss.css"
 
 
 async function sendEmail(email, uniqueString) {
@@ -20,7 +22,8 @@ async function sendEmail(email, uniqueString) {
         from: sender,
         to: email,
         subject: "User verification",
-        html: `Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>here</a>Para validar tu email`
+        html: `<div class="mail">Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>
+        here</a>Para validar tu email</div>`
     }
     await transporter.sendMail(mailOptions, function (error, response) {
         if (error) {
@@ -41,7 +44,7 @@ const userControllers = {
         if (user) {
             user.emailVerified = true
             await user.save()
-            res.redirect("https://mytinerary-elena.herokuapp.com/api/verify/signin")
+            res.redirect("https://mytinerary-elena.herokuapp.com/api/signin")
         }
         else {
             res.json({ success: false, response: "your email couldn't be verified" })

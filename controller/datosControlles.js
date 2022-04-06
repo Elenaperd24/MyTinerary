@@ -45,13 +45,13 @@ const datosController = {
         try {
             itinerary = await Itinerary.findOne({ _id: id })
             let cityItinerary = itinerary.city
+            console.log("ciudad de itinerario con like:"+ cityItinerary)
             city = await Cities.find({ name: cityItinerary })
             let idCity = city[0]._id.toString()
             console.log(idCity)
 
-            if (itinerary.likes.includes(user)) {
-                
-                //Cities.findByIdAndUpdate({ _id: idCity }, { $pull: { likeItinerary: user } }, { new: true })
+            if (itinerary.likes.includes(user)) {                
+              //  Cities.findByIdAndUpdate({ _id: idCity }, { $pull: { likeItinerary: user } }, { new: true })
                 Itinerary.findByIdAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })
                     .then(response => {
                         resp.json({ success: true, response: response.likes })
@@ -59,15 +59,12 @@ const datosController = {
 
                     .catch(error => console.log(error))
             }
-            else {
-
-                
-                //  Cities.findByIdAndUpdate({ _id: idCity }, { $push: { likeItinerary: user } }, { new: true })
+            else {                
+               // Cities.findByIdAndUpdate({ _id: idCity }, { $push: { likeItinerary: user } }, { new: true })
                 Itinerary.findByIdAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })
                     .then(response => {
                         resp.json({ success: true, response: response.likes })
                     })
-
                     .catch(error => console.log(error))
             }
         } catch (err) {

@@ -9,7 +9,7 @@ import { Link as LinkRouter } from "react-router-dom";
 
 export default function FloatingActionButtons() {
   return (
-    <Box sx={{ '& > :not(style)': { m: 1.7}}}>
+    <Box sx={{ '& > :not(style)': { m: 1.7}}}> 
       
       <Fab color="secondary" aria-label="MapsUgc">
         <MapsUgcIcon />

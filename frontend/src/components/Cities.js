@@ -32,9 +32,10 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 function Cities() {
     //MIS DATOS DB   
     const [{ cities, citiesNew }, dispatch] = useStateValue()
-    const [check, setCheck ] = useState()
+    const [check, setCheck ] = useState(false)
     const[continente, setContinente]  = useState()
-    const[checked, setChecked]  = useState(true)
+    const[checked, setChecked]  = useState(false)
+  //  console.log("valor inicial de checked:" + checked)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -61,6 +62,7 @@ function Cities() {
         }
     })
     function filterCities() {
+        console.log(checked);
         let textCity = document.getElementById("City").value.toLowerCase()
         let textCountry = document.getElementById("Country").value.toLowerCase()
         console.log(continente)
@@ -71,7 +73,7 @@ function Cities() {
                 city.name.toLowerCase().includes(textCity) &&
                 city.country.toLowerCase().includes(textCountry)
             )
-            console.log(resultFilter)
+         //   console.log(resultFilter)
             dispatch({
                 type: accionType.FILTER,
                 citiesNew: resultFilter
@@ -84,12 +86,12 @@ function Cities() {
             })
         }
     }
-    function handelChange(event) {
-        console.log("valores de handle")
-        
+    async function handelChange(event) {
+        console.log("valor handel de checked:" + checked)       
         setContinente(event.target.name)
-        setChecked(!event.target.checked)
-        filterCities()
+       // console.log("valor del evento"+event.target.checked);
+        //setChecked(event.target.checked)
+        filterCities(event.target.checked)
     }
 
     return (

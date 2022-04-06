@@ -30,7 +30,8 @@
 }
 /* **************************Navbar ***************************************************/
 .navbar-nav{
-  margin-right: 2vh;
+  margin-right: 2vw;
+  width: auto;
 }
 .link-vav {
   position: absolute;
@@ -81,7 +82,22 @@
   .prueba{
     background-color:transparent;
   }
-   
+  .navbar-toggler{
+    margin-right: 4vw;
+  }
+  .signOut{
+    background-color: #9cd5e4;
+    position: relative;
+    right: 0 !important;
+    text-align: left;
+    justify-content: right;      
+  }
+  .dropdown-menu[data-bs-popper] {
+    top: 100% !important;
+    right: 0 !important;
+    margin-top: 0.125rem !important;
+  }
+
    
   /* **************************Sign IN / UP ***************************************************/
 
@@ -507,10 +523,9 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 412.99px) and (max-width:1024px){
+@media (min-width: 413px) and (max-width:1024px){
   .prueba{
     background-color: #fff5ee; 
-    width: auto   
          
   }
   .logo{
@@ -610,11 +625,3 @@ padding: 0;
   }
   }
   
-@media (width: 2340px) {
-  .prueba{
-    background-color: red  ;  
-  }}
-  @media (width: 1080) {
-    .prueba{
-      background-color: red  ;  
-    }}
