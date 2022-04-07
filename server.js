@@ -12,8 +12,8 @@ require('./config/database')
 require('./config/passport')
 //middlewares
 app.use(cors());
-app.use(express.json());
 app.use(passport.initialize())
+app.use(express.json());
 app.use('/api',Router)
 
 if(process.env.NODE_ENV === "production") {
