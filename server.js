@@ -11,8 +11,8 @@ const HOST = process.env.HOST || "0.0.0.0"
 require('./config/database')
 require('./config/passport')
 //middlewares
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use(passport.initialize())
 app.use('/api',Router)
 
