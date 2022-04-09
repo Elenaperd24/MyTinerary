@@ -48,11 +48,17 @@
 .btn-nav {
   font-family: 'Acme', sans-serif;
   font-size: 3vh;
-  background-color:transparent;
-}
-.nav-link :hover {
-  background-color:#ff4b4a;
+  background-color:#ff4b4b;
   color: white;
+}
+.btn-Login{
+  background-color:white ;
+  border-radius: 100%;
+}
+
+.nav-link :hover {
+  background-color:#9cd5e4;
+  color: #ff4b4b;
   }
   .login{       
     height: 6.5vh;
@@ -130,7 +136,7 @@
   
   .helpForm{
     display: flex;
-    padding-top: 2vh;
+    padding: 2vh;
     align-items: center;
     background-color: #9cd5e4;   
     border-radius: 15px;    
@@ -178,15 +184,7 @@
     height: 2px;
     padding: 0;
   }
-  
-
-  
-
-
-
-
-
-/* **************************card more likes ***************************************************/
+  /* **************************card more likes ***************************************************/
 .iconos{
   justify-content: flex-end;
   align-items: flex-end;
@@ -476,25 +474,31 @@ padding: 0;
   position: relative;
   left: 0;
   width: 60%;
-  padding: 0;
-  margin: 0;
-  padding-top: 2vh;
+  padding: 0.5vh;
+  margin: 0.5vh;
   padding-bottom: 2vh;
   padding-left: 0.5vw;
   background-color: #ff4a48;
   color: white;
-  margin-bottom: 3vh;
-  margin-top: 3vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 /**************************comments**************************************/
 .comments {
-  background-color: rgb(156, 213, 228,100%);
+  background-color: #fff5ee;
+  border-style: solid;
+  border-color: #7dd6e5;;
+  padding: 8px;
+  overflow-y: auto;
+  height: 350px;
+}
+.commentsA {
+  background-color: #fff5ee;
   border-style: none;
   padding: 8px;
   overflow-y: auto;
-  height: 300px;
 
 }
 .comments::-webkit-scrollbar {
@@ -523,7 +527,109 @@ padding: 0;
   text-decoration: none;
 }
 /***************************************media query****/
-@media (min-width: 413px) and (max-width:1024px){
+@media (min-width: 1024px) and (max-width:1183px){
+  
+  .logo{
+    width:30vw;    
+  }
+  .desespero{
+    width: 50%;
+   }
+   .FormulariosSig{
+    justify-content: center!important;
+   }
+
+.menu-signUP{
+  width: 80vw;
+  background-color: white;
+  opacity: 90%;}
+
+.informacionPrincipal{
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 0;
+  margin-left: 4vw;
+  margin-top: 4vh;
+}
+.descripcionCity {
+  width: 90vw;
+  margin-bottom: 3vh;
+}
+.nameCountry {
+  display: flex;
+  justify-content: center;
+}
+
+.NameCity{
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  width: 30vw;
+  font-size: 25px;
+  margin-top: 2vh;
+
+}
+.textSignUp{
+  display: flex;
+  flex-direction: column;
+    
+}
+
+}
+
+@media (min-width: 767px) and (max-width:1024px){
+  
+  .logo{
+    width:30vw;    
+  }
+  .desespero{
+    width: 80%;
+   }
+   .FormulariosSig{
+    justify-content: center!important;
+   }
+
+.menu-signUP{
+  width: 80vw;
+  background-color: white;
+  opacity: 90%;}
+
+.informacionPrincipal{
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  padding-right: 0;
+  margin-left: 4vw;
+  margin-top: 4vh;
+}
+.descripcionCity {
+  width: 90vw;
+  margin-bottom: 3vh;
+}
+.nameCountry {
+  display: flex;
+  justify-content: center;
+}
+
+.NameCity{
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  width: 30vw;
+  font-size: 25px;
+  margin-top: 2vh;
+
+}
+.textSignUp{
+  display: flex;
+  flex-direction: column;
+    
+}
+
+}
+
+@media (min-width: 413px) and (max-width:767px){
   .prueba{
     background-color: #fff5ee; 
          
@@ -568,6 +674,11 @@ padding: 0;
   font-size: 25px;
   margin-top: 2vh;
 
+}
+.textSignUp{
+  display: flex;
+  flex-direction: column;
+    
 }
 
 }
@@ -622,6 +733,11 @@ padding: 0;
     font-size: 25px;
     margin-top: 2vh;
   
+  }
+  .textSignUp{
+    display: flex;
+    flex-direction: column;
+
   }
   }
   

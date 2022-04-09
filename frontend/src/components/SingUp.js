@@ -13,6 +13,10 @@ import bannerSignin from "../image/banner/bannerSignin.jpg";
 //<img src={login} className="login" alt="login" />//
 
 function SignUp() {
+    useEffect(() => {
+        window.scrollTo(0, 0);       
+    }, [])
+
 
     const responseGoogle = async (response) => {
         console.log(response)

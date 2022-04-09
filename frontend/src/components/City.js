@@ -6,6 +6,10 @@ import CarouselItinerario from "./CarouselItinerario";
 import { useParams } from "react-router-dom";
 
 function City() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        
+    }, [])
     const [itineraries, setItineraries] = useState([])
     const { id } = useParams()
     const [{ cities }, dispatch] = useStateValue()
@@ -17,9 +21,9 @@ function City() {
                 <div>
                     <div>
                         <img src={process.env.PUBLIC_URL + `/image/cities/${city[0].name}/${city[0].images.banner1}`} className="baner-image w-100 bannerCity d-flex justify-content-center aling-item-center" alt="..." />
-                        <div>
+                       {/*  <div>
                             <div className="NameCity" style={{ fontFamily: "Permanent Marker" }} >{city[0].name}</div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="d-flex informacionPrincipal">
                         <div className="nameCountry ">

@@ -14,6 +14,10 @@ import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
 function Signin() {
     const [{ user }, dispatch] = useStateValue()
+    useEffect(() => {
+        window.scrollTo(0, 0);
+       
+    }, [])
 
     const responseGoogle = (response) => {
         const UserData = {
@@ -85,11 +89,11 @@ function Signin() {
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                             <label className="form-check-label" for="exampleCheck1">Remember me</label>
                         </div>
-                        <div className="helpForm">
-                            <div className="d-flex">
-                                <p>Don't have an account?</p>
+                        <div className="helpForm" style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+                            <div className="d-flex textSignUp" >
+                                <h3>Don't have an account?</h3>
                                 <LinkRouter to="/singup" style={{ }}>
-                                   <p> Sign Up </p>
+                                   <h3> Sign Up </h3>
                                 </LinkRouter>
                             </div>
                         </div>

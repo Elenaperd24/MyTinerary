@@ -17,6 +17,8 @@ import { alpha, styled } from '@mui/material/styles';
 import { pink } from '@mui/material/colors';
 import Switch from '@mui/material/Switch';
 
+
+
 const GreenSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase.Mui-checked': {
         color: pink[600],
@@ -32,21 +34,24 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 function Cities() {
     //MIS DATOS DB   
     const [{ cities, citiesNew }, dispatch] = useStateValue()
-    const [check, setCheck ] = useState(false)
-    const[continente, setContinente]  = useState()
-    const[checked, setChecked]  = useState(false)
-  //  console.log("valor inicial de checked:" + checked)
+    const [check, setCheck] = useState(false)
+    const [continenteValue, setContinenteValue] = useState()
+    let continente = ""
+    let checked = false
+    //const[checked, setChecked]  = useState(false)
+    //  console.log("valor inicial de checked:" + checked)
 
     useEffect(() => {
         window.scrollTo(0, 0);
-       // setChecked(true)
+        // setChecked(true)
+
         dispatch({
             type: accionType.FILTER,
             citiesNew: cities
         })
     }, [])
     let continents = []
-    cities.map((city) => {
+    citiesNew.map((city) => {
         if (!continents.includes(city.continent)) {
             return (
                 continents.push(city.continent)
@@ -62,18 +67,19 @@ function Cities() {
         }
     })
     function filterCities() {
-        console.log(checked);
+        console.log(continente);
+
         let textCity = document.getElementById("City").value.toLowerCase()
         let textCountry = document.getElementById("Country").value.toLowerCase()
-        console.log(continente)
-        if (textCity !== "" || textCountry !== "" || checked) {
+
+        if (textCity !== "" || textCountry !== "") {
             let resultFilter = []
             resultFilter = cities.filter(city =>
-               city.continent === continente &&
+                city.continent === continenteValue &&
                 city.name.toLowerCase().includes(textCity) &&
                 city.country.toLowerCase().includes(textCountry)
             )
-         //   console.log(resultFilter)
+            //   console.log(resultFilter)
             dispatch({
                 type: accionType.FILTER,
                 citiesNew: resultFilter
@@ -86,30 +92,46 @@ function Cities() {
             })
         }
     }
-    async function handelChange(event) {
-        console.log("valor handel de checked:" + checked)       
-        setContinente(event.target.name)
-       // console.log("valor del evento"+event.target.checked);
-        //setChecked(event.target.checked)
-        filterCities(event.target.checked)
+    function handelChange(event) {  
+        setContinenteValue(event.target.name)
+        let resultFilter
+        resultFilter = cities.filter(city => city.continent === event.target.name)
+        dispatch({
+            type: accionType.FILTER,
+            citiesNew: resultFilter
+        })
+        if (event.target.name === "All continent") {
+            dispatch({
+                type: accionType.FILTER,
+                citiesNew: cities
+            })
+        }
     }
+
 
     return (
         <>
             <CarouselHeader cities={cities} />
             <div style={{ display: "flex", justifyContent: "center" }}>
-                {continents?.map((continent) => {
-                    return (
+                {continents.length > 1 ?
+                    continents?.map((continent) => {
+                        return (
+                            <div>
+                                <Switch {...label} color="secondary" defaultChecked onChange={handelChange} name={continent} />
+                                {continent}
+                            </div>
+                        )
+                    })
+                    :
+                    <div>
+                        <GreenSwitch {...label} onChange={handelChange} name={"All continent"} />
+                        Press to see all continent
                         <div>
-                            <Switch {...label} color="secondary" onChange={handelChange} name={continent} />
-                            {continent}
+                            <h1 style={{fontFamily: "Permanent Marker", color: "#ff4b4b", display: "flex", justifyContent: "center", marginTop: "2%" }}>
+                                {continenteValue}
+                            </h1>
                         </div>
-                    )
-                })}
-                <div>
-                    <GreenSwitch {...label} defaultChecked />
-                    All continent
-                </div>
+                    </div>}
 
             </div>
             <div className='busquedaCity'>
@@ -119,7 +141,7 @@ function Cities() {
                         freeSolo
                         options={countries.map((option) => option)}
                         onKeyPress={filterCities}
-                       // onChange={filterCities}
+                        // onChange={filterCities}
                         renderInput={(params) => <TextField {...params} label="Country" color="success" focused onChange={filterCities} />}
                     />
                     <Autocomplete

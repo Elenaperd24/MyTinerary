@@ -4,12 +4,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import React, { useState } from "react";
+import { Link as LinkRouter } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentIcon from '@mui/icons-material/Comment';
 import SendIcon from '@mui/icons-material/Send';
 import swal from 'sweetalert'
@@ -24,9 +24,8 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { type } from "@testing-library/user-event/dist/type";
-import { accionType } from '../reducer'
-
+import ClearIcon from '@mui/icons-material/Clear';
+import PersonIcon from '@mui/icons-material/Person';
 
 
 const ExpandMore = styled((props) => {
@@ -52,7 +51,7 @@ function Comments(props) {
         setExpanded(!expanded);
     };
     //FUNCIONALIDAD
-    const [{ user}, dispatch] = useStateValue()
+    const [{ user }, dispatch] = useStateValue()
 
     //CONSTANTES SET   
     let date = ""
@@ -60,8 +59,8 @@ function Comments(props) {
     const [reload, setReload] = useState(false)
     const [edit, setEdit] = useState(true)
     const [changeComment, setChangeComment] = useState()
-    const [contador, setContador] = useState(props.likes.length)
-    
+
+
     //FUNCIONES
     const submitComent = async (event) => {
         event.preventDefault()
@@ -94,12 +93,14 @@ function Comments(props) {
 
     const deleteEdit = async (id, name) => {
         if (name === "Delete") {
-            axios.delete(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
-            setReload(!reload)
+            console.log("entre al if")
+            await axios.delete(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
+                .then(response => setReload(!reload))
         }
         else if (name === "Edit") {
             setEdit(false)
         }
+
     }
     const inputText = (event) => {
         setChangeComment(event.target.value)
@@ -108,60 +109,88 @@ function Comments(props) {
         fecha()
         let data = changeComment
         let newDate = date
-        axios.put(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`, { data, newDate })
-            .then(response => {
-                setEdit(true)
-                setReload(!reload)
-            })
+        if (id !== "x") {
+            await axios.put(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`, { data, newDate })
+                .then(response => {
+                    setEdit(true)
+                    setReload(!reload)
+                })
+        }
+        else {
+            setEdit(true)
+        }
 
     }
 
-    const Darlike = async () => {
-        console.log(user)
-        const token = localStorage.getItem("token")
-        axios.put(`https://mytinerary-elena.herokuapp.com/api/likeDislike/${props.itinerary}`, {},
-            { headers: { 'Authorization': 'Bearer ' + token } }
-        )
-            .then(response => {
-                console.log(response)
-                setContador(response.data.response.length)
-              
-            })
-
-    }
 
     function fecha() {
         var registro = new Date()
         var dia = registro.getDate()
-        var mes = registro.getMonth() +1
+        var mes = registro.getMonth() + 1
         var time = registro.getHours() + ":" + registro.getMinutes()
         var year = registro.getYear()
         date = dia + "/" + mes + "/" + year + " " + time
     }
     return (
         <>
-            <CardActions>
-                <Box sx={{ '& > :not(style)': { m: 1.7 } }}>
-                    <Fab aria-label="like" onClick={Darlike} >
-                        <FavoriteIcon /> {contador}
-                    </Fab>
-                </Box>
-                {user ?
-                    <ExpandMore
-                        // expand={expanded}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label="show more"
-                    >
-                        <Fab color="secondary" aria-label="CommentIcon">
-                            <CommentIcon />
-                        </Fab>
-                    </ExpandMore> : ""}
-            </CardActions>
             <h3 style={{ textDecoration: "none", color: "#ff6f6f", fontFamily: "Permanent Marker", textAlign: "center" }}>
-               {comment?.length>0?"know opinions of our users":"Be the first to comment"} 
+                {comment?.length > 0 ? "know opinions of our users" :
+                user?
+                    <div>
+                       <p>"Be the first to comment"</p>        
+                      
+                    </div>:
+                    <div>
+                    <p>"Be the first to comment"</p>          
+                   <div>
+                         <LinkRouter to="/signin" className="">
+                             <div>
+                                     <PersonIcon fontSize={"large"} />
+                                     <h2>Signin</h2>
+                                 </div>
+                             </LinkRouter>
+                         </div>
+                 </div>                    
+                }
             </h3>
-            <div className="comments shadow">
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <form onSubmit={submitComent}>
+                        <div>
+                            <label for="exampleFormControlTextarea1" className="form-label"></label>
+                            <div style={{ display: "flex", justifyContent: "right", margin: 0 }}>
+                                <ExpandMore
+                                    // expand={expanded}
+                                    onClick={handleExpandClick}
+                                    aria-expanded={expanded}
+                                    aria-label="show more"
+                                >
+                                    <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} type="submit" />
+                                </ExpandMore>
+                            </div>
+                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{ borderStyle: "solid", borderColor: "#ff4a48" }}></textarea>
+                        </div>
+                        <div style={{ display: "flex", justifyContent: "right" }}>
+                            <div >
+                                <ExpandMore
+                                    // expand={expanded}
+                                    onClick={handleExpandClick}
+                                    aria-expanded={expanded}
+                                    aria-label="show more"
+                                >
+                                    <div>
+                                        <Fab sx={{ bgcolor: "" }} aria-label="SendIcon" aria-expanded={expanded} type="submit">
+                                            <SendIcon style={{ color: "ff4a48" }} />
+                                        </Fab>
+                                    </div>
+                                </ExpandMore>
+                            </div>
+
+                        </div>
+                    </form>
+                </CardContent>
+            </Collapse>
+            <div className={comment?.length > 0 ? "comments shadow" : "commentsA"}>
                 {comment?.map((item) => {
                     return (
                         <Card sx={{ maxWidth: 390, margin: "6px" }}>
@@ -176,6 +205,7 @@ function Comments(props) {
                                 }
                                 title={item.user.name.charAt(0).toUpperCase() + item.user.name.slice(1)}
                                 subheader={item.date + "h" + " from " + item.user.from}
+
                             />
                             <CardContent>
                                 {user?.datosUser.id === item.user._id ?
@@ -203,7 +233,7 @@ function Comments(props) {
                                             direction="left"
                                         >
                                             {actions.map((action) => (
-                                                <SpeedDialAction sx={{ backgroundColor: "#ff4a48", color: "white" }}
+                                                <SpeedDialAction sx={{ bgcolor: "#ff4a48", color: "white" }}
                                                     key={action.name}
                                                     icon={action.icon}
                                                     tooltipTitle={action.name}
@@ -212,38 +242,42 @@ function Comments(props) {
                                             ))}
                                         </SpeedDial>
                                     </Box> :
-                                    <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} onClick={() => editComments(item._id)}>
-                                        <SendIcon />
-                                    </Fab>
+                                    <div>
+                                        <ExpandMore
+                                            // expand={expanded}
+                                            //  onClick={handleExpandClick}
+                                            aria-expanded={expanded}
+                                            aria-label="SendIcon"
+                                            onClick={() => editComments("x")}
+                                        >
+                                            <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} type="submit" />
+                                        </ExpandMore>
+
+                                        <div style={{ display: "flex", justifyContent: "right", marginRight: "5px", marginBottom: "5px" }}>
+                                            <Fab sx={{ bgcolor: "#7dd6e5", margin: "2px" }} aria-label="SendIcon" aria-expanded={expanded} onClick={() => editComments(item._id)}>
+                                                <SendIcon />
+                                            </Fab>
+                                        </div>
+                                    </div>
                                 : ""
                             }
                         </Card>)
-                })}          
-            </div>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <form onSubmit={submitComent}>
-                        <div className="mb-3">
-                            <label for="exampleFormControlTextarea1" className="form-label"></label>
-                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{ borderStyle: "solid", borderColor: "#ff4a48" }}></textarea>
-                        </div>
-                        <div>
-                            <div>
-                                <ExpandMore
-                                    // expand={expanded}
-                                    onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                                    <Fab color="secondary" aria-label="SendIcon" aria-expanded={expanded} type="submit">
-                                        <SendIcon />
-                                    </Fab>
-                                </ExpandMore>
-                            </div>
-                        </div>
-                    </form>
-                </CardContent>
-            </Collapse>
+                })}
+            </div >
+            <CardActions>
+                {user && !expanded ?
+                    <ExpandMore
+                        // expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <Fab color="secondary" aria-label="CommentIcon" sx={{ bgcolor: "#ff4a48" }}>
+                            <CommentIcon />
+                        </Fab>
+                    </ExpandMore> : ""}
+            </CardActions>
+
         </>
     )
 }

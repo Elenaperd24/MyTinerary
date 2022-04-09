@@ -121,7 +121,7 @@ function Navbar() {
                     <div className={"collapse navbar-collapse " + color} id="navbarSupportedContent">
                         <div className="mx-auto"></div>
                         <ul className="navbar-nav ">
-                            <li className="nav-item" >
+                            <li className="nav-item"  >
                                 <LinkRouter to="/home" className="nav-link">
                                     <button className="btn btn-nav" >HOME</button>
                                 </LinkRouter>
@@ -134,7 +134,7 @@ function Navbar() {
                             {!user ?
                                 <li className="nav-item">
                                     <LinkRouter to="/signin" className=" ">
-                                        <button className="btn btn-nav p-0 m-1 " ><img src={login} className="login" style={{ backgroundColor: "transparent", border: 'none', padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" /></button>
+                                        <button className="btn btn-Login p-0 m-1 " ><img src={login} className="login" style={{ backgroundColor: "transparent", border: 'none', padding: 2, marginTop: 6, marginLeft: 4 }} alt="login" /></button>
                                     </LinkRouter>
                                 </li> :
 
