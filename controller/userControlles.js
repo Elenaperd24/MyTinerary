@@ -24,7 +24,7 @@ async function sendEmail(email, uniqueString) {
         <h1 style="color:#ff4b4a; font-family:Permanent Marker;">My Tinerary</h1>
         <h2>Let's travel The World</h2>
        <h2>Press</h2>
-       <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}><h2>Here</h2> </a>
+       <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}> <h2>Here</h2> </a>
        <h2>Para validar tu email</h2></div>`
         /* 
         html: `<div style"background-color:"red">Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>
