@@ -20,12 +20,13 @@ async function sendEmail(email, uniqueString) {
         from: sender,
         to: email,
         subject: "User verification",
-        html:`<div style="background-color:#fff5ee; border-style: solid; border-color: #ff4b4a; height:80vh; display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <h1 style="color:#ff4b4a; font-family:Permanent Marker;">My Tinerary</h1>
-        <h2>Let's travel The World</h2>
-       <h2>Press</h2>
-       <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}> <h2>Here</h2> </a>
-       <h2>Para validar tu email</h2></div>`
+        html:`<div style="background-color:#fff5ee; border-style: solid; border-color: #ff4b4a; height:80vh; display: flex; justify-content: center; align-items: center;">
+                <h1 style="color:#ff4b4a; font-family:Permanent Marker;">My Tinerary</h1>
+                 <h2>Let's travel The World</h2>
+                <h2>Press</h2>
+                <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}> Here </a>
+                <h2>Para validar tu email</h2>
+            </div>`
         /* 
         html: `<div style"background-color:"red">Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>
         here</a>Para validar tu email
