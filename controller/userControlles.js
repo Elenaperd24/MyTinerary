@@ -20,12 +20,13 @@ async function sendEmail(email, uniqueString) {
         from: sender,
         to: email,
         subject: "User verification",
-        html:`<div style="background-color:#fff5ee; border-style: solid; border-color: #ff4b4a; height:80vh; display: flex; justify-content: center; align-items: center;">
-                <h1 style="color:#ff4b4a; font-family:Permanent Marker;">My Tinerary</h1>
-                 <h2>Let's travel The World</h2>
-                <h2>Press</h2>
-                <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}> Here </a>
-                <h2>Para validar tu email</h2>
+        html:`<div  style="width: 400px; height: 200px; margin-left: 20%;">
+            <div style="width: 100%; height:100%; background-color: #fff5ee;">
+                  <h2 style="font-size: 30px;text-align: center;font-family: 'Poppins', sans-serif;  color: #ff4b4b; font-weight: 800;">EMAIL VALIDATION</h2>
+                  <h2 style="font-size: 20px;text-align: center;font-family: 'Poppins', sans-serif;  color: rgb(99, 99, 99); font-weight: 100;">Let's travel The World</h2>
+                  <a href=https://mytinerary-ana.herokuapp.com/api/verify/${uniqueText} style=" color: rgb(255, 85, 0); font-size: 20px;text-align: center;font-family: 'Poppins', sans-serif; text-decoration: none;margin-left: 35%; font-weight: 700;">Click Here</a>
+                 <h1 style="font-size: 30px ; text-align: center; color:#ff4b4a; font-family:Permanent Marker;font-weight: 800">My Tinerary</h1>
+            </div>
             </div>`
         /* 
         html: `<div style"background-color:"red">Press <a href=https://mytinerary-elena.herokuapp.com/api/verify/${uniqueString}>
