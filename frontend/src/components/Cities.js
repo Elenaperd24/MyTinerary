@@ -43,7 +43,7 @@ function Cities() {
             citiesNew: cities
         })
     }, [])
-  
+
     let continents = []
     citiesNew.map((city) => {
         if (!continents.includes(city.continent)) {
@@ -67,30 +67,32 @@ function Cities() {
         let textCountry = document.getElementById("Country").value.toLowerCase()
         if (textCity !== "" || textCountry !== "") {
             let resultFilter = []
-            if(continenteValue ==="All continent" || continenteValue === ""){
+            if (continenteValue === "All continent" || continenteValue === "") {
                 resultFilter = cities.filter(city =>
-                city.name.toLowerCase().includes(textCity) &&
-                city.country.toLowerCase().includes(textCountry))
-            } 
-            else{
-                resultFilter = cities.filter(city =>
-                    city.continent=== continenteValue&&
                     city.name.toLowerCase().includes(textCity) &&
                     city.country.toLowerCase().includes(textCountry))
             }
-          dispatch({
+            else {
+                resultFilter = cities.filter(city =>
+                    city.continent === continenteValue &&
+                    city.name.toLowerCase().includes(textCity) &&
+                    city.country.toLowerCase().includes(textCountry))
+            }
+            dispatch({
                 type: accionType.FILTER,
                 citiesNew: resultFilter
             })
         }
         else {
-        let resultFilter
-        resultFilter = cities.filter(city => city.continent === continenteValue)
-            if(resultFilter.length>0){
-            dispatch({
-            type: accionType.FILTER,
-            citiesNew: resultFilter})}
-            else{
+            let resultFilter
+            resultFilter = cities.filter(city => city.continent === continenteValue)
+            if (resultFilter.length > 0) {
+                dispatch({
+                    type: accionType.FILTER,
+                    citiesNew: resultFilter
+                })
+            }
+            else {
                 dispatch({
                     type: accionType.FILTER,
                     citiesNew: cities
@@ -99,7 +101,7 @@ function Cities() {
         }
     }
 
-    function selectContinent(event) {  
+    function selectContinent(event) {
         setContinenteValue(event.target.name)
         let resultFilter
         resultFilter = cities.filter(city => city.continent === event.target.name)
@@ -131,10 +133,10 @@ function Cities() {
                     :
                     <div>
                         <GreenSwitch {...label} onChange={selectContinent} name={"All continent"} />
-                        Press to see all continent
+                       Press to see all continent 
                         <div>
-                            <h1 style={{fontFamily: "Permanent Marker", color: "#ff4b4b", display: "flex", justifyContent: "center", marginTop: "2%" }}>
-                                {continenteValue==="All continent"?"":continenteValue}
+                            <h1 style={{ fontFamily: "Permanent Marker", color: "#ff4b4b", display: "flex", justifyContent: "center", marginTop: "2%" }}>
+                                {continenteValue === "All continent" ? "" : continenteValue}
                             </h1>
                         </div>
                     </div>}
@@ -176,7 +178,7 @@ function Cities() {
                         citiesNew.map((city) => {
                             return (
                                 <Card sx={{ maxWidth: 375, margin: "2vw", background: "#fff4ee", borderRadius: "15px" }} key={city._id}>
-                                    <CardHeader                                   
+                                    <CardHeader
                                         action={
                                             <IconButton aria-label="settings">
                                                 <MoreVertIcon />

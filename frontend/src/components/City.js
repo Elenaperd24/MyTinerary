@@ -60,6 +60,7 @@ function City() {
                                     {/* <p className="card-text info ">{city[0].descripcion.weather}</p> */}
                                 </div>
                             </div>
+                          
                         </div>
                     </div>
                     
