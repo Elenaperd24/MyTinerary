@@ -10,6 +10,26 @@ db.itineraries.drop();
 // Inserta los documentos que nosotros le indiquemos.
 db.itineraries.insertMany([ 
 {'name':	'Boat Excursion To The Tiger And Delta Del Paraná',
+'nroItinerario':	1,
+'city':	'Buenos Aires',
+'duracion':	'8',
+'costo':	'52',
+'descripcion':	'We Will Sail Through The Delta del Parana to Discover Sites Flora and Fauna And Enter Ourselves In The City of Tigre to Know One of The Predilect Weekend Retreats of the Portaños. In Tigre We Will See The Stalls of Fresh Products and Crafts of The Port of Fruits And Will Take to Walk Along The Riverbank On The Victorica Walk.',
+'actividades':{	
+'activity1':{	
+'name':	'Tiger',
+'descripcion':	'ONCE WE DISMBARK IN THE TIGER, WE WILL TRAVEL THE CITY ABOARD A Comfortable Panoramic Coach. You Will See the Main Points of Interest of the City While Complete Audio Guide Gives You Useful Information About Them.',
+'image':	'place1.jpg',},
+'activity2':{	
+'name':	'Fruit Port',
+'descripcion':	'OUR NEXT STOP WILL BE IN THE PORT OF FRUITS. The Ancient Commercial Port of Delta Today has Become a Point of Tourist Attraction for Premises and Foreigners. In Their Positions You Will Find Fresh Products, Handicrafts and Souvenirs.',
+'image':	'place2.jpg',},
+'activity3':{	
+'name':	'Victorica Ride',
+'descripcion':	'After Lunch, Our Next Stop Will Be In An Exceptional Place Next To The River. The Victorica Walk Combines ITS Incredible Natural Charm With Rowing Clubs and an Interesting Cultural Proposal. There, WHO WISHS YOU WILL HAVE FREE TIME TO VISIT ONE OF ITS ATTRACTIVE MUSEUMS (Tickets Not included)',
+'image':	'place3.jpg',},}},
+	
+{'name':	'Boat Excursion To The Tiger And Delta Del Paraná',
 'nroItinerario':	2,
 'city':	'Buenos Aires',
 'duracion':	'8',
@@ -25,7 +45,7 @@ db.itineraries.insertMany([
 'descripcion':	'OUR NEXT STOP WILL BE IN THE PORT OF FRUITS. The Ancient Commercial Port of Delta Today has Become a Point of Tourist Attraction for Premises and Foreigners. In Their Positions You Will Find Fresh Products, Handicrafts and Souvenirs.',
 'image':	'place2.jpg',},
 'activity3':{	
-'name':	'Victorica Ride.',
+'name':	'Victorica Ride',
 'descripcion':	'After Lunch, Our Next Stop Will Be In An Exceptional Place Next To The River. The Victorica Walk Combines ITS Incredible Natural Charm With Rowing Clubs and an Interesting Cultural Proposal. There, WHO WISHS YOU WILL HAVE FREE TIME TO VISIT ONE OF ITS ATTRACTIVE MUSEUMS (Tickets Not included)',
 'image':	'place3.jpg',},}},
 	
@@ -401,7 +421,7 @@ db.itineraries.insertMany([
 'descripcion':	'Visit Victoria, the capital of British Columbia, on a tour of Vancouver',
 'image':	'place1.jpg',},
 'activity2':{	
-'name':	'Travel By Ferry',
+'name':	'Travel By Ferry.',
 'descripcion':	'Travel by ferry through the Gulf Islands to Vancouver Island',
 'image':	'place2.jpg',},
 'activity3':{	
@@ -422,7 +442,7 @@ db.itineraries.insertMany([
 'image':	'place1.jpg',},
 'activity2':{	
 'name':	'See The Orcas',
-'descripcion':	'See the orcas in your natural environment.',
+'descripcion':	'See the orcas in its natural environment.',
 'image':	'place2.jpg',},
 'activity3':{	
 'name':	'Pass The Afternoon Exploring Victory',
@@ -1966,26 +1986,6 @@ db.itineraries.insertMany([
 'image':	'place2.jpg',},
 'activity3':{	
 'name':	'Hear The Stories Of The Criminals Housed At Alcatraz Prison And Their Daring Escape Attempts',
-'descripcion':	'',
-'image':	'place3.jpg',},}},
-	
-{'name':	'Hop-On Hop-Off Sightseeing Bus Ticket',
-'nroItinerario':	100,
-'city':	'San Francisco',
-'duracion':	'4',
-'costo':	'40',
-'descripcion':	'N / A.',
-'actividades':{	
-'activity1':{	
-'name':	'San Francisco Hop-on Hop-off Bus Loop',
-'descripcion':	'',
-'image':	'place1.jpg',},
-'activity2':{	
-'name':	'Stop 1: Pier 41 (End Of Powell St), FishermanS Wharf',
-'descripcion':	'',
-'image':	'place2.jpg',},
-'activity3':{	
-'name':	'Stop 2: Washington Square - Corner Of Columbus And Union Streets',
 'descripcion':	'',
 'image':	'place3.jpg',},}},
 	
