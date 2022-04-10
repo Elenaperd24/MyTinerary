@@ -144,7 +144,7 @@ function Comments(props) {
                          <LinkRouter to="/signin" className="">
                              <div>
                                      <PersonIcon fontSize={"large"} />
-                                     <h2>Signin</h2>
+                                     <h2>Sign in</h2>
                                  </div>
                              </LinkRouter>
                          </div>

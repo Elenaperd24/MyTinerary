@@ -57,7 +57,7 @@ function City() {
                                     <div className="foto-usuario d-flex">
                                         <img src={city[0].flag} className="card-img-top foto-usuario" alt="..." />
                                     </div>
-                                    <p className="card-text info">{city[0].descripcion.language}</p>
+                             {/*        <p className="card-text info">{city[0].descripcion.language}</p> */}
                                 </div>
                             </div>
                             <div className="card info shadow col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "19rem" }}>
@@ -67,7 +67,7 @@ function City() {
                                     <div className="foto-usuario d-flex">
                                         <img src={city[0].flag} className="card-img-top foto-usuario" alt="..." />
                                     </div>
-                                    <p className="card-text info">{city[0].descripcion.population}</p>
+                                  {/*   <p className="card-text info">{city[0].descripcion.population}</p> */}
                                 </div>
                             </div>
                             <div className=" card info shadow col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "19rem" }}>
@@ -77,7 +77,7 @@ function City() {
                                     <div className="foto-usuario d-flex">
                                         <img src={city[0].flag} className="card-img-top foto-usuario" alt="..." />
                                     </div>
-                                    <p className="card-text info ">{city[0].descripcion.weather}</p>
+                                    {/* <p className="card-text info ">{city[0].descripcion.weather}</p> */}
                                 </div>
                             </div>
                         </div>
