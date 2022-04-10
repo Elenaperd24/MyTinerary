@@ -113,19 +113,16 @@ console.log(itineraries);
                 >
                   <SwiperSlide style={{ height: 150, borderRadius: "15px" }}>
                     <img src={process.env.PUBLIC_URL + `/image/itinerary/itinerary${item.nroItinerario}/place1.jpg`} />
-                    {item.nroItinerario}
                   </SwiperSlide>
 
                   <SwiperSlide style={{ height: 150, borderRadius: "15px" }}>
-                    <img src={process.env.PUBLIC_URL + `/image/itinerary/itinerary${item.nroItinerario}/place2.jpg`} />
-                    {item.nroItinerario}                
+                    <img src={process.env.PUBLIC_URL + `/image/itinerary/itinerary${item.nroItinerario}/place2.jpg`} />               
                   </SwiperSlide>
 
                   <SwiperSlide style={{ height: 150, borderRadius: "15px" }}>
                     <img src={process.env.PUBLIC_URL + `/image/itinerary/itinerary${item.nroItinerario}/place3.jpg`} />
-                    {item.nroItinerario}
                   </SwiperSlide>
-                  
+
                 </Swiper>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
