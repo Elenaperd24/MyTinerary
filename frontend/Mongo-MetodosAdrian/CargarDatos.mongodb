@@ -29,32 +29,12 @@ db.itineraries.insertMany([
 'descripcion':	'After Lunch, Our Next Stop Will Be In An Exceptional Place Next To The River. The Victorica Walk Combines ITS Incredible Natural Charm With Rowing Clubs and an Interesting Cultural Proposal. There, WHO WISHS YOU WILL HAVE FREE TIME TO VISIT ONE OF ITS ATTRACTIVE MUSEUMS (Tickets Not included)',
 'image':	'place3.jpg',},}},
 	
-{'name':	'Boat Excursion To The Tiger And Delta Del Paraná',
-'nroItinerario':	2,
-'city':	'Buenos Aires',
-'duracion':	'8',
-'costo':	'52',
-'descripcion':	'We Will Sail Through The Delta del Parana to Discover Sites Flora and Fauna And Enter Ourselves In The City of Tigre to Know One of The Predilect Weekend Retreats of the Portaños. In Tigre We Will See The Stalls of Fresh Products and Crafts of The Port of Fruits And Will Take to Walk Along The Riverbank On The Victorica Walk.',
-'actividades':{	
-'activity1':{	
-'name':	'Tiger',
-'descripcion':	'ONCE WE DISMBARK IN THE TIGER, WE WILL TRAVEL THE CITY ABOARD A Comfortable Panoramic Coach. You Will See the Main Points of Interest of the City While Complete Audio Guide Gives You Useful Information About Them.',
-'image':	'place1.jpg',},
-'activity2':{	
-'name':	'Fruit Port',
-'descripcion':	'OUR NEXT STOP WILL BE IN THE PORT OF FRUITS. The Ancient Commercial Port of Delta Today has Become a Point of Tourist Attraction for Premises and Foreigners. In Their Positions You Will Find Fresh Products, Handicrafts and Souvenirs.',
-'image':	'place2.jpg',},
-'activity3':{	
-'name':	'Victorica Ride',
-'descripcion':	'After Lunch, Our Next Stop Will Be In An Exceptional Place Next To The River. The Victorica Walk Combines ITS Incredible Natural Charm With Rowing Clubs and an Interesting Cultural Proposal. There, WHO WISHS YOU WILL HAVE FREE TIME TO VISIT ONE OF ITS ATTRACTIVE MUSEUMS (Tickets Not included)',
-'image':	'place3.jpg',},}},
-	
 {'name':	'Football Tour By Boca Juniors Stadiums And River Plate',
-'nroItinerario':	3,
+'nroItinerario':	2,
 'city':	'Buenos Aires',
 'duracion':	'6',
 'costo':	'81',
-'descripcion':	'Live An Experience to Pure Soccer, Closely Knowing One of the Great Passions of the Argentines. We Will Visit The Two Most Emblematic Stadiums in The Country: La Bombonera And The Monumentary.You Also Have The Option To Visit A ​​Single Stadium, Paying Something Less. When you select The Tour Date, Choose Which You Want to Visit Between The Different Options.',
+'descripcion':	'Live An Experience to Pure Soccer, Closely Knowing One of the Great Passions of The Argentines. We Will Visit The Two Most Emblematic Stadiums in The Country: La Bombonera And The Monumentary.You Also Have The Option To Visit A ​​Single Stadium, Paying Something Less. When you select The Tour Date, Choose Which You Want to Visit Between The Different Options.',
 'actividades':{	
 'activity1':{	
 'name':	'The Bombonera',
@@ -70,7 +50,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'The Apple Of Lights',
-'nroItinerario':	4,
+'nroItinerario':	3,
 'city':	'Buenos Aires',
 'duracion':	'3',
 'costo':	'33',
@@ -90,7 +70,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tour Of 2 Days Of Hiking And Rowing In Ushuaia For Small Groups.',
-'nroItinerario':	5,
+'nroItinerario':	4,
 'city':	'Ushuaia',
 'duracion':	'48',
 'costo':	'305',
@@ -110,7 +90,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Land Excursion - National Park Tierra Del Fuego',
-'nroItinerario':	6,
+'nroItinerario':	5,
 'city':	'Ushuaia',
 'duracion':	'5',
 'costo':	'20',
@@ -130,7 +110,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Half Day Tour To The National Park Tierra Del Fuego With Optional Tour On The End Of The World',
-'nroItinerario':	7,
+'nroItinerario':	6,
 'city':	'Ushuaia',
 'duracion':	'4',
 'costo':	'50',
@@ -150,7 +130,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To Iguazú Falls, Boat Ride, Train, Safari Truck',
-'nroItinerario':	8,
+'nroItinerario':	7,
 'city':	'Missions Argentina',
 'duracion':	'10',
 'costo':	'81',
@@ -158,7 +138,7 @@ db.itineraries.insertMany([
 'actividades':{	
 'activity1':{	
 'name':	'National Park Iguazu',
-'descripcion':	'The Iguazu Falls are one of the most spectacular natural attractions in South America and the world: they were declared a World Heritage Site by UNESCO! Upon arrival, you must show your entry and access the park (price of the entrance not included).',
+'descripcion':	'The Iguazu Falls are one of the most spectacular natural attractions in South America and the world: they were declared a World Heritage Site by UNESCO! Upon arrival, you must show your entry and access the park (price of the entry not included).',
 'image':	'place1.jpg',},
 'activity2':{	
 'name':	'DevilS Throat.',
@@ -167,6 +147,26 @@ db.itineraries.insertMany([
 'activity3':{	
 'name':	'Iguazu Falls',
 'descripcion':	'After visiting the Devils throat, it will continue to explore the gateways of the lower or superior circuit. Both will impress you: The lower circuit offers a more intimate experience with nature. As he enters into the forest to the heart of the cataracts, he may feel the "spirit" of the jungle; Its humidity, sounds and aromas. The upper circuit offers magnificent panoramic views from the top of the falls. This circuit is perfect for relaxing with the sound of water in the background and feeling the sunlight on the skin.',
+'image':	'place3.jpg',},}},
+	
+{'name':	'Full Day To The Ruins Of San Ignacio And The Mines Of Wanda From Puerto Iguazú',
+'nroItinerario':	8,
+'city':	'Missions Argentina',
+'duracion':	'10',
+'costo':	'50',
+'descripcion':	'San Ignacio Miní is the Jesuit mission of the best preserved XVI and XVII centuries throughout the Argentine territory. Around the main square, the church is located, the "Parent House", the cemetery, the houses and the town hall. The native stones and large pieces of red sandstone were used to build the city of San Ignacio. The Wanda mines are a place specially known for its deposits of precious, turquoise, amethysts and rock crystals. Since 1976, they have become a mandatory stop for all those who come to these distances, known as the Selva region.',
+'actividades':{	
+'activity1':{	
+'name':	'Ruins Of San Ignacio',
+'descripcion':	'In 1984, the Jesuit missions of San Ignacio Mini, together with Our Lady of Loreto, Santa Ana and Santa María La Mayor (located in Argentina) were declared a World Heritage Site by UNESCO. The city of San Ignacio is a tourist destination, with impressive landscapes, such as the refuge of the Provincial Park Teyú Lunté, the Yabebiri stream and other natural beauties that extend throughout the region. The city is surrounded by the indigenous flora in each corner.',
+'image':	'place1.jpg',},
+'activity2':{	
+'name':	'Wanda Mines',
+'descripcion':	'In the interior of the Wanda mines, tourists who come to visit this exciting place can observe and acquire agates, jaspes and original tapacios among other varieties. The stones drawn from the mines become precious stones and are used for the manufacture of jewelry. In relation to this, as the legend has, this place of great tourist importance receives the name of a Polish Princess who was very fond of the beauty of the stones that are generated in this place.',
+'image':	'place2.jpg',},
+'activity3':{	
+'name':	'Puerto Esperanza.',
+'descripcion':	'The beautiful city of Puerto Esperanza Misiones will impress you with all the secrets that it hides since it looks like a passive and quiet city but everything you have to offer you will leave you stubborn stay in reading and discover with us this interesting city.',
 'image':	'place3.jpg',},}},
 	
 {'name':	'Full Day To The Ruins Of San Ignacio And The Mines Of Wanda From Puerto Iguazú',
@@ -189,28 +189,8 @@ db.itineraries.insertMany([
 'descripcion':	'The beautiful city of Puerto Esperanza Misiones will impress you with all the secrets that it hides since it looks like a passive and quiet city but everything you have to offer you will leave you stubborn stay in reading and discover with us this interesting city.',
 'image':	'place3.jpg',},}},
 	
-{'name':	'Full Day To The Ruins Of San Ignacio And The Mines Of Wanda From Puerto Iguazú',
-'nroItinerario':	10,
-'city':	'Missions Argentina',
-'duracion':	'10',
-'costo':	'50',
-'descripcion':	'San Ignacio Miní is the Jesuit mission of the best preserved XVI and XVII centuries throughout the Argentine territory. Around the main square, the church is located, the "Parent House", the cemetery, the houses and the town hall. The native stones and large pieces of red sandstone were used to build the city of San Ignacio. The Wanda mines are a place specially known for its deposits of precious, turquoise, amethysts and rock crystals. Since 1976, they have become a mandatory stop for all those who come to these distances, known as the Selva region.',
-'actividades':{	
-'activity1':{	
-'name':	'Ruins Of San Ignacio',
-'descripcion':	'In 1984, the Jesuit missions of San Ignacio Mini, together with Our Lady of Loreto, Santa Ana and Santa María La Mayor (located in Argentina) were declared a World Heritage Site by UNESCO. The city of San Ignacio is a tourist destination, with impressive landscapes, such as the refuge of the Provincial Park Teyú Lunté, the Yabebiri stream and other natural beauties that extend throughout the region. The city is surrounded by the indigenous flora in each corner.',
-'image':	'place1.jpg',},
-'activity2':{	
-'name':	'Wanda Mines',
-'descripcion':	'In the interior of the Wanda mines, tourists who come to visit this exciting place can observe and acquire agates, jaspes and original tapacios among other varieties. The stones drawn from the mines become precious stones and are used for the manufacture of jewelry. In relation to this, as the legend has, this place of great tourist importance receives the name of a Polish Princess who was very fond of the beauty of the stones that are generated in this place.',
-'image':	'place2.jpg',},
-'activity3':{	
-'name':	'Puerto Esperanza.',
-'descripcion':	'The beautiful city of Puerto Esperanza Misiones will impress you with all the secrets that it hides since it looks like a passive and quiet city but everything you have to offer you will leave you stubborn stay in reading and discover with us this interesting city.',
-'image':	'place3.jpg',},}},
-	
 {'name':	'Bus Trip With Free Stops By Sydney And Bondi',
-'nroItinerario':	11,
+'nroItinerario':	10,
 'city':	'Sydney',
 'duracion':	'48',
 'costo':	'200',
@@ -230,7 +210,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Boat Ride By The 30 Minute Pier In Sydney Harbor: Thunder Twist',
-'nroItinerario':	12,
+'nroItinerario':	11,
 'city':	'Sydney',
 'duracion':	'1',
 'costo':	'100',
@@ -250,7 +230,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Helicopter Tour By The Olympic Park And Sydney Port 30 Minutes',
-'nroItinerario':	13,
+'nroItinerario':	12,
 'city':	'Sydney',
 'duracion':	'2',
 'costo':	'200',
@@ -270,7 +250,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Culture And Cruising.',
-'nroItinerario':	14,
+'nroItinerario':	13,
 'city':	'Brisbane',
 'duracion':	'8',
 'costo':	'250',
@@ -290,7 +270,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Fortitude Valley And Koala Cuddles',
-'nroItinerario':	15,
+'nroItinerario':	14,
 'city':	'Brisbane',
 'duracion':	'10',
 'costo':	'350',
@@ -298,7 +278,7 @@ db.itineraries.insertMany([
 'actividades':{	
 'activity1':{	
 'name':	'Fortitude Valley',
-'descripcion':	'The Bustling Neighbourhood of Forexale Valley is Loved for SitiS Alfresco Cafés, One-off Boutiques and Vibrant Live Music Scene. From The City Center, The Valley IS A 25-Minute Walk Along Ann Street, Or You Can Hop On The Two-Minute Train Ride From Central Station.',
+'descripcion':	'The Bustling Neighbourhood of Forexale Valley is Loved for SitiS Alfresco Cafés, One-off Boutiques and Vibrant Live Music Scene. From The City Center, The Valley IS A 25-Minute Walk Along Ann Street, Or You Can Hop On The Two-Minute Train Ride from Central Station.',
 'image':	'place1.jpg',},
 'activity2':{	
 'name':	'King Arthur Coffee.',
@@ -310,7 +290,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Adventure On Moreton Island',
-'nroItinerario':	16,
+'nroItinerario':	15,
 'city':	'Brisbane',
 'duracion':	'6',
 'costo':	'200',
@@ -330,7 +310,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Cruise With Dinner At The Spirit Of Melbourne',
-'nroItinerario':	17,
+'nroItinerario':	16,
 'city':	'Melbourne',
 'duracion':	'3',
 'costo':	'100',
@@ -350,7 +330,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Ecotourism Route In Small Group By The Great Oceanic Highway From Melbourne',
-'nroItinerario':	18,
+'nroItinerario':	17,
 'city':	'Melbourne',
 'duracion':	'12',
 'costo':	'200',
@@ -370,7 +350,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tour Of The Bodegas Del Valle Del Yarra From Melbourne',
-'nroItinerario':	19,
+'nroItinerario':	18,
 'city':	'Melbourne',
 'duracion':	'8',
 'costo':	'90',
@@ -390,7 +370,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Panoramic Rafting Adventure In Squamish At Sunset',
-'nroItinerario':	20,
+'nroItinerario':	19,
 'city':	'Vancouver',
 'duracion':	'10',
 'costo':	'150',
@@ -410,7 +390,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Visit To The Gardens Of Victoria And The Butchart From Vancouver',
-'nroItinerario':	21,
+'nroItinerario':	20,
 'city':	'Vancouver',
 'duracion':	'8',
 'costo':	'163',
@@ -421,7 +401,7 @@ db.itineraries.insertMany([
 'descripcion':	'Visit Victoria, the capital of British Columbia, on a tour of Vancouver',
 'image':	'place1.jpg',},
 'activity2':{	
-'name':	'Travel By Ferry.',
+'name':	'Travel By Ferry',
 'descripcion':	'Travel by ferry through the Gulf Islands to Vancouver Island',
 'image':	'place2.jpg',},
 'activity3':{	
@@ -430,7 +410,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Whale Watching Vancouver To Victoria Back To Vancouver In Seaplane',
-'nroItinerario':	22,
+'nroItinerario':	21,
 'city':	'Vancouver',
 'duracion':	'10',
 'costo':	'346',
@@ -442,7 +422,7 @@ db.itineraries.insertMany([
 'image':	'place1.jpg',},
 'activity2':{	
 'name':	'See The Orcas',
-'descripcion':	'See the orcas in its natural environment.',
+'descripcion':	'See the orcas in your natural environment.',
 'image':	'place2.jpg',},
 'activity3':{	
 'name':	'Pass The Afternoon Exploring Victory',
@@ -450,7 +430,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Exciting Air Tour Of 120 Km By Toronto With Iflytoto',
-'nroItinerario':	23,
+'nroItinerario':	22,
 'city':	'Toronto',
 'duracion':	'1',
 'costo':	'69',
@@ -470,7 +450,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'One-Day Excursion For Small Groups To Niagara Falls From Toronto',
-'nroItinerario':	24,
+'nroItinerario':	23,
 'city':	'Toronto',
 'duracion':	'9',
 'costo':	'72',
@@ -490,7 +470,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Visit To The Gardens Of Victoria And The Butchart From Vancouver',
-'nroItinerario':	25,
+'nroItinerario':	24,
 'city':	'Toronto',
 'duracion':	'10',
 'costo':	'70',
@@ -509,8 +489,8 @@ db.itineraries.insertMany([
 'descripcion':	'With a small group, a personal service is guaranteed',
 'image':	'place3.jpg',},}},
 	
-{'name':	'Helicopter Tour About Montreal',
-'nroItinerario':	26,
+{'name':	'Helicopter Tour Over Montreal',
+'nroItinerario':	25,
 'city':	'Montreal',
 'duracion':	'1',
 'costo':	'140',
@@ -530,7 +510,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Fat Ebike Ride In Monte Real',
-'nroItinerario':	27,
+'nroItinerario':	26,
 'city':	'Montreal',
 'duracion':	'2',
 'costo':	'62',
@@ -550,7 +530,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Private Excursion From One Day To Mont Tremblant From Montreal',
-'nroItinerario':	28,
+'nroItinerario':	27,
 'city':	'Montreal',
 'duracion':	'9',
 'costo':	'186',
@@ -570,7 +550,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Zhujiajiao Water Coach Excursion',
-'nroItinerario':	29,
+'nroItinerario':	28,
 'city':	'Shangai',
 'duracion':	'5',
 'costo':	'80',
@@ -590,7 +570,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Shanghai Acrobatic Show',
-'nroItinerario':	30,
+'nroItinerario':	29,
 'city':	'Shangai',
 'duracion':	'2',
 'costo':	'80',
@@ -610,7 +590,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Shanghai Circus World.',
-'nroItinerario':	31,
+'nroItinerario':	30,
 'city':	'Shangai',
 'duracion':	'3',
 'costo':	'100',
@@ -630,7 +610,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'NoahS Ark Hong Kong',
-'nroItinerario':	32,
+'nroItinerario':	31,
 'city':	'Hong Kong',
 'duracion':	'8',
 'costo':	'16',
@@ -650,7 +630,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Professional Guides Routes',
-'nroItinerario':	33,
+'nroItinerario':	32,
 'city':	'Hong Kong',
 'duracion':	'3',
 'costo':	'114',
@@ -670,7 +650,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'One Day Getaway To The Island Of Lantau And The Buddha',
-'nroItinerario':	34,
+'nroItinerario':	33,
 'city':	'Hong Kong',
 'duracion':	'8',
 'costo':	'135',
@@ -690,7 +670,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion The Best Of Seoul In The Morning',
-'nroItinerario':	35,
+'nroItinerario':	34,
 'city':	'Seul',
 'duracion':	'4',
 'costo':	'26',
@@ -710,7 +690,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Seoul, South Korea Treasury Search',
-'nroItinerario':	36,
+'nroItinerario':	35,
 'city':	'Seul',
 'duracion':	'2',
 'costo':	'2',
@@ -730,7 +710,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tours Of Highlights',
-'nroItinerario':	37,
+'nroItinerario':	36,
 'city':	'Seul',
 'duracion':	'4',
 'costo':	'60',
@@ -750,7 +730,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Boat To Formentera From Ibiza',
-'nroItinerario':	38,
+'nroItinerario':	37,
 'city':	'Ibiza',
 'duracion':	'1',
 'costo':	'19,33',
@@ -770,7 +750,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Cruise By Cala Bassa',
-'nroItinerario':	39,
+'nroItinerario':	38,
 'city':	'Ibiza',
 'duracion':	'5',
 'costo':	'65,17',
@@ -790,7 +770,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Cruise Per Es Vedree',
-'nroItinerario':	40,
+'nroItinerario':	39,
 'city':	'Ibiza',
 'duracion':	'11',
 'costo':	'109,5',
@@ -810,7 +790,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Guided Tour Of The Sagrada Family Without Queues',
-'nroItinerario':	41,
+'nroItinerario':	40,
 'city':	'Barcelona',
 'duracion':	'2',
 'costo':	'50',
@@ -830,7 +810,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Guided Tour Of Güell Park Without Queues!',
-'nroItinerario':	42,
+'nroItinerario':	41,
 'city':	'Barcelona',
 'duracion':	'2',
 'costo':	'28',
@@ -850,7 +830,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Barcelona City Tour Full',
-'nroItinerario':	43,
+'nroItinerario':	42,
 'city':	'Barcelona',
 'duracion':	'5',
 'costo':	'58,5',
@@ -870,7 +850,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Panoramic Tour For The Best Of Madrid',
-'nroItinerario':	44,
+'nroItinerario':	43,
 'city':	'Madrid',
 'duracion':	'3',
 'costo':	'32',
@@ -890,7 +870,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To Toledo And Segovia',
-'nroItinerario':	45,
+'nroItinerario':	44,
 'city':	'Madrid',
 'duracion':	'5',
 'costo':	'100',
@@ -910,7 +890,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Guided Tour Of The Prado Museum',
-'nroItinerario':	46,
+'nroItinerario':	45,
 'city':	'Madrid',
 'duracion':	'2',
 'costo':	'36',
@@ -930,7 +910,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Free Tour! In Spanish By Paris',
-'nroItinerario':	47,
+'nroItinerario':	46,
 'city':	'Paris',
 'duracion':	'3',
 'costo':	'0',
@@ -950,7 +930,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Guided Tour Of The Louvre Museum',
-'nroItinerario':	48,
+'nroItinerario':	47,
 'city':	'Paris',
 'duracion':	'2',
 'costo':	'74',
@@ -970,7 +950,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To The Palace Of Versailles',
-'nroItinerario':	49,
+'nroItinerario':	48,
 'city':	'Paris',
 'duracion':	'6',
 'costo':	'45',
@@ -990,7 +970,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To Connemara, Fjord Killary And Kylemore Abbey',
-'nroItinerario':	50,
+'nroItinerario':	49,
 'city':	'Manchester',
 'duracion':	'13',
 'costo':	'59',
@@ -1010,7 +990,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To The Calzada Of The Giants And Belfast',
-'nroItinerario':	51,
+'nroItinerario':	50,
 'city':	'Manchester',
 'duracion':	'13',
 'costo':	'60',
@@ -1030,7 +1010,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To Glasgow, Doune Castle And Lake Lomond',
-'nroItinerario':	52,
+'nroItinerario':	51,
 'city':	'Manchester',
 'duracion':	'20',
 'costo':	'2',
@@ -1050,7 +1030,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Free Tour! Of Jack The Ripper',
-'nroItinerario':	53,
+'nroItinerario':	52,
 'city':	'Liverpool',
 'duracion':	'2',
 'costo':	'0',
@@ -1070,7 +1050,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tour To The Pyramids Of Teotihuacán',
-'nroItinerario':	54,
+'nroItinerario':	53,
 'city':	'Liverpool',
 'duracion':	'9',
 'costo':	'35',
@@ -1090,7 +1070,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Churches Of Liverpool.',
-'nroItinerario':	55,
+'nroItinerario':	54,
 'city':	'Liverpool',
 'duracion':	'5',
 'costo':	'20',
@@ -1110,7 +1090,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Great Tour De London',
-'nroItinerario':	56,
+'nroItinerario':	55,
 'city':	'London',
 'duracion':	'9',
 'costo':	'111',
@@ -1130,7 +1110,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tickets For The London',
-'nroItinerario':	57,
+'nroItinerario':	56,
 'city':	'London',
 'duracion':	'2',
 'costo':	'32',
@@ -1150,7 +1130,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Historic London Tour, The Jewels Of The Crown',
-'nroItinerario':	58,
+'nroItinerario':	57,
 'city':	'London',
 'duracion':	'5',
 'costo':	'80',
@@ -1170,7 +1150,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To The Cliffs Of Moher And West Coast Of Ireland',
-'nroItinerario':	59,
+'nroItinerario':	58,
 'city':	'Dublin',
 'duracion':	'12',
 'costo':	'56',
@@ -1190,7 +1170,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Free Tour Of Irish Legends And Dublin Mysteries',
-'nroItinerario':	60,
+'nroItinerario':	59,
 'city':	'Dublin',
 'duracion':	'2',
 'costo':	'0',
@@ -1210,7 +1190,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To The Calzada Of The Giants And Belfast',
-'nroItinerario':	61,
+'nroItinerario':	60,
 'city':	'Dublin',
 'duracion':	'13',
 'costo':	'62',
@@ -1230,7 +1210,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Guided Tour Of The Vatican Museums And The Sistine Chapel',
-'nroItinerario':	62,
+'nroItinerario':	61,
 'city':	'Rome',
 'duracion':	'3',
 'costo':	'51',
@@ -1250,7 +1230,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Guided Tour Of The Colosseum, Roman Forum And Palatine',
-'nroItinerario':	63,
+'nroItinerario':	62,
 'city':	'Rome',
 'duracion':	'3',
 'costo':	'45',
@@ -1270,7 +1250,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Vatican + Colosseum + Roman Forum And Palatine',
-'nroItinerario':	64,
+'nroItinerario':	63,
 'city':	'Rome',
 'duracion':	'8',
 'costo':	'90',
@@ -1290,7 +1270,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Gastronomic Tour On Foot Through The Streets Of Palermo',
-'nroItinerario':	65,
+'nroItinerario':	64,
 'city':	'Palermo',
 'duracion':	'5',
 'costo':	'48',
@@ -1310,7 +1290,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Palazzo Conte Federico.',
-'nroItinerario':	66,
+'nroItinerario':	65,
 'city':	'Palermo',
 'duracion':	'2',
 'costo':	'15',
@@ -1330,7 +1310,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Walking Tour Palermo Not Mafia',
-'nroItinerario':	67,
+'nroItinerario':	66,
 'city':	'Palermo',
 'duracion':	'3',
 'costo':	'25',
@@ -1350,7 +1330,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Milan Essential + The Last Dinner',
-'nroItinerario':	68,
+'nroItinerario':	67,
 'city':	'Milan',
 'duracion':	'3',
 'costo':	'64',
@@ -1370,7 +1350,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tour To The Swiss Alps By Train Bernina Express',
-'nroItinerario':	69,
+'nroItinerario':	68,
 'city':	'Milan',
 'duracion':	'13',
 'costo':	'137',
@@ -1390,7 +1370,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Excursion To Cinque Terre And Cruise By Riviera De Liguria',
-'nroItinerario':	70,
+'nroItinerario':	69,
 'city':	'Milan',
 'duracion':	'8',
 'costo':	'140',
@@ -1410,7 +1390,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Venice: DogeS Palace Reserved Entry Admission Ticket',
-'nroItinerario':	71,
+'nroItinerario':	70,
 'city':	'Venice',
 'duracion':	'3',
 'costo':	'20',
@@ -1430,7 +1410,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Venice: Murano, Burano And Torcello Islands Full-Day Trip',
-'nroItinerario':	72,
+'nroItinerario':	71,
 'city':	'Venice',
 'duracion':	'8',
 'costo':	'100',
@@ -1450,7 +1430,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Venice: Grand Canal By Gondola With Commentary',
-'nroItinerario':	73,
+'nroItinerario':	72,
 'city':	'Venice',
 'duracion':	'5',
 'costo':	'40',
@@ -1470,7 +1450,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Pompeii: Fast Track Entrance Ticket With Audio Guide',
-'nroItinerario':	74,
+'nroItinerario':	73,
 'city':	'Naples',
 'duracion':	'2',
 'costo':	'34',
@@ -1490,7 +1470,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Pompeii Ruins & Mount Vesuvius Day Tour',
-'nroItinerario':	75,
+'nroItinerario':	74,
 'city':	'Naples',
 'duracion':	'12',
 'costo':	'111',
@@ -1510,14 +1490,14 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Full-Day: Pompeii And Vesuvius With Pizza Lunch',
-'nroItinerario':	76,
+'nroItinerario':	75,
 'city':	'Naples',
 'duracion':	'12',
 'costo':	'120',
 'descripcion':	'N / A.',
 'actividades':{	
 'activity1':{	
-'name':	'Hike Up To The Top Of The Crater at Vesuvius',
+'name':	'Hike Up To The Top of the Crater at Vesuvius',
 'descripcion':	'',
 'image':	'place1.jpg',},
 'activity2':{	
@@ -1530,7 +1510,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Unesco Shrine And Nikko Scenic Spots Bus Tour',
-'nroItinerario':	77,
+'nroItinerario':	76,
 'city':	'Tokyo',
 'duracion':	'10',
 'costo':	'80',
@@ -1550,7 +1530,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tokyo Skytree Admission Ticket',
-'nroItinerario':	78,
+'nroItinerario':	77,
 'city':	'Tokyo',
 'duracion':	'5',
 'costo':	'10',
@@ -1570,7 +1550,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Tokyo: Go-Kart Tour And Photoshoot',
-'nroItinerario':	79,
+'nroItinerario':	78,
 'city':	'Tokyo',
 'duracion':	'3',
 'costo':	'60',
@@ -1590,7 +1570,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Rangitoto Island Roundtrip Ferry Pass',
-'nroItinerario':	80,
+'nroItinerario':	79,
 'city':	'Auckland',
 'duracion':	'4',
 'costo':	'50',
@@ -1610,7 +1590,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Zipline And Native Forest Adventure Trip',
-'nroItinerario':	81,
+'nroItinerario':	80,
 'city':	'Auckland',
 'duracion':	'3',
 'costo':	'103',
@@ -1630,7 +1610,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Waiheke Island Ferry & Explorer Hop-On Hop-Off Bus Ticket',
-'nroItinerario':	82,
+'nroItinerario':	81,
 'city':	'Auckland',
 'duracion':	'24',
 'costo':	'10',
@@ -1650,7 +1630,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Gardens By The Bay Admission E-Ticket',
-'nroItinerario':	83,
+'nroItinerario':	82,
 'city':	'Singapore',
 'duracion':	'4',
 'costo':	'15',
@@ -1670,7 +1650,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Singapore Duck Tour.',
-'nroItinerario':	84,
+'nroItinerario':	83,
 'city':	'Singapore',
 'duracion':	'1',
 'costo':	'10',
@@ -1690,7 +1670,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Night Safari Ticket, Tram Ride, & Return Transfer',
-'nroItinerario':	85,
+'nroItinerario':	84,
 'city':	'Singapore',
 'duracion':	'5',
 'costo':	'80',
@@ -1710,7 +1690,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Daily Boat Cruises',
-'nroItinerario':	86,
+'nroItinerario':	85,
 'city':	'South Africa',
 'duracion':	'2',
 'costo':	'30',
@@ -1730,7 +1710,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Cape Town City Sightseeing Hop-On Hop-Off Tour',
-'nroItinerario':	87,
+'nroItinerario':	86,
 'city':	'South Africa',
 'duracion':	'3',
 'costo':	'18',
@@ -1750,7 +1730,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Garden Route National Park: Tsitsikamma Zipline Canopy Tour',
-'nroItinerario':	88,
+'nroItinerario':	87,
 'city':	'South Africa',
 'duracion':	'3',
 'costo':	'50',
@@ -1770,7 +1750,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Chicago River: 1.5-Hour Guided Architecture Cruise',
-'nroItinerario':	89,
+'nroItinerario':	88,
 'city':	'Chicago',
 'duracion':	'2',
 'costo':	'30',
@@ -1790,7 +1770,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'360 Chicago Observation Deck Admission: Skip The Ticket Desk',
-'nroItinerario':	90,
+'nroItinerario':	89,
 'city':	'Chicago',
 'duracion':	'4',
 'costo':	'100',
@@ -1810,7 +1790,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Navy Pier Centennial Wheel Regular & Express Ticket',
-'nroItinerario':	91,
+'nroItinerario':	90,
 'city':	'Chicago',
 'duracion':	'1',
 'costo':	'10',
@@ -1830,7 +1810,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Boston Duck Tour: The Original And World-Famous',
-'nroItinerario':	92,
+'nroItinerario':	91,
 'city':	'Boston',
 'duracion':	'60',
 'costo':	'2',
@@ -1850,7 +1830,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'England Aquarium Entry Ticket',
-'nroItinerario':	93,
+'nroItinerario':	92,
 'city':	'Boston',
 'duracion':	'4',
 'costo':	'40',
@@ -1870,7 +1850,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Fenway Park: 1-Hour Guided Walking Tour',
-'nroItinerario':	94,
+'nroItinerario':	93,
 'city':	'Boston',
 'duracion':	'8',
 'costo':	'200',
@@ -1890,7 +1870,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Summit One Vanderbilt Experience Ticket',
-'nroItinerario':	95,
+'nroItinerario':	94,
 'city':	'New York',
 'duracion':	'5',
 'costo':	'49',
@@ -1910,7 +1890,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Manhattan Island Helicopter Tour',
-'nroItinerario':	96,
+'nroItinerario':	95,
 'city':	'New York',
 'duracion':	'2',
 'costo':	'100',
@@ -1930,7 +1910,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Empire State Building General & Skip-The-Line Tickets',
-'nroItinerario':	97,
+'nroItinerario':	96,
 'city':	'New York',
 'duracion':	'2',
 'costo':	'5',
@@ -1950,7 +1930,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Golden Gate Bay Cruise',
-'nroItinerario':	98,
+'nroItinerario':	97,
 'city':	'San Francisco',
 'duracion':	'1',
 'costo':	'40',
@@ -1970,7 +1950,7 @@ db.itineraries.insertMany([
 'image':	'place3.jpg',},}},
 	
 {'name':	'Escape From The Rock Bay Cruise',
-'nroItinerario':	99,
+'nroItinerario':	98,
 'city':	'San Francisco',
 'duracion':	'3',
 'costo':	'150',
@@ -1986,6 +1966,26 @@ db.itineraries.insertMany([
 'image':	'place2.jpg',},
 'activity3':{	
 'name':	'Hear The Stories Of The Criminals Housed At Alcatraz Prison And Their Daring Escape Attempts',
+'descripcion':	'',
+'image':	'place3.jpg',},}},
+	
+{'name':	'Hop-On Hop-Off Sightseeing Bus Ticket',
+'nroItinerario':	99,
+'city':	'San Francisco',
+'duracion':	'4',
+'costo':	'40',
+'descripcion':	'N / A.',
+'actividades':{	
+'activity1':{	
+'name':	'San Francisco Hop-on Hop-off Bus Loop',
+'descripcion':	'',
+'image':	'place1.jpg',},
+'activity2':{	
+'name':	'Stop 1: Pier 41 (End Of Powell St), FishermanS Wharf',
+'descripcion':	'',
+'image':	'place2.jpg',},
+'activity3':{	
+'name':	'Stop 2: Washington Square - Corner Of Columbus And Union Streets',
 'descripcion':	'',
 'image':	'place3.jpg',},}},
 	
