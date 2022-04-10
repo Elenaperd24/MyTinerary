@@ -16,6 +16,7 @@ import { accionType } from '../reducer'
 import { alpha, styled } from '@mui/material/styles';
 import { pink } from '@mui/material/colors';
 import Switch from '@mui/material/Switch';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
@@ -177,11 +178,14 @@ function Cities() {
                     {citiesNew.length > 0 ?
                         citiesNew.map((city) => {
                             return (
-                                <Card sx={{ maxWidth: 375, margin: "2vw", background: "#fff4ee", borderRadius: "15px" }} key={city._id}>
+                                <Card sx={{ maxWidth: 375, margin: "2vw", background: "#fff4ee", borderRadius: "15px"}} key={city._id}>
                                     <CardHeader
                                         action={
                                             <IconButton aria-label="settings">
-                                                <MoreVertIcon />
+                                                <LinkRouter key={city._id} to={`/city/${city._id}`}>
+                                                <FavoriteIcon style={{color:"#7dd6e5"}}/>
+                                                </LinkRouter>
+                                              
                                             </IconButton>
                                         }
                                         title={city.name}
@@ -189,6 +193,7 @@ function Cities() {
                                         style={{ color: "#ff4b4a", fontFamily: "Permanent Marker" }}
                                     />
                                     <div className="contenerdorInfoCity">
+                                    <LinkRouter key={city._id} to={`/city/${city._id}`} style={{ textDecoration: "none"}}>
                                         <figure>
                                             <CardMedia className="imagen-card  img"
                                                 component="img"
@@ -202,10 +207,11 @@ function Cities() {
                                                 </LinkRouter>
                                             </div>
                                         </figure>
+                                         </LinkRouter>
                                     </div>
 
                                     <CardContent>
-                                        <FloatingActionButtons />
+                                        <FloatingActionButtons id={city._id}/>
                                     </CardContent>
                                 </Card>
                             )

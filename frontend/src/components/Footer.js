@@ -16,8 +16,6 @@ function Footer() {
                             </a>
                             <ul className="list-unstyled small text-muted">
                                 <li className="mb-2">Designed and built with all the love in the world by the <a href="/docs/5.1/about/team/"> Team MyTinerary</a> </li>
-
-
                             </ul>
                         </div>
                         <div className="col-6 col-lg-2 offset-lg-1 mb-3">
@@ -35,27 +33,16 @@ function Footer() {
                             </ul>
                         </div>
                         <div className="col-6 col-lg-2 mb-3">
-                            <h5>Places</h5>
-                            <ul className="list-unstyled">
-                                <LinkRouter to="/city">
-                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Santiago de Chile{/*</a>*/}</li>
-                                </LinkRouter>
-                                <LinkRouter to="/city">
-                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Sydney{/*</a>*/}</li>
-                                </LinkRouter>
-                                <LinkRouter to="/city">
-                                    <li className="mb-2">{/*<a className="text-decoration-none" href="#">*/}Dublin{/*</a>*/}</li>
-                                </LinkRouter>
-                            </ul>
-                        </div>
-                        <div className="col-lg-3 mb-3">
-                            <a className="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
+                       
+                        <a className="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
                                 <img src={SocialMedia} width="180" height="auto" className="d-block me-2" viewBox="0 0 118 94" role="img" />
                             </a>
                             <ul className="list-unstyled small text-muted">
                                 <li className="mb-2">
                                     CONTACT US ON OUR SOCIAL NETWORKS<a href="/docs/5.1/about/team/"> Team MyTinerary</a> </li>
                             </ul>
+                        </div>
+                        <div className="col-lg-3 mb-3">                           
                             <div className="col-6 col-lg-2 mb-3">
                                 <h5>SocialMedia</h5>
                                 <ul className="list-unstyled">
