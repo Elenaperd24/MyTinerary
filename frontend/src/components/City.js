@@ -25,29 +25,9 @@ function City() {
                             <div className="NameCity" style={{ fontFamily: "Permanent Marker" }} >{city[0].name}</div>
                         </div> */}
                     </div>
-                    <div className="d-flex informacionPrincipal">
-                        <div className="nameCountry ">
-                            <h1>{city[0].name}</h1>
+                    <div className="nameCountry"style={{fontFamily: "Permanent Marker" }}>
+                            {city[0].name}
                         </div>
-                        <div className="descripcionCity shadow">
-                            <h5>{city[0].descripcion.main}
-                            </h5>
-                        </div>
-                    </div>
-                    <div className="importantInformation">
-                        <h1>Look at the itineraries</h1>
-                        <h1>that you are going to love</h1>
-                    </div>
-                    <CarouselItinerario /* itineraries={itineraries} */ city={city} />
-                    <div className="whyCity container">
-                        <h3>Why choose </h3>
-                        <h1>{city[0].name + " "} as a destination?</h1>
-                    </div>
-                    <ListaImagenesCity city={city} />
-          <div className="importantInformation">
-                        <h1>Important </h1>
-                        <h1>information</h1>
-                    </div>
                     <div className="d-flex contInfoImportant container">
                         <div className="row">
                             <div className="card info shadow col-12 col-md-6 col-lg-4 col-xl-4" style={{ width: "19rem" }}>
@@ -82,6 +62,26 @@ function City() {
                             </div>
                         </div>
                     </div>
+                    
+                    {/* <div className="d-flex informacionPrincipal">
+                        <div className="nameCountry ">
+                            <h1>{city[0].name}</h1>
+                        </div>
+                        <div className="descripcionCity shadow">
+                            <h5>{city[0].descripcion.main}
+                            </h5>
+                        </div>
+                    </div> */}
+                    <div className="importantInformation">
+                        <h1>Look at the itineraries</h1>
+                        <h1>that you are going to love</h1>
+                    </div>
+                    <CarouselItinerario /* itineraries={itineraries} */ city={city} />
+                    <div className="whyCity container">
+                        <h3>Why choose </h3>
+                        <h1>{city[0].name + " "} as a destination?</h1>
+                    </div>
+                    <ListaImagenesCity city={city} />               
                 </div> : ""}
         </>
     )

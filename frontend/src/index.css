@@ -340,12 +340,13 @@ cursor: pointer;
   justify-content: center !important;
 }
 .nameCountry{
- margin-right: 10vw;
  display: flex;
+ justify-content: center;
  align-items: center;
  color: #ff4b4a;
  position: relative;
- left: 2vw;
+ font-size: 90px;
+ 
  
 }
 .descripcionCity h5{
@@ -429,10 +430,8 @@ cursor: pointer;
   color: #ff4a48;
 }
 .contInfoImportant{
-  justify-content: center;
-  margin-top: 5vh;
-  width: 100%;
-  
+  justify-content: center; 
+  width: 100%;  
 }
 .contInfoImportant .card-body{
   position: relative;
@@ -484,6 +483,10 @@ padding: 0;
   margin-top: 1vh;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+.carouselItinerario{
+  display: flex;
+  justify-content: center;
 }
 /**************************comments**************************************/
 .comments {
@@ -562,6 +565,7 @@ padding: 0;
 .nameCountry {
   display: flex;
   justify-content: center;
+  font-size: 80px;
 }
 
 .NameCity{
@@ -613,6 +617,7 @@ padding: 0;
 .nameCountry {
   display: flex;
   justify-content: center;
+  font-size: 50px;
 }
 
 .NameCity{
@@ -667,6 +672,7 @@ padding: 0;
 .nameCountry {
   display: flex;
   justify-content: center;
+  font-size: 50px;
 }
 
 .NameCity{
@@ -727,6 +733,7 @@ padding: 0;
   .nameCountry {
     display: flex;
     justify-content: center;
+    font-size: 50px;
   }
   .NameCity{
     position: absolute;

@@ -73,7 +73,7 @@ const responsive = {
  
   return (
     <>
-      <Carousel responsive={responsive} >
+      <Carousel responsive={responsive}  className="carouselItinerario">
         {itineraries?.map((item) => {  
           return (
             <div key={item._id} style={{ maxWidth: 450, backgroundColor: "red" }}>
