@@ -52,18 +52,24 @@ function Comments(props) {
     };
     //FUNCIONALIDAD
     const [{ user }, dispatch] = useStateValue()
-
     //CONSTANTES SET   
     let date = ""
     const [comment, setComment] = useState()
     const [reload, setReload] = useState(false)
     const [edit, setEdit] = useState(true)
     const [changeComment, setChangeComment] = useState()
+    useEffect(() => {   
+        let id = props.itinerary
+        axios.get(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
+            .then(response => {
+                setComment(response.data.response.comment)
+            })
 
+    }, [reload])
 
     //FUNCIONES
     const submitComent = async (event) => {
-        event.preventDefault()
+        event.preventDefault()      
         swal({
             title: "comment sent",
             icon: "success",
@@ -73,7 +79,7 @@ function Comments(props) {
         const dataComments = {
             intinerary: props.itinerary,
             user: user.datosUser.id,
-            message: event.target[0].value,
+            message: event.target[1].value,
             date: date
         }
         await axios.post("https://mytinerary-elena.herokuapp.com/api/comments", { dataComments })
@@ -82,19 +88,11 @@ function Comments(props) {
             })
         setReload(!reload)
     }
-    useEffect(() => {
-        let id = props.itinerary
-        axios.get(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
-            .then(response => {
-                setComment(response.data.response.comment)
-            })
 
-    }, [reload])
 
-    const deleteEdit = async (id, name) => {
+    const deleteEdit = async (id, name) => {    
         if (name === "Delete") {
-            console.log("entre al if")
-            await axios.delete(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
+        await axios.delete(`https://mytinerary-elena.herokuapp.com/api/comments/${id}`)
                 .then(response => setReload(!reload))
         }
         else if (name === "Edit") {
@@ -103,9 +101,9 @@ function Comments(props) {
 
     }
     const inputText = (event) => {
-        setChangeComment(event.target.value)
+        setChangeComment(event.target.value)  
     }
-    const editComments = async (id) => {
+    const editComments = async (id) => {   
         fecha()
         let data = changeComment
         let newDate = date
@@ -154,8 +152,9 @@ function Comments(props) {
                 }
             </h3>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <form onSubmit={submitComent}>
+            {user? 
+             <CardContent>                 
+                   <form onSubmit={submitComent}>
                         <div>
                             <label for="exampleFormControlTextarea1" className="form-label"></label>
                             <div style={{ display: "flex", justifyContent: "right", margin: 0 }}>
@@ -165,7 +164,7 @@ function Comments(props) {
                                     aria-expanded={expanded}
                                     aria-label="show more"
                                 >
-                                    <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} type="submit" />
+                                    <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} />
                                 </ExpandMore>
                             </div>
                             <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" style={{ borderStyle: "solid", borderColor: "#ff4a48" }}></textarea>
@@ -177,18 +176,16 @@ function Comments(props) {
                                     onClick={handleExpandClick}
                                     aria-expanded={expanded}
                                     aria-label="show more"
-                                >
-                                    <div>
-                                        <Fab sx={{ bgcolor: "" }} aria-label="SendIcon" aria-expanded={expanded} type="submit">
-                                            <SendIcon style={{ color: "ff4a48" }} />
-                                        </Fab>
-                                    </div>
+                                   
+                                >                                  
+                                <Fab sx={{ bgcolor: "secondary" }} aria-label="SendIcon" aria-expanded={expanded}  type="submit"  >
+                                    <SendIcon style={{ color: "ff4a48" }}/> 
+                                </Fab>                               
                                 </ExpandMore>
                             </div>
-
                         </div>
                     </form>
-                </CardContent>
+                </CardContent>:""}
             </Collapse>
             <div className={comment?.length > 0 ? "comments shadow" : "commentsA"}>
                 {comment?.map((item) => {
@@ -250,7 +247,7 @@ function Comments(props) {
                                             aria-label="SendIcon"
                                             onClick={() => editComments("x")}
                                         >
-                                            <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded} type="submit" />
+                                            <ClearIcon style={{ color: "ff4a48" }} aria-expanded={expanded}  />
                                         </ExpandMore>
 
                                         <div style={{ display: "flex", justifyContent: "right", marginRight: "5px", marginBottom: "5px" }}>

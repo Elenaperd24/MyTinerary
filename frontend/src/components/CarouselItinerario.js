@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import IconButton from '@mui/material/IconButton';
 import swal from 'sweetalert'
+import { useStateValue } from '../StateProvide'
 
 function CarouselItinerario(props) {
 //responsive de MATERIAL UI
@@ -36,8 +37,10 @@ const responsive = {
 };
 //START COMPONENTE
   let city = props.city
+  const [{ user }, dispatch] = useStateValue()
   const [itineraries, setItineraries] = useState([])
   const [reload, setReload] = useState(false)
+  const [colorLike, setColorLike] = useState()
 
   useEffect(() => {
    // window.scrollTo(0, 0);
@@ -50,22 +53,23 @@ const responsive = {
  const Darlike = async (id) => {
   const token = localStorage.getItem("token")
   if(!token){
-    swal({
-      title: "Go to signin to post your opinions",
-      icon: "error",
-      buttons: "ok"
-  })
-  }
+    swal({title: "Go to sign in to post your opinions",
+          icon: "error",
+          buttons: "ok"})
+    }
   else{
-
   axios.put(`https://mytinerary-elena.herokuapp.com/api/likeDislike/${id}`, {},
       { headers: { 'Authorization': 'Bearer ' + token } })
       .then(response => {  
-        console.log(response); 
+        console.log(response.data.response); 
+        if(response.data.response.includes(user.datosUser.id)){
+       //   setColorLike("colorLike")
+        }
           setReload(!reload)
       })
     }
 }
+
  
   return (
     <>
@@ -76,7 +80,8 @@ const responsive = {
               <Card key={item._id} sx={{ maxWidth: 450, background: "#fff4ee" , position:"relative" }}>
               <Box sx={{ '& > :not(style)': { m: 1.7 } , position:"absolute", right:0}}>
                     <Fab aria-label="like" onClick={() => Darlike(item._id)}>
-                        <ThumbUpAltIcon /> {item.likes.length} 
+                        <ThumbUpAltIcon className = {user && item.likes.includes(user.datosUser.id)?
+                          "colorLike":""}/> {item.likes.length} 
                     </Fab>
                 </Box>
                 <CardMedia key={item._id}

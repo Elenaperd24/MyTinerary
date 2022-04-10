@@ -34,22 +34,16 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 function Cities() {
     //MIS DATOS DB   
     const [{ cities, citiesNew }, dispatch] = useStateValue()
-    const [check, setCheck] = useState(false)
-    const [continenteValue, setContinenteValue] = useState()
-    let continente = ""
-    let checked = false
-    //const[checked, setChecked]  = useState(false)
-    //  console.log("valor inicial de checked:" + checked)
+    const [continenteValue, setContinenteValue] = useState("")
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // setChecked(true)
-
         dispatch({
             type: accionType.FILTER,
             citiesNew: cities
         })
     }, [])
+  
     let continents = []
     citiesNew.map((city) => {
         if (!continents.includes(city.continent)) {
@@ -58,6 +52,7 @@ function Cities() {
             )
         }
     })
+
     let countries = []
     citiesNew.map((city) => {
         if (!countries.includes(city.country)) {
@@ -66,33 +61,45 @@ function Cities() {
             )
         }
     })
-    function filterCities() {
-        console.log(continente);
 
+    function filterCities() {
         let textCity = document.getElementById("City").value.toLowerCase()
         let textCountry = document.getElementById("Country").value.toLowerCase()
-
         if (textCity !== "" || textCountry !== "") {
             let resultFilter = []
-            resultFilter = cities.filter(city =>
-                city.continent === continenteValue &&
+            if(continenteValue ==="All continent" || continenteValue === ""){
+                resultFilter = cities.filter(city =>
                 city.name.toLowerCase().includes(textCity) &&
-                city.country.toLowerCase().includes(textCountry)
-            )
-            //   console.log(resultFilter)
-            dispatch({
+                city.country.toLowerCase().includes(textCountry))
+            } 
+            else{
+                resultFilter = cities.filter(city =>
+                    city.continent=== continenteValue&&
+                    city.name.toLowerCase().includes(textCity) &&
+                    city.country.toLowerCase().includes(textCountry))
+            }
+          dispatch({
                 type: accionType.FILTER,
                 citiesNew: resultFilter
             })
         }
         else {
+        let resultFilter
+        resultFilter = cities.filter(city => city.continent === continenteValue)
+            if(resultFilter.length>0){
             dispatch({
-                type: accionType.FILTER,
-                citiesNew: cities
-            })
+            type: accionType.FILTER,
+            citiesNew: resultFilter})}
+            else{
+                dispatch({
+                    type: accionType.FILTER,
+                    citiesNew: cities
+                })
+            }
         }
     }
-    function handelChange(event) {  
+
+    function selectContinent(event) {  
         setContinenteValue(event.target.name)
         let resultFilter
         resultFilter = cities.filter(city => city.continent === event.target.name)
@@ -108,7 +115,6 @@ function Cities() {
         }
     }
 
-
     return (
         <>
             <CarouselHeader cities={cities} />
@@ -117,18 +123,18 @@ function Cities() {
                     continents?.map((continent) => {
                         return (
                             <div>
-                                <Switch {...label} color="secondary" defaultChecked onChange={handelChange} name={continent} />
+                                <Switch {...label} color="secondary" defaultChecked onChange={selectContinent} name={continent} />
                                 {continent}
                             </div>
                         )
                     })
                     :
                     <div>
-                        <GreenSwitch {...label} onChange={handelChange} name={"All continent"} />
+                        <GreenSwitch {...label} onChange={selectContinent} name={"All continent"} />
                         Press to see all continent
                         <div>
                             <h1 style={{fontFamily: "Permanent Marker", color: "#ff4b4b", display: "flex", justifyContent: "center", marginTop: "2%" }}>
-                                {continenteValue}
+                                {continenteValue==="All continent"?"":continenteValue}
                             </h1>
                         </div>
                     </div>}
@@ -141,7 +147,7 @@ function Cities() {
                         freeSolo
                         options={countries.map((option) => option)}
                         onKeyPress={filterCities}
-                        // onChange={filterCities}
+                        onChange={filterCities}
                         renderInput={(params) => <TextField {...params} label="Country" color="success" focused onChange={filterCities} />}
                     />
                     <Autocomplete
@@ -170,12 +176,7 @@ function Cities() {
                         citiesNew.map((city) => {
                             return (
                                 <Card sx={{ maxWidth: 375, margin: "2vw", background: "#fff4ee", borderRadius: "15px" }} key={city._id}>
-                                    <CardHeader
-                                        /*    avatar={
-                                             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                               R
-                                             </Avatar>
-                                           } */
+                                    <CardHeader                                   
                                         action={
                                             <IconButton aria-label="settings">
                                                 <MoreVertIcon />

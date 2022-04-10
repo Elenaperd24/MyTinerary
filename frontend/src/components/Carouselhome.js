@@ -8,6 +8,7 @@ import "./styles.css";
 // import required modules
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
+import { Link as LinkRouter } from "react-router-dom";
 
 export default function App(props) {
     let cities = props.cities
@@ -36,12 +37,19 @@ export default function App(props) {
                         return (
                             <>
                                 <SwiperSlide key={`${city._id}+a`}>
-                                    <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} />
+                                    <div style={{ color: "#ff4b4b" }}>
+                                    {city.name} - {city.country}
+                                      
+                                        <LinkRouter key={city._id} to={`/city/${city._id}`} style={{ textDecoration: "none", color: "#ff4b4a", fontFamily: "Permanent Marker" }}>
+                                          <img src={process.env.PUBLIC_URL + `/image/cities/${city.name}/${city.images.banner2}`} alt={city.name} />
+                                          Go to this city..
+                                        </LinkRouter>                                       
+                                    </div>
                                 </SwiperSlide>
                             </>
                         )
                     })}
-                </Swiper>: ""}
+                </Swiper> : ""}
 
         </>
     );

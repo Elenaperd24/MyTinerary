@@ -44,7 +44,7 @@ function City() {
                         <h1>{city[0].name + " "} as a destination?</h1>
                     </div>
                     <ListaImagenesCity city={city} />
-                  {/*   <div className="importantInformation">
+          <div className="importantInformation">
                         <h1>Important </h1>
                         <h1>information</h1>
                     </div>
@@ -81,7 +81,7 @@ function City() {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div> : ""}
         </>
     )
