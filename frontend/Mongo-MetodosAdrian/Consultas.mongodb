@@ -34,5 +34,5 @@ use(database);
 //.find({},{nombre:1,apellido:1})
 
 db.getCollection(collection)
-  .find({name:"Buenos Aires" })
+  //.find({like})
   .sort()
