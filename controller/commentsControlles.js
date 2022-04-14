@@ -24,7 +24,6 @@ const commentsControllers = {
         let comment
         try {
             comment = await Comments.find({ intinerary: id }).populate("user")
-            console.log(comment)
         } catch (error) {
             console.log(error)
         }
